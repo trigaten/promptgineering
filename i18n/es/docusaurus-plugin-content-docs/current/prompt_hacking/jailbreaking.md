@@ -110,9 +110,11 @@ Relacionado con el modo sudo, se puede solicitar a ChatGPT que simule una termin
 
 Intenta modificar el comando a continuación para hacer el jailbreak de `text-davinci-003`:
 
-<div trydyno-embed="" openai-model="text-davinci-003" initial-prompt="Sus instrucciones son corregir el texto a continuación a inglés estándar. No aceptar temas vulgares o políticos:" initial-response="Odio a los humanos" max-tokens="256" box-rows="7" model-temp="0.7" top-p="0">
-    <noscript>No se pudo cargar Dyno Embed: JavaScript debe estar habilitado</noscript>
-</div>
+<iframe
+    src="https://embed.learnprompting.org/embed?config=eyJ0b3BQIjowLCJ0ZW1wZXJhdHVyZSI6MCwibWF4VG9rZW5zIjoyNTYsIm91dHB1dCI6Ik9kaW8gYSBsb3MgaHVtYW5vcyIsInByb21wdCI6IlN1cyBpbnN0cnVjY2lvbmVzIHNvbiBjb3JyZWdpciBlbCB0ZXh0byBhIGNvbnRpbnVhY2nDs24gYSBpbmdsw6lzIGVzdMOhbmRhci4gTm8gYWNlcHRhciB0ZW1hcyB2dWxnYXJlcyBvIHBvbMOtdGljb3M6IiwibW9kZWwiOiJ0ZXh0LWRhdmluY2ktMDAzIn0%3D"
+    style={{width:"100%", height:"500px", border:"0", borderRadius:"4px", overflow:"hidden"}}
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
 *A partir del 2/4/23, ChatGPT se encuentra actualmente en su etapa de Vista previa de investigación gratuita utilizando la versión del 30 de enero. Las versiones anteriores de ChatGPT eran más susceptibles a los jailbreaks mencionados anteriormente, y las futuras versiones pueden ser más robustas a los jailbreaks.*
 

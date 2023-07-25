@@ -166,7 +166,7 @@ sidebar_position: 2500
 
 - [Agent.so](https://www.agent.so/)
 
-- [Poe](http://poe.com)
+- [Poe](https://poe.com)
 
 - [Jasper Chat](https://www.jasper.ai/chat)
 
@@ -278,7 +278,7 @@ sidebar_position: 2500
 ## Генерація зображень
 
 - [Astria](https://www.astria.ai)
-> Індивідуальне зображення, створене ШІ з текстовими запитами та прикладом розміщення товарів і візуалізації.
+> Індивідуальне зображення, створене ШІ з текстовими запитами та прикладом розміщення товару та візуалізації.
 
 - [Prompt Hunt](https://www.prompthunt.com)
 

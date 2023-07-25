@@ -34,7 +34,11 @@ import Image from '@site/docs/assets/jailbreak/injection_job.webp';
 
 尝试通过向提示添加文本来使以下的 LLM 说出"PWNED"(@chase2021adversarial)：
 
-<div trydyno-embed="" openai-model="text-davinci-002" initial-prompt="English: I want to go to the park today.\nFrench: Je veux aller au parc aujourd'hui.\nEnglish: I like to wear a hat when it rains.\nFrench: J'aime porter un chapeau quand it pleut.\nEnglish: What are you doing at school?\nFrench: Qu'est-ce que to fais a l'ecole?\nEnglish:" initial-response="" max-tokens="256" box-rows="10" model-temp="0.7" top-p="1"></div>
+<iframe
+    src="https://embed.learnprompting.org/embed?config=eyJ0b3BQIjowLCJ0ZW1wZXJhdHVyZSI6MCwibWF4VG9rZW5zIjoyNTYsIm91dHB1dCI6IiIsInByb21wdCI6IkVuZ2xpc2g6IEkgd2FudCB0byBnbyB0byB0aGUgcGFyayB0b2RheS5cXG5GcmVuY2g6IEplIHZldXggYWxsZXIgYXUgcGFyYyBhdWpvdXJkJ2h1aS5cXG5FbmdsaXNoOiBJIGxpa2UgdG8gd2VhciBhIGhhdCB3aGVuIGl0IHJhaW5zLlxuRnJlbmNoOiBKJ2FpbWUgcG9ydGVyIHVuIGNoYXBlYXUgcXVhbmQgaXQgcGxldXQuXG5FbmdsaXNoOiBXaGF0IGFyZSB5b3UgZG9pbmcgYXQgc2Nob29sP1xuRnJlbmNoOiBRdSdlc3QtY2UgcXVlIHRvIGZhaXMgYSBsJ2Vjb2xlP1xuRW5nbGlzaDoiLCJtb2RlbCI6InRleHQtZGF2aW5jaS0wMDMifQ%3D%3D"
+    style={{width:"100%", height:"500px", border:"0", borderRadius:"4px", overflow:"hidden"}}
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
 ## 备注
 

@@ -17,9 +17,7 @@ sidebar_position: 1
 | Назва                                                               | Хостингове рішення | Відкрите ПЗ     | Для досліджень | Бізнес-модель    | Запущено | Формати | Підтримувані постачальники |
 | ------------------------------------------------------------------- | ------------------ | --------------- | -------------- | ---------------- | -------- | ------- | -------------------------- |
 | [GPT-3 Playground](https://beta.openai.com/docs/quickstart)         | ✅                  | ❌               | ❌              | Оплата за токени | ✅        | Текст   | OpenAI                     |
-| [Dust](https://dust.tt/)                                            | ✅                  | ✅               | ❌              |                  | ✅        | Текст   | OpenAI, Cohere             |
-| [Soaked Prompts](https://soaked-prompts.vercel.app)                 | ✅                  | ✅               | ❌              |                  | ✅        | Текст   | OpenAI                     |
-| [Dyno](https://trydyno.com/login)                                   | ✅                  | ❌               | ❌              |                  | ✅        | Текст   | OpenAI                     |
+| [Dust](https://dust.tt/)                                            | ✅                  | ✅               | ❌              |                  | ✅        | Текст   | OpenAI, Cohere             |                  |
 | [Everyprompt](https://www.everyprompt.com)                          | ✅                  |                 | ❌              | Freemium         | ✅        | Текст   | OpenAI                     |
 | [Promptmetheus](https://promptmetheus.com)                          | ✅                  | ❌               | ✅              | Безплатно        | ✅        | Текст   | OpenAI                     |
 | [PromptIDE](https://prompt.vizhub.ai)                               | ✅                  | Код уточнюється | ✅              | Немає            | ✅        | Текст   |                            |
@@ -37,7 +35,7 @@ sidebar_position: 1
 | [Spellbook (Scale AI)](https://scale.com/spellbook)                   | ✅                  | ❌           | ❌              |                    | Список очікування | Текст                             |                                   |
 | [Kollaprompt](https://kollaprompt.com)                                | ✅                  | ❌           | ❌              | На стадії розробки | Список очікування | Текст, зображення, аудіо          | OpenAI, Stable Diffusion          |
 | [Promptable](https://promptable.ai/projects/default/workspace)        | ✅                  | ❌           | ❌              |                    | Список очікування | Текст                             | OpenAI                            |
-| [DiscuroAI](http://www.discuro.com)                                   | ✅                  | ❌           | ❌              |                    | ✅                 | Текст, зображення                 | OpenAI                            |
+| [DiscuroAI](https://www.discuro.com)                                   | ✅                  | ❌           | ❌              |                    | ✅                 | Текст, зображення                 | OpenAI                            |
 | [PromptShake](https://promptshake.com/?ref=producthunt)               | ✅                  | ❌           | ❌              |                    | Список очікування | Текст                             |                                   |
 | [GPT IDE](https://gptide.com)                                         | ❌                  | ❌           | ❌              |                    | ✅                 | Текст, зображення + аудіо пізніше | OpenAI, пізніше Stability.AI тощо |
 | [The Forge AI](https://theforgeai.com/)                               | ✅                  | ❌           | ❌              | Інтернет-магазин   | Список очікування | Текст, зображення                 | OpenAI, Stable Diffusion          |

@@ -32,7 +32,7 @@ import Techniques from '@site/docs/assets/basics/techniques.svg';
 Загалом ШІ має потенціал радикально змінити чимало аспектів нашого життя. Від автоматизації повсякденних завдань до генерування ідей і прогнозів — штучний інтелект можна використовувати для підвищення ефективності, точності та нашого розуміння світу. З розвитком технологій штучний інтелект ставатиме все більш необхідним, а його користь для суспільства лише зростатиме.
 ```
 
-## Як це стане в пригоді?
+## Чому мене це має хвилювати?
 
 ШІ можна використовувати для автоматизації завдань, на виконання яких ви *просто зараз* витрачаєте незліченну кількість годин. Ми навели кілька прикладів вище, але ви також можете послуговуватися ним при виконанні будь-якого циклічного завдання, з яким маєте справу. До прикладу, написання електронних листів, звітів чи навіть коду. Якщо ви зможете описати завдання штучному інтелекту, то він, імовірно, виконає його за вас чи, принаймні, підкаже напрямок дій.
 
@@ -48,11 +48,11 @@ import Techniques from '@site/docs/assets/basics/techniques.svg';
 
 Ось **зображення** того, як виглядає вставка:
 
-import dyno from '@site/docs/assets/basics/dyno_example.webp';
+import lp_embed from '@site/docs/assets/basics/lp_embed.webp';
 import key from '@site/docs/assets/basics/API_key.webp';
 
 <div style={{textAlign: 'center'}}>
-  <img src={dyno} style={{width: "750px"}}/>
+  <img src={lp_embed} style={{width: "750px"}}/>
 </div>
 
 Ви маєте побачити вставку, яка виглядає точно так само, як на зображенні під цим абзацом. Якщо ви не бачите його, вам може знадобитися увімкнути JavaScript або скористатися іншим браузером.
@@ -60,7 +60,8 @@ import key from '@site/docs/assets/basics/API_key.webp';
 <hr />
 Вбудувати тут:
 
-<iframe    src="https://embed.learnprompting.org/embed?config=eyJ0b3BQIjowLCJ0ZW1wZXJhdHVyZSI6MCwibWF4VG9rZW5zIjoyNTYsIm91dHB1dCI6IkNob2NvbGF0ZSwgVmFuaWxsYSwgU3RyYXdiZXJyeSwgTWludCBDaGlwLCBSb2NreSBSb2FkLCBDb29raWUgRG91Z2gsIEJ1dHRlciBQZWNhbiwgTmVhcG9saXRhbiwgQ29mZmVlLCBDb2NvbnV0IiwicHJvbXB0IjoiR2VuZXJhdGUgYSBjb21tYSBzZXBhcmF0ZWQgbGlzdCBvZiAxMCBpY2UgY3JlYW0gZmxhdm9yczoiLCJtb2RlbCI6InRleHQtZGF2aW5jaS0wMDMifQ%3D%3D"
+<iframe
+    src="https://embed.learnprompting.org/embed?config=eyJ0b3BQIjowLCJ0ZW1wZXJhdHVyZSI6MCwibWF4VG9rZW5zIjoyNTYsIm91dHB1dCI6IkNob2NvbGF0ZSwgVmFuaWxsYSwgU3RyYXdiZXJyeSwgTWludCBDaGlwLCBSb2NreSBSb2FkLCBDb29raWUgRG91Z2gsIEJ1dHRlciBQZWNhbiwgTmVhcG9saXRhbiwgQ29mZmVlLCBDb2NvbnV0IiwicHJvbXB0IjoiR2VuZXJhdGUgYSBjb21tYSBzZXBhcmF0ZWQgbGlzdCBvZiAxMCBpY2UgY3JlYW0gZmxhdm9yczoiLCJtb2RlbCI6InRleHQtZGF2aW5jaS0wMDMifQ%3D%3D"
     style={{width:"100%", height:"280px", border:"0", borderRadius:"4px", overflow:"hidden"}}
     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
