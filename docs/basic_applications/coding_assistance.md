@@ -19,19 +19,19 @@ You can use ChatGPT for debugging, code generation, reformatting, commenting, an
 | Forth       | Tcl            | Groovy              | Vlang                 |
 | Ada         | SQL            | Scala Native        | Erlang                |
 |             | Java           |                     |                       |
+|             | Python         |                     |                       |
 
 ## Code Generation
 
 Instructing ChatGPT to generate code is as simple as this:
 
-```text
+<AIInput>
 Act as a junior python programmer. Please write the code to generate madlibs from 3 arrays of 6 items each: prepositions, verbs and nouns, with the nouns also being used as direct objects. After writing it, execute the code.
-```
+</AIInput>
 
 The output will be something like:
 
-```text
-// highlight-start
+<AIOutput>
 import random
 
 prepositions = ['at', 'in', 'on', 'with', 'under', 'over']
@@ -45,8 +45,7 @@ noun = random.choice(nouns)
 madlib = f"I {verb} {preposition} the {noun}."
 
 print(madlib)
-// highlight-end
-```
+</AIOutput>
 
 Try it here:
 

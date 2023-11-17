@@ -6,7 +6,7 @@ function Footer() {
   const rightLinks = [
     {
       name: "Discord",
-      link: "http://discord.gg/learn-prompting",
+      link: "https://discord.gg/learn-prompting-1046228027434086460",
     },
     {
       name: "GitHub",
@@ -22,7 +22,7 @@ function Footer() {
     },
     {
       name: "Contact",
-      link: "mailto:learnprompting@gmail.com",
+      link: "mailto:team@learnprompting.org",
     },
   ];
 

@@ -35,6 +35,12 @@ async function createConfig() {
         "id"
       ],
     },
+    scripts: [
+      {
+        src: 'https://tag.clearbitscripts.com/v1/pk_5621ff511ea83a6ec015bee0a0b5dd79/tags.js',
+        async: true,
+      },
+    ],
     plugins: [
       [
         "@docusaurus/plugin-client-redirects",
@@ -47,6 +53,10 @@ async function createConfig() {
             {
               to: '/docs/tooling/IDEs/intro',
               from: '/docs/IDEs/intro',
+            },
+            {
+              to: '/our_services',
+              from: '/consulting',
             },
           ],
         },
@@ -61,6 +71,13 @@ async function createConfig() {
           },
         };
       },
+      ["posthog-docusaurus",
+        {
+          apiKey: process.env.POSTHOG_API_KEY || "DEV",
+          appUrl: "https://app.posthog.com", // optional
+          enableInDevelopment: false, // optional
+        },
+      ]
     ],
 
     presets: [
@@ -152,7 +169,7 @@ async function createConfig() {
         },
         {
           name: "og:image",
-          content: "https://learnprompting.org/img/og-image.webp", // Replace this with the actual path to your og-image.
+          content: "https://learnprompting.org/docs/assets/astronaut.webp", // Replace this with the actual path to your og-image.
         },
         {
           name: "og:type",

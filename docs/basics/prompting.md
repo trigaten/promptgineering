@@ -8,6 +8,7 @@ import Interface from '@site/docs/assets/basics/chatgpt_interface.webp';
 <div style={{textAlign: 'center'}}>
   <img src={Interface} className="img-docs" style={{width: "80%"}}/>
 </div>
+<br/>
 
 :::takeaways
 - Set up ChatGPT
@@ -27,13 +28,27 @@ To get started with ChatGPT, follow these steps:
 
 Here is a video that shows you how to get setup with ChatGPT.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FMEzy2jo84c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FMEzy2jo84c" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
 
 ## Test Some Prompts on ChatGPT
 
 Now that we have ChatGPT set up, let's test out some prompts.
 
-#### 1) Summarizing an Article
+#### 1) Color of Grass
+
+We will start with something very simple: can ChatGPT tell us the color of grass?
+
+<AIInput>
+What color is grass?
+</AIInput>
+
+<AIOutput>
+Grass is green.
+</AIOutput>
+
+Indeed it can, now let's try a more useful example.
+
+#### 2) Summarizing an Article
 
 Say you are reading an article about snowfall in Florida. You want to quickly get the main ideas of the article, so you show the AI what you are reading, and ask for a summary[^b]:
 
@@ -53,7 +68,7 @@ Snowfall is extremely rare in Florida, with the exception of the far northern ar
 You will likely see a slightly different output. This will be the case for most prompts in this course. We will learn why later in this module.
 :::
 
-#### 2) Math Problem Solving
+#### 3) Math Problem Solving
 
 ChatGPT can also solve math problems! Let's give it a prompt with a simple problem.
 

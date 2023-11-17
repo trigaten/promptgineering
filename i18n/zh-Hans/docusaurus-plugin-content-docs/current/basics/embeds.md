@@ -1,19 +1,23 @@
 ---
-sidebar_position: 40
+sidebar_position: 3
 ---
 
-# 🟢 Learn Prompting Embeds
+# 🟢 学习提示嵌入
 
-:::takeaways
-- Set up the Learn Prompting Embed
-- Run ChatGPT prompts in the course website
+:::takeaways 本文要点
+
+- 配置学习提示嵌入（Learn Prompting Embed）
+- 在课程网站上运行 ChatGPT 的提示
+
 :::
 
 The ChatGPT website is useful, but wouldn't it be nice if you could write and test prompts right on this website? With [Learn Prompting Embeds](https://embed.learnprompting.org/), you can! Read on to see how to set this up. We will include these interactive embeds in the most articles.
 
-## Get Set Up
+ChatGPT 网站非常有用，但如果你能在本网站上编写和测试提示，那不是更好吗？通过[学习提示嵌入](https://embed.learnprompting.org/)（Learn Prompting Embeds），你可以实现这一点！继续阅读以了解如何设置。我们将在大多数文章中包含这些交互式嵌入。
 
-Watch the video tutorial here:
+## 准备工作
+
+观看视频教程:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sNUKiwd2DWU" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
 
@@ -22,9 +26,7 @@ Here is an **image** of what an embed looks like:
 import lp_embed from '@site/docs/assets/basics/lp_embed.webp';
 import key from '@site/docs/assets/basics/API_key.webp';
 
-
 <img src={lp_embed} class="img-docs" style={{width: "100%"}}/>
-
 
 You should be able to see an embed that looks just like the image right below this paragraph. If it is not visible, you may need to enable JavaScript or use a different browser. If you still cannot see it, join the [Discord](https://discord.com/invite/learn-prompting) and tell us about your problem.
 
@@ -34,20 +36,19 @@ You should be able to see an embed that looks just like the image right below th
     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
-
 Assuming that you can see the embed, click on the **Generate** button. If this is your first time using it, you will be prompted to input an OpenAI API key. An OpenAI API key is just a string of text that the embed uses to link to your OpenAI account.
 
 ### Get an OpenAI API Key
 
-- First, navigate to [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys) 
-- Then, sign up for or sign into your OpenAI account. 
+- First, navigate to [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys)
+- Then, sign up for or sign into your OpenAI account.
 - Click the **Create new secret key** button. It will pop up a modal that contains a string of text like this:
 
 <div style={{textAlign: 'center'}}>
   <LazyLoadImage src={key} class="img-docs" style={{width: "80%"}} />
 </div>
 
-- Copy and paste this key into the embed on this website and click **Submit**. 
+- Copy and paste this key into the embed on this website and click **Submit**.
 
 You should now be able to use the embeds throughout this site. Note that OpenAI charges you for each prompt you submit through these embeds. If you have recently created a new account, you should have 3 months of free credits. If you have run out of credits, don't worry, since using these models is very cheap. ChatGPT only costs about $0.02 for every seven thousand words you generate[^a].
 
@@ -61,8 +62,8 @@ Let's learn how to use the embed. Edit the "Type your prompt here" field. This e
     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
-You can see four pieces of information under the Generate button. The left one, 'gpt-3.5-turbo' is the model (gpt-3.5-turbo is the technical name for ChatGPT). The three numbers are [LLM settings](https://learnprompting.org/docs/basics/configuration_hyperparameters), which we will learn about in a few articles. If you would like to make your own embed, click the 
-edit this embed button. 
+You can see four pieces of information under the Generate button. The left one, 'gpt-3.5-turbo' is the model (gpt-3.5-turbo is the technical name for ChatGPT). The three numbers are [LLM settings](https://learnprompting.org/docs/basics/configuration_hyperparameters), which we will learn about in a few articles. If you would like to make your own embed, click the
+edit this embed button.
 
 ## Conclusion
 

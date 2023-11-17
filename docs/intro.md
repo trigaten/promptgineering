@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 import CodeBlock from '@theme/CodeBlock';
 
-# Welcome
+# Prompt Engineering Guide
 
 import Astronaut from '@site/docs/assets/astronaut_welcome.webp';
 
@@ -53,14 +53,14 @@ Best,
 [Your Position]
 </AIOutput>
 
-The AI easily writes an email that is both humorous and professional. By modifying the *prompt*, we can make it change the style as we see fit. We can even make it copy how we read. We can also make it edit emails that we have already written! With all of these abilities, Gen AI saves us hours in email writing each week. See [this article](@site/docs/basic_applications/writing_emails.md) for more information on writing emails with Gen AI.
+The AI easily writes an email that is both humorous and professional. By modifying the *prompt*, we can make it change the style as we see fit. We can even make it copy how we read. We can also make it edit emails that we have already written! With all of these abilities, Gen AI saves us hours in email writing each week. See [this article](https://learnprompting.org/docs/basic_applications/writing_emails) for more information on writing emails with Gen AI.
 
 ## Ethos and Philosphy
 
 We will now give a broad overview of the rest of the course, including our ethos and philosophy, our teaching style, and a list of modules. This course is open source (anyone can see the code), and built by a diverse community of researchers, translators, and hobbyists. We believe that AI should be accessible to everyone, and that it should be described clearly and objectively. To this end, we have written a comprehensive course that is free of excessive jargon and hype.
 
 We have found this approach to be appreciated by the prompt engineering community: This course is cited by [Wikipedia](https://en.wikipedia.org/wiki/Prompt_engineering#cite_ref-15), and is used by people at companies such as [O'REILLY](https://learning.oreilly.com/live-events/prompt-engineering-for-generating-ai-art-and-text/0636920084340/0636920084339/), Scale AI, and OpenAI. You may also notice that <a href="https://youtu.be/GPqSoiOP3w8?t=274" rel={"nofollow"}>almost </a><a href="https://learnwithhasan.com/prompt-engineering-guide/" rel={"nofollow"}>every </a><a href="https://www.youtube.com/watch?v=EYjG6i53-xk" rel={"nofollow"}>other </a> <a href="https://youtu.be/yR4hNBNS6yc?t=743" rel={"nofollow"}>prompt </a> <a href="https://youtu.be/pZsJbYIFCCw?t=208" rel={"nofollow"}>engineering </a> <a href="https://youtu.be/4kp7oVTu9Ck?t=495" rel={"nofollow"}>video </a> <a href="https://www.youtube.com/watch?v=q5wuHUmGFMw" rel={"nofollow"}>and </a> <a href="https://youtu.be/f8PGV3T9w38?t=549" rel={"nofollow"}>guide </a>
-uses material from this course. We are honored to support the prompt engineering community, including our 1.3M+ users and 40K+ [Discord](https://discord.gg/learn-prompting) members.
+uses material from this course. We are honored to support the prompt engineering community, including our 1.3M+ users and 40K+ [Discord](https://discord.gg/learn-prompting-1046228027434086460) members.
 
 ## How We Teach
 
