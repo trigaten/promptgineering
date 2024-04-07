@@ -19,6 +19,8 @@ import Techniques from '@site/docs/assets/basics/techniques.svg';
 
 ## What is AI?
 
+<iframe src="https://player.bilibili.com/player.html?aid=1250475138&bvid=BV1wJ4m1x7Xy&cid=1431429871&p=1" style={{width: "100%", height: "500px"}} scrolling="no" border="0" frameborder="no" framespacing="0" allowFullScreen={true}></iframe>
+
 Artificial intelligence (AI) is a field in which people have created "smart" algorithms that can "learn" from data[^1]. This course focuses on **Generative AI** (Gen AI), a type of AI that is able to create new content, just like humans can. For example, they can write **essays**, solve **math problems**, and **win [art competitions](https://impakter.com/art-made-by-ai-wins-fine-arts-competition/)**. 
 
 
