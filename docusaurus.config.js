@@ -259,7 +259,16 @@ async function createConfig() {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      giscus: {
+        repo: 'LearnPrompt/LP',
+        repoId: 'R_kgDOLq34xQ',
+        category: 'Announcements',
+        categoryId: 'DIC_kwDOLq34xc4CehDO',
+        theme: 'light_high_contrast',
+        darkTheme: 'dark_tritanopia',
+      }
     },
+    clientModules: [require.resolve('./src/clientModules/routeModules.js')],
     markdown: {
       mermaid: true,
     },
