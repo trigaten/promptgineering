@@ -33,6 +33,7 @@
     "@mdx-js/react": "^1.6.22",
     "@motionone/utils": "^10.15.1",
     "@renatonagliati/remark-auto-glossary": "git://github.com/renatonagliati/remark-auto-glossary.git#fed3f0983592ea15298b54b82fc92acc53359c25",
+    "canvas-confetti": "^1.9.2",
     "clsx": "^1.2.1",
     "cspell": "^6.17.0",
     "docusaurus-plugin-mindmap": "^0.1.4",
