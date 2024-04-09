@@ -35,6 +35,7 @@
     "@renatonagliati/remark-auto-glossary": "git://github.com/renatonagliati/remark-auto-glossary.git#fed3f0983592ea15298b54b82fc92acc53359c25",
     "clsx": "^1.2.1",
     "cspell": "^6.17.0",
+    "docusaurus-plugin-mindmap": "^0.1.4",
     "framer-motion": "^6.5.1",
     "fs": "^0.0.1-security",
     "hast-util-is-element": "^1.1.0",

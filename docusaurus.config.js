@@ -55,6 +55,7 @@ async function createConfig() {
       },
     ],
     plugins: [
+      ['mindmap', {}],
       [
         "@docusaurus/plugin-client-redirects",
         {
