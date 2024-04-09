@@ -1,0 +1,34 @@
+.friendContainer {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+}
+
+.friendList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.dragBox {
+  position: sticky;
+  bottom: 1rem;
+  left: 1rem;
+
+  display: inline-flex;
+  text-align: right;
+  cursor: move;
+}
+
+.siteInfo {
+  text-align: left;
+  width: 400px;
+  font-size: 0.9rem;
+  border-radius: var(--ifm-pre-border-radius);
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  --ifm-leading: 0;
+}
+
+.siteInfo code {
+  --ifm-pre-padding: 0 1rem 1rem;
+}

@@ -29,6 +29,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@giscus/react": "^2.4.0",
     "@headlessui/react": "^1.7.16",
+    "@iconify/react": "^4.1.1",
     "@kailualabs/multimodal-search": "^1.0.1",
     "@mdx-js/react": "^1.6.22",
     "@motionone/utils": "^10.15.1",
