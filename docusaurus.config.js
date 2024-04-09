@@ -96,10 +96,10 @@ async function createConfig() {
         "classic",
         {
           gtag: {
-            trackingID: "G-FV0C417KS8",
+            trackingID: "G-LV7H9L9JQ3",
           },
           googleAnalytics: {
-            trackingID: "G-FV0C417KS8",
+            trackingID: "G-LV7H9L9JQ3",
           },
           docs: {
             admonitions: {
