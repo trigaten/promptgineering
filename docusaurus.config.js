@@ -242,6 +242,8 @@ async function createConfig() {
             position: "right",
           },
           { to: '/blog', label: '📰 Changelog', position: 'right' },
+          { to: '/friends', label: '👬 Blogroll', position: 'right'},
+
           // {
           //   href: "https://github.com/trigaten/Learn_Prompting/releases",
           //   label: "Change Log",
