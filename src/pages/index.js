@@ -12,6 +12,8 @@ import GetStarted from "../subsections/landingpage/GetStarted";
 import Footer from "../components/Footer";
 import Banner from "../subsections/landingpage/Banner";
 
+import Brand from '../subsections/landingpage/Brand';
+
 function Home() {
   return (
     <>
@@ -22,6 +24,7 @@ function Home() {
         <Join />
         <FAQ />
         <Newsletter />
+        <Brand />
         <GetStarted />
         <Footer />
       </div>

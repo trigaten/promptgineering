@@ -6,29 +6,25 @@ function Footer() {
   const rightLinks = [
     {
       name: "Discord",
-      link: "https://discord.gg/learn-prompting-1046228027434086460",
+      link: "https://discord.gg/w6ZjEc2g",
     },
     {
       name: "GitHub",
-      link: "https://github.com/trigaten/Learn_Prompting",
+      link: "https://github.com/LearnPrompt/LearnPrompt",
     },
     {
       name: "Twitter",
-      link: "https://twitter.com/learnprompting",
-    },
-    {
-      name: "LinkedIn",
-      link: "https://www.linkedin.com/company/learn-prompting",
+      link: "https://twitter.com/aiwarts",
     },
     {
       name: "Contact",
-      link: "mailto:team@learnprompting.org",
+      link: "mailto:learnprompt2023@gmail.com",
     },
   ];
 
   return (
     <ClassicPadding className="bg-gray-100 py-12 sm:py-16 border-t-[gray/200] border flex flex-col sm:flex-row justify-between font-vietnam tracking-tight text-default">
-      <div className="hidden sm:flex">© 2023 Learn Prompting | <a href="http://learnprompting.org/privacy_policy">Privacy Policy</a> | <a href="http://learnprompting.org/terms_of_service">Terms of Use</a> </div>
+      <div className="hidden sm:flex">© 2023 Learn Prompt. Built with aiwarts.</div>
       <div className="flex gap-4">
         {rightLinks.map((link, idx) => (
           <div
@@ -46,7 +42,7 @@ function Footer() {
           </div>
         ))}
       </div>
-      <div className="flex sm:hidden mt-4 sm:mt-0">© 2023 Learn Prompting | <a href="http://learnprompting.org/privacy_policy">Privacy Policy</a> | <a href="http://learnprompting.org/terms_of_use">Terms of Use</a></div>
+      <div className="flex sm:hidden mt-4 sm:mt-0">© 2023 Learn Prompt. Built with aiwarts.</div>
     </ClassicPadding>
   );
 }

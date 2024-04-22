@@ -1,46 +1,32 @@
 import React, { useEffect, useMemo } from "react";
+
+import Button from "./Button";
+import ButtonField from "./ButtonField";
+import CONFIG from '../config'
+import CONFIG_EN from '../config_en'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import Button from "@site/src/components/Button";
 import { RxArrowTopRight } from "react-icons/rx";
-import ButtonField from "@site/src/components/ButtonField";
 
-// import BeginnerWeb from "@site/static/img/beginnerweb.webp";
-// import IntermediateWeb from "@site/static/img/intermediateweb.webp";
-// import AdvancedWeb from "@site/static/img/advancedweb.webp";
-// import ApplicationsWeb from "@site/static/img/applicationsweb.webp";
+// import BeginnerWeb from "../images/beginnerweb.webp";
+// import IntermediateWeb from "images/intermediateweb.webp";
+// import AdvancedWeb from "images/advancedweb.webp";
+// import ApplicationsWeb from "images/applicationsweb.webp";
 
-import AgentWeb from "@site/static/img/agentweb.webp";
-import AudioWeb from "@site/static/img/audioweb.webp";
-import GptWeb from "@site/static/img/gptweb.webp";
-import HeygenWeb from "@site/static/img/heygenweb.webp";
-import LlmWeb from "@site/static/img/llmweb.webp";
-import MjWeb from "@site/static/img/mjweb.webp";
-import RunwayWeb from "@site/static/img/runwayweb.webp";
-import SdWeb from "@site/static/img/sdweb.webp";
- 
-import AgentMobile from "@site/static/img/agentmobile.webp";
-import AudioMobile from "@site/static/img/audiomobile.webp";
-import GptMobile from "@site/static/img/gptmobile.webp";
-import HeygenMobile from "@site/static/img/heygenmobile.webp";
-import LlmMobile from "@site/static/img/llmmobile.webp";
-import MjMobile from "@site/static/img/mjmobile.webp";
-import RunwayMobile from "@site/static/img/runwaymobile.webp";
-import SdMobile from "@site/static/img/sdmobile.webp";
+// import BeginnerMobile from "images/beginnermobile.webp";
+// import IntermediateMobile from "images/intermediatemobile.webp";
+// import AdvancedMobile from "images/advancedmobile.webp";
+// import ApplicationsMobile from "images/applicationsmobile.webp";
 
-// import BeginnerMobile from "@site/static/img/beginnermobile.webp";
-// import IntermediateMobile from "@site/static/img/intermediatemobile.webp";
-// import AdvancedMobile from "@site/static/img/advancedmobile.webp";
-// import ApplicationsMobile from "@site/static/img/applicationsmobile.webp";
+// import "public/css/index.css";
 
-import "../../pages/index.css";
+function Hero(props) {
+  const { i18n = 'zh' } = props
 
+  const config = i18n === 'zh' ? CONFIG : CONFIG_EN;
 
-function Hero() {
-  const categories = ["ChatGPT", "Midjourney", "Runway", "Agents"];
-  const categories2 =  ["OpenLLM", "StableDiffusion", "DigitalHuman", "AI Music"];
-  
+  const categories =config.CATEGORIES;
+  const categories2 = config.CATEGORIES2;
   const [activeCategory, setActiveCategory] = React.useState("ChatGPT");
-
 
   const x_pos = React.useMemo(() => {
     switch (activeCategory) {
@@ -88,41 +74,35 @@ function Hero() {
     <div style={{ maxWidth: "100vw", overflow: "hidden",  marginTop: "70px" }}>
       <div className={"pb-10 px-4 md:px-20 lg:px-56 2xl:px-96"}>
         <div
-          className="text-center text-3xl md:text-7xl font-vietnam md:font-medium font-semibold tracking-tighter lg:px-8 2xl:px-32 pt-8"
+          className="mt-14 text-center text-3xl md:text-7xl font-vietnam md:font-medium font-semibold tracking-tighter lg:px-8 2xl:px-32 pt-2"
           style={{ color: "black" }}
         >
-          <span
-            className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 md:text-6xl text-5xl"
-            style={{
-              backgroundImage: 'linear-gradient(to bottom right, rgb(36,5,80), rgb(108,75,150), rgb(213,189,237))'
-            }}
-          >
-          Your CookBook to Communicating with AI
-          </span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 md:text-6xl text-5xl"
+              style={{
+                backgroundImage: 'linear-gradient(to bottom right, rgb(36,5,80), rgb(108,75,150), rgb(213,189,237))'
+              }}
+            
+            >{config.HERO_TITLE_1}</span>
         </div>
-        <div className="text-center text-default text-sm font-vietnam font-light tracking-tighter px-4 md:px-10 lg:px-20 xl:px-60 pt-8">
-          Be a pro at ChatGPT and other AI tools with our open-source curriculum! 
-          Kickstart your free learning journey today! 🥳🎉
+        <div className="text-center text-default text-sm font-vietnam font-light tracking-wider px-4 md:px-10 lg:px-20 xl:px-60 pt-6">
+          {config.HERO_P_1}
         </div>
+        {/* <div>
+          <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">{config.HERO_P_1}</p>
+        </div> */}
         <div className="flex items-center justify-center pt-6">
-          <a href="https://learnprompting.org/docs/intro">
-          {/* <a href="https://learn-prompting.webflow.io"> */}
-            <Button
-              onClick={() =>
-                React.useEffect(() => {
-                  window.location.replace("/docs/intro");
-                }, [])
-              }
-              text={"Start Learning"}
-              // text={"See our Latest Offerings"}
+          <Button
+            onClick={() => {
+              window.location.replace("/about");
+            }}
+              text={"Learn Prompt"}
               icon={
                 <RxArrowTopRight
                   className="inline-block text-white"
                   style={{ verticalAlign: "middle" }}
                 />
               }
-            />
-          </a>
+            />  
         </div>
         <div className="flex flex-col items-center pt-16 z-10 overflow-hidden md:overflow-visible">
           <div
@@ -174,14 +154,14 @@ function Hero() {
             <div
               className={`mt-[-25px] top-0 hidden md:flex border-black transition-all ${x_pos}`}
             >
-              <img src={GptWeb} alt="Beginner Web"/>
-              <img src={MjWeb} alt="Intermediate Web" />
-              <img src={RunwayWeb} alt="Advanced Web" />
-              <LazyLoadImage src={AgentWeb} alt="Applications Web" />
-              <img src={LlmWeb} alt="Beginner Web"/>
-              <img src={SdWeb} alt="Intermediate Web" />
-              <img src={HeygenWeb} alt="Advanced Web" />
-              <LazyLoadImage src={AudioWeb} alt="Applications Web" />
+              <img src={"/images/gptweb.webp"} alt="Beginner Web"/>
+              <img src={"/images/mjweb.webp"} alt="Intermediate Web" />
+              <img src={"/images/runwayweb.webp"} alt="Advanced Web" />
+              <LazyLoadImage src={"/images/agentweb.webp"} alt="Applications Web" />
+              <img src={"/images/llmweb.webp"} alt="Beginner Web"/>
+              <img src={"/images/sdweb.webp"} alt="Intermediate Web" />
+              <img src={"/images/heygenweb.webp"} alt="Advanced Web" />
+              <LazyLoadImage src={"/images/audioweb.webp"} alt="Applications Web" />
             </div>
           </div>
 
@@ -192,14 +172,14 @@ function Hero() {
                 x_pos_mob
               }
             >
-              <img src={GptMobile} alt="Beginner Mobile" width={"100%"}/>
-              <img src={MjMobile} alt="Intermediate Mobile" />
-              <img src={RunwayMobile} alt="Advanced Mobile" />
-              <LazyLoadImage src={AgentMobile} alt="Applications Mobile"/>
-              <img src={LlmMobile} alt="Beginner Mobile" width={"100%"}/>
-              <img src={SdMobile} alt="Intermediate Mobile" />
-              <img src={HeygenMobile} alt="Advanced Mobile" />
-              <LazyLoadImage src={AudioMobile} alt="Applications Mobile"/>
+              <img src={"/images/gptmobile.webp"} alt="Beginner Mobile" width={"100%"}/>
+              <img src={"/images/mjmobile.webp"} alt="Intermediate Mobile" />
+              <img src={"/images/runwaymobile.webp"} alt="Advanced Mobile" />
+              <LazyLoadImage src={"/images/agentmobile.webp"} alt="Applications Mobile"/>
+              <img src={"/images/llmmobile.webp"} alt="Beginner Mobile" width={"100%"}/>
+              <img src={"/images/sdmobile.webp"} alt="Intermediate Mobile" />
+              <img src={"/images/heygenmobile.webp"} alt="Advanced Mobile" />
+              <LazyLoadImage src={"/images/audiomobile.webp"} alt="Applications Mobile"/>
             </div>
           </div>
         </div>

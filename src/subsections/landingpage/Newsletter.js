@@ -34,7 +34,7 @@ class NewsletterSignupForm extends Component {
               Stay up to date with the latest content delivered to your inbox.
             </div>
             <div className="pt-10 flex flex-row">
-            <iframe 
+            {/* <iframe 
   src="https://embeds.beehiiv.com/ae49cad6-1b3a-4ec2-91fa-73b7f3e0188a?slim=true" 
   data-test-id="beehiiv-embed" 
   height="52" 
@@ -43,7 +43,8 @@ class NewsletterSignupForm extends Component {
   scrolling="no" 
   style={{margin: 0, borderRadius: 0, backgroundColor: 'transparent'}}
   className="rounded-l-md bg-white text-dark/500 text-sm font-medium tracking-tight ring-0 focus:outline-none w-[250px] md:w-[450px] focus:ring-0"
-/>
+/> */}
+            <a href="https://quail.ink/aiwarts" style={{ fontSize: '20px', color: 'white', fontWeight: 'bold', textDecoration: 'underline' }}>🎉 Subscribe for unique insights 🎉</a>
             </div>
           </>
         )}

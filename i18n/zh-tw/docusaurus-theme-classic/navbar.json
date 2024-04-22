@@ -12,9 +12,9 @@
   "item.label.Supporters": {
     "message": "支持者"
   },
-  "item.label.Certificate": {
-    "message": "證書"
-  },
+  // "item.label.Certificate": {
+  //   "message": "證書"
+  // },
   "item.label.Consulting": {
     "message": "諮詢"
   },

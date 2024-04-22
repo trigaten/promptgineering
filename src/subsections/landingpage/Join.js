@@ -21,15 +21,15 @@ import OpenAI from "@site/static/img/openai_logo.webp";
 function Join() {
   const stats = [
     {
-      header: "1M+",
+      header: "70K+",
       subtitle: "People Learning",
     },
     {
-      header: "43K+",
-      subtitle: "Discord Members",
+      header: "12K+",
+      subtitle: "Community Members",
     },
     {
-      header: "60+",
+      header: "80+",
       subtitle: "Content Modules",
     },
     {
@@ -56,14 +56,14 @@ function Join() {
   return (
     <div className="w-screen font-vietnam">
       <div className="text-center text-2xl md:text-5xl font-vietnam font-semibold md:font-medium tracking-tighter px-4 md:px-32 md:pt-15 lg:px-[200px]">
-        <span style={{ color: "black" }}>Join our global community.</span>
+        <span style={{ color: "black" }}>Join Our Community.</span>
         <br />
-        <span style={{ color: "black" }}>Elevate your prompting skills.</span>
-        <div className="text-center text-default text-sm font-vietnam font-light tracking-tight px-4 md:px-30 lg:px-56 pt-10">
+        <span style={{ color: "black" }}>Update your prompting skills.</span>
+        {/* <div className="text-center text-default text-sm font-vietnam font-light tracking-tight px-4 md:px-30 lg:px-56 pt-10">
           Become part of a worldwide network of learners from various
           industries, all mastering the skill of effectively engaging with AI
           using our curriculum
-        </div>
+        </div> */}
       </div>
       <div className="flex flex-col gap-8 md:gap-0 md:flex-row items-center justify-between px-12 md:px-16 lg:px-20 xl:px-24 2xl:px-32 text-transparent bg-clip-text bg-gradient-to-r from-[#005046] to-[#027F75] pt-14 pb-10 max-w-screen-xl mx-auto">
         {stats.map((stat, i) => (
@@ -71,7 +71,7 @@ function Join() {
         ))}
       </div>
 
-      <LargeCallout className={"pt-20 tracking-tighter"}>
+      {/* <LargeCallout className={"pt-20 tracking-tighter"}>
         <div
           id={"competition"}
           className="flex gap-4 justify-around flex-col md:flex-row"
@@ -152,7 +152,7 @@ function Join() {
             Proudly Sponsored by Industry-Leading AI Companies
           </div>
         </div>
-      </LargeCallout>
+      </LargeCallout> */}
     </div>
   );
 }

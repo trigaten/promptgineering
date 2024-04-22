@@ -43,33 +43,25 @@ function Navbar(props) {
     {
       name: "Our Services",
       link: "/our_services",
-    },
-    {
-      name: "Certificate",
-      link: "/certificate",
-    },
+    }
   ];
 
   const rightLinks = [
     {
       name: "Discord",
-      link: "https://discord.gg/learn-prompting-1046228027434086460",
+      link: "https://discord.gg/w6ZjEc2g",
     },
     {
       name: "GitHub",
-      link: "https://github.com/trigaten/Learn_Prompting",
+      link: "https://github.com/LearnPrompt/LearnPrompt",
     },
     {
       name: "Twitter",
-      link: "https://twitter.com/learnprompting",
-    },
-    {
-      name: "LinkedIn",
-      link: "https://www.linkedin.com/company/learn-prompting",
+      link: "https://twitter.com/aiwarts",
     },
     {
       name: "Contact",
-      link: "mailto:team@learnprompting.org",
+      link: "mailto:learnprompt2023@gmail.com",
     },
   ];
 

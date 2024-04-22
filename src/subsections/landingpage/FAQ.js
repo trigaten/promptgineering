@@ -14,9 +14,9 @@ function FAQ() {
       icon: (
         <FaBookOpen className="align-middle inline-block text-dark/500 text-xl" />
       ),
-      header: "Is this curriculum free?",
+      header: "Is this course free?",
       subtitle:
-        "Yes, it is completely free and open source. We do not charge for any of the content on this website.",
+        "Yes, it is completely free and open source. Everyone can access all the resources on our website for free.",
     },
     {
       icon: (
@@ -24,15 +24,15 @@ function FAQ() {
       ),
       header: "Do I need to know how to code?",
       subtitle:
-        "Nope! However, coding is a great skill to learn alongside prompt engineering. We recommend learning Python, as it is a popular language for AI and machine learning.",
+        "Not at all! The course is designed to be inclusive, catering to participants with or without a programming background.",
     },
     {
       icon: (
         <TbCertificate className="align-middle inline-block text-dark/500 text-2xl mt-1" />
       ),
-      header: "When is the certificate being released?",
+      header: "Is learning AI genuinely beneficial? ",
       subtitle:
-        "It is coming soon! Be among the first to access the certification program as soon as it launches by joining our newsletter below.",
+        "Absolutely. AI is a rapidly evolving field, and having this skill set will open doors for you in various industries.",
     },
   ];
   const rightFaq = [
@@ -40,25 +40,25 @@ function FAQ() {
       icon: (
         <FiLayers className="align-middle inline-block text-dark/500 text-xl mt-1" />
       ),
-      header: "Do I need previous experience?",
+      header: "Is experience in AI required?",
       subtitle:
-        "Nope! This course is designed to be accessible to everyone, regardless of prior experience. ",
+        "No, it is not required! Our program will take you through the basics and advanced topics of Artificial Intelligence.",
     },
     {
       icon: (
         <RiSuitcaseFill className="align-middle inline-block text-dark/500 text-2xl mt-1" />
       ),
-      header: "Is prompt engineering a real job?",
+      header: "Will the course offer certificates?",
       subtitle:
-        "Yes, but most prompt engineering jobs require other skills such as coding and teaching. We prefer to view it as a skill that can be used in many different professions.",
+        "We plan to release tutorials to teach you how to get AI certificates from Google, Microsoft and others.",
     },
     {
       icon: (
         <BsPencilFill className="align-middle inline-block text-dark/500 text-xl mt-1" />
       ),
-      header: "Can I help add to the site?",
+      header: "Can I contribute to this project?",
       subtitle:
-        "Yes, we are always looking for more contributors! You can find more information by clicking the contribute tab.",
+        "Yes, we are continually seeking contributors. For more details, Navigate to our website's bottom and click 'Contribute'",
     },
   ];
   return (
@@ -73,7 +73,7 @@ function FAQ() {
         Can't find what you are looking for?{" "}
         <span className={"underline"}>
           <a
-            href={"mailto:team@learnprompting.org"}
+            href={"mailto:learnprompt2023@gmail.com"}
             className="underline"
             style={{ color: "grey" }}
           >

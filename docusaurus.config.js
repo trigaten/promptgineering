@@ -5,7 +5,7 @@ const math = require("remark-math");
 async function createConfig() {
   const katex = (await import("rehype-katex")).default;
   return {
-    title: "Learn Prompting: Your Guide to Communicating with AI",
+    title: "Learn Prompt: Your CookBook to Communicating with AI",
     tagline:
       "A Free, Open Source Course on Communicating with Artificial Intelligence",
     url: "https://learnprompting.org",
@@ -227,7 +227,7 @@ async function createConfig() {
         },
       ],
       navbar: {
-        title: "Learn Prompting",
+        title: "Learn Prompt",
         logo: {
           alt: "My Site Logo",
           src: "img/simple_ai.webp",
@@ -261,7 +261,7 @@ async function createConfig() {
       },
       footer: {
         style: "dark",
-        copyright: `Copyright © ${new Date().getFullYear()} Learn Prompting.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Learn Prompt.`,
       },
       prism: {
         theme: lightCodeTheme,
