@@ -30,7 +30,7 @@ function Navbar(props) {
     },
     {
       name: "About",
-      link: "/about",
+      link: "/TeamUs",
     },
     {
       name: "Contribute",
