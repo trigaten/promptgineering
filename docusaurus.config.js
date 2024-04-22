@@ -258,8 +258,8 @@ async function createConfig() {
       announcementBar: {
         id: "announcement",
         content:
-          'Now available: <a href="https://learn-prompting.webflow.io/courses/intro-to-prompt-engineering">Intro to AI Video</a>',
-        backgroundColor: "#53ffd4",
+          '🌟 If you have any questions, feel free to join our <a href="https://learn-prompting.webflow.io/courses/intro-to-prompt-engineering">community</a> 🌟',
+        backgroundColor: "#8f77b5",
         textColor: "#000",
         isCloseable: true,
       },
