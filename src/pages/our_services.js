@@ -17,8 +17,7 @@ export default function Home() {
       description="Learn Prompt Engineering">
       <main>
         <div style={{ alignSelf: 'center', display:"flex", width:"100%", justifyContent:"center"}}>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfzRlo0dNlIvohc2w8seHo3U5krP6KbZKLzY0YUZ7XeE3mIUA/viewform?embedded=true" width="640" height="1300" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeVttnIH0d9xwc_yjC_EgR9Nkwh7vQq6SDmuDGEcIDw3nfvcA/viewform?embedded=true" width="640" height="1300" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
         
       </main>

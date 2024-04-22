@@ -60,6 +60,10 @@ function Navbar(props) {
       link: "https://twitter.com/aiwarts",
     },
     {
+      name: "Multimedia",
+      link: "/multimedia",
+    },
+    {
       name: "Contact",
       link: "mailto:learnprompt2023@gmail.com",
     },

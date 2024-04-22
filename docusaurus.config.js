@@ -230,7 +230,7 @@ async function createConfig() {
         title: "Learn Prompt",
         logo: {
           alt: "My Site Logo",
-          src: "img/simple_ai.webp",
+          src: "img/logo.svg",
         },
         items: [
           {
@@ -243,7 +243,11 @@ async function createConfig() {
           },
           { to: '/blog', label: '📰 Changelog', position: 'right' },
           { to: '/friends', label: '👬 Blogroll', position: 'right'},
-
+          {
+            href: "https://chat.learnprompt.pro/",
+            label: "💰 FreeGPT",
+            position: "right",
+          },
           // {
           //   href: "https://github.com/trigaten/Learn_Prompting/releases",
           //   label: "Change Log",
@@ -254,13 +258,13 @@ async function createConfig() {
       announcementBar: {
         id: "announcement",
         content:
-          'Now available: <a href="https://learn-prompting.webflow.io/courses/intro-to-prompt-engineering">Intro to Prompt Engineering</a>',
+          'Now available: <a href="https://learn-prompting.webflow.io/courses/intro-to-prompt-engineering">Intro to AI Video</a>',
         backgroundColor: "#53ffd4",
         textColor: "#000",
         isCloseable: true,
       },
       footer: {
-        style: "dark",
+        style: "light",
         copyright: `Copyright © ${new Date().getFullYear()} Learn Prompt.`,
       },
       prism: {

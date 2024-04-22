@@ -13,8 +13,8 @@ import Footer from "../components/Footer";
 import Banner from "../subsections/landingpage/Banner";
 
 import Brand from '../subsections/landingpage/Brand';
-import Testimonials from "../subsections/landingpage/Testimonials";
-import Team from "../subsections/landingpage/Team";
+// import Testimonials from "../subsections/landingpage/Testimonials";
+// import Team from "../subsections/landingpage/Team";
 
 function Home() {
   return (
@@ -24,9 +24,9 @@ function Home() {
         <Navbar allowSandwich="true"/>
         <Hero />
         <Join />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <FAQ />
-        <Team />
+        {/* <Team /> */}
         <Newsletter />
         <Brand />
         <GetStarted />
