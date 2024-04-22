@@ -278,7 +278,30 @@ async function createConfig() {
         categoryId: 'DIC_kwDOLq34xc4CehDO',
         theme: 'light_high_contrast',
         darkTheme: 'dark_tritanopia',
-      }
+      },
+      algolia: {
+        // The application ID provided by Algolia
+        appId: 'K5331H6T58',
+        // Public API key: it is safe to commit it
+        apiKey: '98a5ad017e1b79a1d41af6f9507bd4e8',
+        indexName: 'learnprompt',
+        // Optional: see doc section below
+        contextualSearch: true,
+        // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+        externalUrlRegex: 'external\\.com|domain\\.com',
+        // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
+        replaceSearchResultPathname: {
+          from: '/docs/', // or as RegExp: /\/docs\//
+          to: '/',
+        },
+        // Optional: Algolia search parameters
+        searchParameters: {},
+        // Optional: path for search page that enabled by default (`false` to disable it)
+        searchPagePath: 'search',
+        // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)
+        insights: false,
+        //... other Algolia params
+      },
     },
     clientModules: [require.resolve('./src/clientModules/routeModules.js')],
     markdown: {
