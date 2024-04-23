@@ -56,9 +56,9 @@ function Join() {
   return (
     <div className="w-screen font-vietnam">
       <div className="text-center text-2xl md:text-5xl font-vietnam font-semibold md:font-medium tracking-tighter px-4 md:px-32 md:pt-15 lg:px-[200px]">
-        <span style={{ color: "black" }}>Join Our Community.</span>
+        <span style={{ color: "black" }}>Join Our Community</span>
         <br />
-        <span style={{ color: "black" }}>Update your prompting skills.</span>
+        <span style={{ color: "black" }}>Upgrade your prompting skills</span>
         {/* <div className="text-center text-default text-sm font-vietnam font-light tracking-tight px-4 md:px-30 lg:px-56 pt-10">
           Become part of a worldwide network of learners from various
           industries, all mastering the skill of effectively engaging with AI

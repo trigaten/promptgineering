@@ -94,6 +94,12 @@ async function createConfig() {
       [
         "classic",
         {
+          sitemap: {
+            changefreq: 'weekly',
+            priority: 0.5,
+            ignorePatterns: ['/tags/**'],
+            filename: 'sitemap.xml',
+          },
           gtag: {
             trackingID: "G-LV7H9L9JQ3",
           },
@@ -222,6 +228,30 @@ async function createConfig() {
         {
           name: "twitter:image",
           content: "https://learnprompting.org/img/twitter-image.webp", // Replace this with the actual path to your twitter-image.
+        },
+      ],
+      headTags: [
+        // Declare a <link> preconnect tag
+        {
+          tagName: 'link',
+          attributes: {
+            rel: 'preconnect',
+            href: 'https://www.learnprompt.pro',
+          },
+        },
+        // Declare some json-ld structured data
+        {
+          tagName: 'script',
+          attributes: {
+            type: 'application/ld+json',
+          },
+          innerHTML: JSON.stringify({
+            '@context': 'https://schema.org/',
+            '@type': 'Organization',
+            name: 'Learn Prompt',
+            url: 'https://www.learnprompt.pro',
+            logo: 'https://www.learnprompt.pro/img/logo.svg',
+          }),
         },
       ],
       navbar: {
