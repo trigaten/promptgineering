@@ -1,38 +1,40 @@
+import "../../pages/index.css";
+
 import React, { useEffect, useMemo } from "react";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+
+import AgentMobile from "@site/static/img/agentmobile.webp";
+import AgentWeb from "@site/static/img/agentweb.webp";
+import AudioMobile from "@site/static/img/audiomobile.webp";
+import AudioWeb from "@site/static/img/audioweb.webp";
 import Button from "@site/src/components/Button";
-import { RxArrowTopRight } from "react-icons/rx";
 import ButtonField from "@site/src/components/ButtonField";
+import GptMobile from "@site/static/img/gptmobile.webp";
+import GptWeb from "@site/static/img/gptweb.webp";
+import HeygenMobile from "@site/static/img/heygenmobile.webp";
+import HeygenWeb from "@site/static/img/heygenweb.webp";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import LlmMobile from "@site/static/img/llmmobile.webp";
+import LlmWeb from "@site/static/img/llmweb.webp";
+import MjMobile from "@site/static/img/mjmobile.webp";
+import MjWeb from "@site/static/img/mjweb.webp";
+import RunwayMobile from "@site/static/img/runwaymobile.webp";
+import RunwayWeb from "@site/static/img/runwayweb.webp";
+import { RxArrowTopRight } from "react-icons/rx";
+import SdMobile from "@site/static/img/sdmobile.webp";
+import SdWeb from "@site/static/img/sdweb.webp";
 
 // import BeginnerWeb from "@site/static/img/beginnerweb.webp";
 // import IntermediateWeb from "@site/static/img/intermediateweb.webp";
 // import AdvancedWeb from "@site/static/img/advancedweb.webp";
 // import ApplicationsWeb from "@site/static/img/applicationsweb.webp";
 
-import AgentWeb from "@site/static/img/agentweb.webp";
-import AudioWeb from "@site/static/img/audioweb.webp";
-import GptWeb from "@site/static/img/gptweb.webp";
-import HeygenWeb from "@site/static/img/heygenweb.webp";
-import LlmWeb from "@site/static/img/llmweb.webp";
-import MjWeb from "@site/static/img/mjweb.webp";
-import RunwayWeb from "@site/static/img/runwayweb.webp";
-import SdWeb from "@site/static/img/sdweb.webp";
  
-import AgentMobile from "@site/static/img/agentmobile.webp";
-import AudioMobile from "@site/static/img/audiomobile.webp";
-import GptMobile from "@site/static/img/gptmobile.webp";
-import HeygenMobile from "@site/static/img/heygenmobile.webp";
-import LlmMobile from "@site/static/img/llmmobile.webp";
-import MjMobile from "@site/static/img/mjmobile.webp";
-import RunwayMobile from "@site/static/img/runwaymobile.webp";
-import SdMobile from "@site/static/img/sdmobile.webp";
 
 // import BeginnerMobile from "@site/static/img/beginnermobile.webp";
 // import IntermediateMobile from "@site/static/img/intermediatemobile.webp";
 // import AdvancedMobile from "@site/static/img/advancedmobile.webp";
 // import ApplicationsMobile from "@site/static/img/applicationsmobile.webp";
 
-import "../../pages/index.css";
 
 
 function Hero() {
@@ -100,7 +102,7 @@ function Hero() {
           Your CookBook to Communicating with AI
           </span>
         </div>
-        <div className="text-center text-default text-sm font-vietnam font-light tracking-tighter px-4 md:px-10 lg:px-20 xl:px-60 pt-8">
+        <div className="text-center text-default text-sm font-vietnam font-light tracking-wide px-4 md:px-10 lg:px-20 xl:px-60 pt-8">
           Be a pro at ChatGPT and other AI tools with our open-source curriculum! 
           Kickstart your free learning journey today! 🥳🎉
         </div>
