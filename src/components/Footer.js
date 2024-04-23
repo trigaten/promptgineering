@@ -1,5 +1,5 @@
-import React from "react";
 import ClassicPadding from "./layouts/ClassicPadding";
+import React from "react";
 import { RxArrowTopRight } from "react-icons/rx";
 
 function Footer() {
@@ -15,6 +15,10 @@ function Footer() {
     {
       name: "Twitter",
       link: "https://twitter.com/aiwarts",
+    },
+    {
+      name: "Multimedia",
+      link: "/multimedia",
     },
     {
       name: "Contact",
