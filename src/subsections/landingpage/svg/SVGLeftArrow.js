@@ -1,3 +1,5 @@
+import React from "react";
+
 export const SVGLeftArrow = () => {
   return <svg
     className="fill-current"

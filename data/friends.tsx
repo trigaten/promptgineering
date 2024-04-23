@@ -39,7 +39,7 @@ export const Friends: Friend[] = [
     title: 'AI产品榜',
     description: 'Front-end development, Open source',
     website: 'https://aicpb.com/',
-    avatar: '/img/friend/simonme.png',
+    avatar: '/img/friend/aicpb.png',
   }
 ]
 

@@ -1,58 +1,62 @@
+import ClassicPadding from "@site/src/components/layouts/ClassicPadding";
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { SVGAvatarBG } from './svg/SVGAvatarBG'
-import ClassicPadding from "@site/src/components/layouts/ClassicPadding";
 
 const STARTER_TEAM_TITLE = '团队成员';
 const STARTER_TEAM_TEXT_1 = '我们的开发者团队';
-const STARTER_TEAM_TEXT_2 = 'LearnPrompt 由众多AI技术爱好者们共同合作完成，感谢每一位<a className="underline" href="https://github.com/tangly1024/NotionNext/graphs/contributors">贡献者</a>';
+const STARTER_TEAM_TEXT_2 = 'LearnPrompt was completed with the cooperation of many AI technology enthusiasts. Thanks to every <a className="underline" href="https://github.com/LearnPrompt/LearnPrompt/graphs/contributors">contributor.</a>';
 
 const STARTER_TEAM_ITEMS =  [
     {
-    STARTER_TEAM_ITEM_AVATAR:
-        'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa06c61bb-980e-4180-bc18-c15f92c78bb4%2Ftangly1024.jpg?table=collection&id=8e7acf17-de09-4fa1-abde-b5b80ad4a813&t=8e7acf17-de09-4fa1-abde-b5b80ad4a813&width=100&cache=v2',
-    STARTER_TEAM_ITEM_NICKNAME: 'Tangly',
-    STARTER_TEAM_ITEM_DESCRIPTION: 'Developer'
+    STARTER_TEAM_ITEM_AVATAR:'/img/friend/carl.png',
+    STARTER_TEAM_ITEM_NICKNAME: 'Carl',
+    STARTER_TEAM_ITEM_DESCRIPTION: 'Developer, Author'
     },
     {
-      STARTER_TEAM_ITEM_AVATAR: '/images/starter/team/team-01.png',
-      STARTER_TEAM_ITEM_NICKNAME: 'Melissa Tatcher',
-      STARTER_TEAM_ITEM_DESCRIPTION: 'Marketing Expert'
-    },
-    {
-      STARTER_TEAM_ITEM_AVATAR: '/images/starter/team/team-02.png',
-      STARTER_TEAM_ITEM_NICKNAME: 'Stuard Ferrel',
-      STARTER_TEAM_ITEM_DESCRIPTION: 'Digital Marketer'
-    },
-    {
-      STARTER_TEAM_ITEM_AVATAR: '/images/starter/team/team-03.png',
-      STARTER_TEAM_ITEM_NICKNAME: 'Eva Hudson',
+      STARTER_TEAM_ITEM_AVATAR: '/img/friend/ATang.png',
+      STARTER_TEAM_ITEM_NICKNAME: 'Tang',
       STARTER_TEAM_ITEM_DESCRIPTION: 'Creative Designer'
+    },
+    {
+      STARTER_TEAM_ITEM_AVATAR: '/img/friend/whoiskoala.png',
+      STARTER_TEAM_ITEM_NICKNAME: 'whoiskoala',
+      STARTER_TEAM_ITEM_DESCRIPTION: 'Prompt Engineer'
+    },
+    {
+      STARTER_TEAM_ITEM_AVATAR: '/img/friend/ting.png',
+      STARTER_TEAM_ITEM_NICKNAME: 'ditto',
+      STARTER_TEAM_ITEM_DESCRIPTION: 'web designer'
+    },
+    {
+      STARTER_TEAM_ITEM_AVATAR: '/img/friend/Andyyang.png',
+      STARTER_TEAM_ITEM_NICKNAME: 'Andy yang',
+      STARTER_TEAM_ITEM_DESCRIPTION: 'web designer'
     }
 ];
 
 function Team() {
   return (
-    <ClassicPadding className="flex flex-col md:flex-row gap-4 justify-between items-center pt-16 md:pt-24 pb-16 md:pb-24">
+    <ClassicPadding className="flex flex-col md:flex-row gap-4 justify-between items-center pt-2 md:pt-3 pb-2 md:pb-3">
       <section
         id='team'
-        className='overflow-hidden bg-gray-1 pb-12 pt-20 dark:bg-dark-2 lg:pb-[90px] lg:pt-[120px]'>
+        className='overflow-hidden bg-gray-1 pb-6 pt-10 dark:bg-dark-2 lg:pb-[90px] lg:pt-[120px] mt-[-20px] mb-[-20px]'>
         <div className='container mx-auto'>
           <div className='-mx-4 flex flex-wrap'>
             <div className='w-full px-4'>
               <div className='mx-auto mb-[60px] max-w-[485px] text-center'>
                 <span className='mb-2 block text-lg font-semibold text-primary'>
-                STARTER_TEAM_TITLE
+                Team Members
                 </span>
                 <h2 className='mb-3 text-3xl font-bold leading-[1.2] text-dark dark:text-white sm:text-4xl md:text-[40px]'>
-                STARTER_TEAM_TEXT_1
+                Our Development Team
                 </h2>
                 <p
                   dangerouslySetInnerHTML={{
                     __html: STARTER_TEAM_TEXT_2
                   }}
                   className='text-base text-body-color dark:text-dark-6'></p>
-              </div>x
+              </div>
             </div>
           </div>
 
@@ -62,7 +66,7 @@ function Team() {
               return (
                 <div
                   key={index}
-                  className='w-full px-4 sm:w-1/2 lg:w-1/4 xl:w-1/4'>
+                  className='w-full px-4 sm:w-1/2 lg:w-1/5 xl:w-1/5'>
                   <div className='group mb-8 rounded-xl bg-white px-5 pb-10 pt-12 shadow-testimonial dark:bg-dark dark:shadow-none'>
                     {/* 头像 */}
                     <div className='relative z-10 mx-auto mb-5 h-[120px] w-[120px]'>
