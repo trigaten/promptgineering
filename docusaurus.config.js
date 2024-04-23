@@ -8,12 +8,12 @@ async function createConfig() {
     title: "Learn Prompt: Your CookBook to Communicating with AI",
     tagline:
       "A Free, Open Source Course on Communicating with Artificial Intelligence",
-    url: "https://learnprompting.org",
+    url: "https://www.learnprompt.pro",
     baseUrl: "/",
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
-    organizationName: "trigaten",
+    organizationName: "aiwarts",
     projectName: "promptgineering",
     deploymentBranch: "gh-pages",
     trailingSlash: false,
@@ -28,13 +28,11 @@ async function createConfig() {
         "zh-Hans",
         "zh-tw",
         "ko",
-        "si",
         "ru",
         "ar",
         "de",
         "uk",
         "id",
-        "ur",
       ],
       localeConfigs: {
         'zh-tw': {
@@ -171,7 +169,7 @@ async function createConfig() {
         {
           name: "description",
           content:
-            "Learn Prompting is the largest and most comprehensive course in prompt engineering available on the internet, with over 60 content modules, translated into 9 languages, and a thriving community.",
+            "Learn Prompt is the largest and most comprehensive course in artificial intelligence available on the internet, with over 80 content modules, translated into 13 languages, and a thriving community.",
         },
         {
           name: "keywords",
@@ -180,20 +178,20 @@ async function createConfig() {
         },
         {
           name: "og:title",
-          content: "Learn Prompting: Your Guide to Communicating with AI",
+          content: "Learn Prompt: Your CookBook to Communicating with AI",
         },
         {
           name: "og:description",
           content:
-            "Learn Prompting is the largest and most comprehensive course in prompt engineering available on the internet, with over 60 content modules, translated into 9 languages, and a thriving community.",
+            "Learn Prompt is the largest and most comprehensive course in artificial intelligence available on the internet, with over 80 content modules, translated into 13 languages, and a thriving community.",
         },
         {
           name: "og:url",
-          content: "https://learnprompting.org",
+          content: "https://www.learnprompt.pro",
         },
         {
           name: "og:image",
-          content: "https://learnprompting.org/docs/assets/astronaut.webp", // Replace this with the actual path to your og-image.
+          content: "https://learnprompting.org/docs/assets/star.webp", // Replace this with the actual path to your og-image.
         },
         {
           name: "og:type",
@@ -210,7 +208,7 @@ async function createConfig() {
         },
         {
           name: "twitter:title",
-          content: "Learn Prompting: Your Guide to Communicating with AI",
+          content: "Learn Prompt: Your CookBook to Communicating with A",
         },
         {
           name: "twitter:description",
@@ -219,7 +217,7 @@ async function createConfig() {
         },
         {
           name: "twitter:url",
-          content: "https://learnprompting.org",
+          content: "https://www.learnprompt.pro",
         },
         {
           name: "twitter:image",
