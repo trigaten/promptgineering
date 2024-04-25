@@ -18,6 +18,10 @@ const DESCRIPTION = translate({
   id: 'theme.project.description',
   message: '🔊 在你探寻AI路上，任何需要的工具帐号，我们都会尽可能的为你提供。\n👬你尽管探索，剩下的我们来帮你解决！   \n📱 收藏店铺地址｜新号一键直达',
 })
+const CONTACT = translate({
+  id: 'theme.project.contact',
+  message: '📇联系方式',
+})
 
 // const GITHUB_URL = 'https://github.com/kuizuo'
 
@@ -67,6 +71,18 @@ function ShowcaseHeader() {
   )
 }
 
+
+function ShowcaseEnd() {
+  return (
+    <section className="text--center">
+      <h2>{CONTACT}</h2>
+      <p><strong>微信 Wechat ｜aiwarts101</strong></p>
+      <img src="/img/contact.jpg" alt="联系方式" style={{ display: 'block', margin: 'auto' }} />
+    </section>
+  )
+}
+
+
 function ShowcaseCards() {
   const { i18n } = useDocusaurusContext()
   const lang = i18n.currentLocale
@@ -113,6 +129,7 @@ function Showcase(): JSX.Element {
       <main className="margin-vert--lg">
         <ShowcaseHeader />
         <ShowcaseCards />
+        <ShowcaseEnd />
       </main>
     </MyLayout>
   )

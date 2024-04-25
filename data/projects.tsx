@@ -1,59 +1,122 @@
 export const projects: Project[] = [
   {
-    title: 'Runway',
-    description: '全球首款AI生成视频｜150/月',
-    website: 'https://shop.liuliangbang.vip/buy/50?skuId=&customId=aiwarts',
+    title: 'ChatGPT账号',
+    description: 'GPT 带5刀api = 35元｜GPT4 30天独享/代充 200~240元',
+    website: '',
     tags: [],
-    type: 'AI',
+    type: 'AI账号',
   },
   {
-    title: 'Runway',
-    description: '全球首款AI生成视频｜150/月',
-    website: 'https://shop.liuliangbang.vip/buy/50?skuId=&customId=aiwarts',
+    title: 'GPT4合租',
+    description: '40(10人月付) ｜100（4人月付） ',
+    website: '',
     tags: [],
-    type: 'AI',
+    type: 'AI账号',
   },
   {
-    title: 'PS AI',
-    description: '全球首款AI生成视频｜150元/月',
-    website: 'https://shop.liuliangbang.vip/buy/50?skuId=&customId=aiwarts',
+    title: 'GPT3 API',
+    description: 'gpt-3.5-turbo-1106 ¥0.00154 / 1K tokenss起 | gpt-3.5-turbo-instruct ¥0.00277 / 1K tokens起 ',
+    website: '',
+    tags:['contact'],
+    type: 'API服务',
+  },
+  {
+    title: 'GPT4 API',
+    description: 'gpt-4-1106-preview ¥0.03 / 1K tokens起 | gpt-4  ¥0.09 / 1K tokens起 ',
+    website: '',
+    tags: ['contact'],
+    type: 'API服务',
+  },
+  {
+    title: 'Go API',
+    description: '同时支持Midjourney, Stable Diffusion, GPT3.5, GPT4, GPT-4-vision, DALLE3, Suno & 专属优惠码 AIWARTSPROMOCODE',
+    website: 'https://www.goapi.ai/',
+    tags: ['contact'],
+    type: 'API服务',
+  },
+  {
+    title: 'MidJourney API',
+    description: '低至 $0.015 / image & 专属优惠码 AIWARTSPROMOCODE',
+    website: 'https://www.goapi.ai/midjourney-api',
+    tags:[],
+    type: 'API服务',
+  },
+  {
+    title: 'Stable Diffusion API',
+    description: '低至 $0.0014 / image & 专属优惠码 AIWARTSPROMOCODE',
+    website: 'https://www.goapi.ai/stable-diffusion-api',
     tags: [],
-    type: 'AI',
+    type: 'API服务',
+  },
+  {
+    title: 'GPTs API',
+    description: 'AI应用开发必备 & 量大优惠',
+    website: '',
+    tags: ['contact'],
+    type: 'API服务',
+  },
+  {
+    title: 'GPTs or Assistants API',
+    description: 'AI应用开发必备 & 量大优惠',
+    website: '',
+    tags: ['contact'],
+    type: 'API服务',
+  },
+  {
+    title: 'GPT API（大额专属）',
+    description: '3.5和4都可用｜API 额度$2,000 价格￥1,200｜额度$5,000 价格￥2,500',
+    website: '',
+    tags: ['contact'],
+    type: 'API服务',
+  },
+  {
+    title: 'MidJourney',
+    description: '全球首款AI生成视频｜350/月',
+    website: 'https://shop.liuliangbang.vip/buy/26?skuId=&customId=aiwarts',
+    tags: [],
+    type: 'AI账号',
+  },
+  {
+    title: 'Poe会员',
+    description: '多个AI大模型共用｜280元/月',
+    website: 'https://shop.liuliangbang.vip/buy/35?skuId=&customId=aiwarts',
+    tags: [],
+    type: 'AI账号',
   },
   {
     title: 'Office 365',
     description: '正版软件｜100元/12月',
-    website: 'https://shop.liuliangbang.vip/buy/50?skuId=&customId=aiwarts',
+    website: 'https://shop.liuliangbang.vip/buy/43?skuId=&customId=aiwarts',
     tags: [],
-    type: 'AI',
+    type: 'AI账号',
   },
   {
     title: 'Runway',
     description: '全球首款AI生成视频｜150/月',
     website: 'https://shop.liuliangbang.vip/buy/50?skuId=&customId=aiwarts',
     tags: [],
-    type: 'AI',
+    type: 'AI账号',
   },
   {
     title: '美区苹果帐号免税州',
     description: '下载海外软件｜10.8元',
     website: '',
-    tags: ['Apple', 'contact'],
-    type: 'AI',
+    tags: ['contact'],
+    type: 'AI账号',
   },
   {
     title: '独享小火箭账号',
     description: '魔法环境｜32.88元',
     website: '',
-    tags: ['Apple', 'contact'],
-    type: 'AI',
+    tags: ['contact'],
+    type: 'AI账号',
   },
   {
     title: 'WildCard - 虚拟VISA卡',
     description: '支持OpenAI等全部AI 账号 & API 等海外自订阅服务。',
     website: 'https://bewildcard.com/i/AIWARTS',
-    tags: ['virtualCard'],
-    type: 'BankCard',
+    tags: [],
+    type: '虚拟卡',
   },
 ]
 
@@ -64,11 +127,12 @@ export type Tag = {
 }
 export type TagType = 'contact'|'GPT' | 'GPT4' | 'GPTs' | 'API' | 'Midjourney' | 'DALLE3' | 'Poe' | 'Notion' | 'Office365' | 'Adobe' | 'Runway' | 'Apple' | 'virtualCard';
 
-export type ProjectType = 'AI' | 'BankCard'
+export type ProjectType = 'AI账号' | '虚拟卡'|'API服务'
 
 export const projectTypeMap = {
-  AI: 'AI账号',
-  BankCard: '虚拟卡',
+  'AI账号': 'AI账号',
+  'API服务': 'API服务',
+  '虚拟卡': '虚拟卡',
 }
 
 export type Project = {
@@ -87,70 +151,10 @@ export const Tags: Record<TagType, Tag> = {
     description: '咨询方式在网页最后哦～',
     color: '#e9669e',
   },
-  GPT: {
-    label: 'GPT',
-    description: 'GPT',
-    color: '#39ca30',
-  },
-  GPT4: {
-    label: 'GPT4',
-    description: 'GPT4',
-    color: '#dfd545',
-  },
-  GPTs: {
-    label: 'GPTs',
-    description: 'GPTs',
-    color: '#007acc',
-  },
   API: {
     label: 'API',
     description: 'API',
     color: '#ff4500',
-  },
-  Midjourney: {
-    label: 'Midjourney',
-    description: 'Midjourney',
-    color: '#6a0dad',
-  },
-  DALLE3: {
-    label: 'DALLE3',
-    description: 'DALLE3',
-    color: '#008080',
-  },
-  Poe: {
-    label: 'Poe',
-    description: 'Poe',
-    color: '#ff8c00',
-  },
-  Notion: {
-    label: 'Notion',
-    description: 'Notion',
-    color: '#2f4f4f',
-  },
-  Office365: {
-    label: 'Office365',
-    description: 'Office365',
-    color: '#8b0000',
-  },
-  Adobe: {
-    label: 'Adobe全家桶',
-    description: 'Adobe全家桶',
-    color: '#008000',
-  },
-  Runway: {
-    label: 'Runway',
-    description: 'Runway',
-    color: '#00008b',
-  },
-  Apple: {
-    label: '苹果海外账号',
-    description: 'Apple账号',
-    color: '#ff1493',
-  },
-  virtualCard: {
-    label: '虚拟卡',
-    description: '虚拟卡',
-    color: '#1e90ff',
   },
 };
 
