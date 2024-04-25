@@ -137,6 +137,8 @@ async function createConfig() {
               ],
             ],
             rehypePlugins: [[katex, { strict: false }]],
+            showLastUpdateAuthor: true,
+            showLastUpdateTime: true,
           },
           theme: {
             customCss: require.resolve("./src/css/custom.css"),
