@@ -1,0 +1,30 @@
+.tooltip {
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: var(--site-color-tooltip);
+  background: var(--site-color-tooltip-background);
+  font-size: 0.8rem;
+  z-index: 500;
+  line-height: 1.4;
+  font-weight: 500;
+  max-width: 300px;
+  opacity: 0.92;
+}
+
+.tooltipArrow {
+  visibility: hidden;
+}
+
+.tooltipArrow::before {
+  visibility: visible;
+  content: '';
+  transform: rotate(45deg);
+}
+
+.tooltip[data-popper-placement^='top'] > .tooltipArrow {
+  bottom: -4px;
+}
+
+.tooltip[data-popper-placement^='bottom'] > .tooltipArrow {
+  top: -4px;
+}

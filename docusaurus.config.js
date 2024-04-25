@@ -278,6 +278,11 @@ async function createConfig() {
             label: "💰 FreeGPT",
             position: "right",
           },
+          {
+            to: "/project",
+            label: "🚀  有号",
+            position: "right",
+          },
           // {
           //   href: "https://github.com/trigaten/Learn_Prompting/releases",
           //   label: "Change Log",
