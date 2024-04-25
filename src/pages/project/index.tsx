@@ -16,7 +16,7 @@ const TITLE = translate({
 })
 const DESCRIPTION = translate({
   id: 'theme.project.description',
-  message: '有号！别问，问就是有！这里是A|沃茨提供的一站式帐号购买地，在你探寻AI路上，任何需要的工具帐号，我们都会尽可能的为你提供。你尽管探索，剩下的我们来帮你解决!',
+  message: '🔊 在你探寻AI路上，任何需要的工具帐号，我们都会尽可能的为你提供。\n👬你尽管探索，剩下的我们来帮你解决！   \n📱 收藏店铺地址｜新号一键直达',
 })
 
 // const GITHUB_URL = 'https://github.com/kuizuo'
@@ -41,7 +41,20 @@ function ShowcaseHeader() {
   return (
     <section className="text--center">
       <h2>{TITLE}</h2>
-      <p>{DESCRIPTION}</p>
+      <p style={{ whiteSpace: 'pre-line' }}>{DESCRIPTION}</p>
+      {/* <h3>快速预览：</h3>
+      <ul>
+        <li>ChatGPT</li>
+        <li>MidJourney</li>
+        <li>Poe会员</li>
+        <li>Notion</li>
+        <li>PSAl</li>
+        <li>Offce 365</li>
+        <li>Adobe全家桶</li>
+        <li>Runway</li>
+        <li>Apple账号（其他Al账号急需也可联系我们）</li>
+      </ul>
+      <h2>产品表（货币单位均为：元）</h2> */}
       {/* <a
         className="button button--primary"
         href={GITHUB_URL}
