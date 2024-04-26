@@ -37,7 +37,7 @@ export const Friends: Friend[] = [
   },
   {
     title: 'AI产品榜',
-    description: 'Front-end development, Open source',
+    description: 'AI产品榜单｜AI产品经理必备',
     website: 'https://aicpb.com/',
     avatar: '/img/friend/aicpb.png',
   }
