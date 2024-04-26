@@ -42,8 +42,8 @@ const ShowcaseCard = memo(({ project }: { project: Project }) => {
     <div key={project.title} className={clsx('card', styles.showcaseCard)}>
       {project.preview && (
         <div className={clsx('card__image', styles.showcaseCardImage)}>
-          {/* <Image src={project.preview} alt={project.title} img={project.preview} /> */}
-          <img src={project.preview} alt={project.title} />
+          <Image src={project.preview} alt={project.title} img={project.preview} />
+          {/* <img src={project.preview} alt={project.title} /> */}
         </div>
       )}
       <div className="card__body">

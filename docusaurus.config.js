@@ -53,6 +53,7 @@ async function createConfig() {
       },
     ],
     plugins: [
+      '@docusaurus/plugin-ideal-image',
       ['mindmap', {}],
       [
         "@docusaurus/plugin-client-redirects",
