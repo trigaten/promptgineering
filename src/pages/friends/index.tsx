@@ -1,21 +1,19 @@
-import React from 'react'
-import Layout from '@theme/Layout'
 import CodeBlock from '@theme/CodeBlock'
-
 import FriendCard from './_components/FriendCard'
 import { Friends } from '@site/data/friends'
-
-import styles from './styles.module.css'
+import Layout from '@theme/Layout'
+import React from 'react'
 import { motion } from 'framer-motion'
+import styles from './styles.module.css'
 
 const TITLE = '友链'
 const DESCRIPTION = '有很多良友，胜于有很多财富。'
 const ADD_FRIEND_URL = 'https://github.com/LearnPrompt/LP/edit/v4/data/friends.tsx'
 const SITE_INFO = `
-title: '愧怍'
-description: '道阻且长，行则将至'
-website: 'https://kuizuo.cn'
-avatar: 'https://kuizuo.cn/img/logo.png'
+title: '卡尔'
+description: '让每个人成为AI创作者
+website: 'https://www.learnprompt.pro/'
+avatar: '/img/logo.png'
 `
 
 function SiteInfo() {
@@ -66,6 +64,7 @@ export default function FriendLink(): JSX.Element {
         <FriendCards />
         <motion.div drag dragConstraints={ref} className={styles.dragBox}>
           {/* <SiteInfo /> */}
+
         </motion.div>
       </motion.main>
     </Layout>
