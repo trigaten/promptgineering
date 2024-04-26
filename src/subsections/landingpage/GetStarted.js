@@ -1,8 +1,8 @@
-import React from "react";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import ClassicPadding from "@site/src/components/layouts/ClassicPadding";
-import { RxArrowTopRight } from "react-icons/rx";
 import Button from "@site/src/components/Button";
+import ClassicPadding from "@site/src/components/layouts/ClassicPadding";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import React from "react";
+import { RxArrowTopRight } from "react-icons/rx";
 
 function GetStarted() {
   return (
@@ -14,7 +14,7 @@ function GetStarted() {
           Learn Al for free, for all levels!
           </div>
           <div className="flex justify-center md:justify-start pt-8 text-[1rem] tracking-tighter mb-12 mt-1">
-            <a href="https://learnprompting.org/docs/intro">
+            <a href="https://learnprompt.pro/docs/intro">
               <Button
                 onClick={() => {
                   window.location.replace("/docs/intro");

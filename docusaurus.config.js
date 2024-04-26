@@ -294,7 +294,7 @@ async function createConfig() {
       announcementBar: {
         id: "announcement",
         content:
-          '🌟 If you have any questions, feel free to join our <a href="https://learn-prompting.webflow.io/courses/intro-to-prompt-engineering">community</a> 🌟',
+          '🌟 If you have any questions, feel free to join our <a href="https://discord.gg/w6ZjEc2g">community</a> 🌟',
         backgroundColor: "#8f77b5",
         textColor: "#000",
         isCloseable: true,

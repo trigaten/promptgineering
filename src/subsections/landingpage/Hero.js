@@ -107,7 +107,7 @@ function Hero() {
           Kickstart your free learning journey today! 🥳🎉
         </div>
         <div className="flex items-center justify-center pt-6">
-          <a href="https://learnprompting.org/docs/intro">
+          <a href="https://learnprompt.pro/docs/intro">
           {/* <a href="https://learn-prompting.webflow.io"> */}
             <Button
               onClick={() =>
