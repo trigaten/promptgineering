@@ -36,10 +36,9 @@ import SdWeb from "@site/static/img/sdweb.webp";
 // import ApplicationsMobile from "@site/static/img/applicationsmobile.webp";
 
 
-
 function Hero() {
   const categories = ["ChatGPT", "Midjourney", "Runway", "Agents"];
-  const categories2 =  ["OpenLLM", "StableDiffusion", "DigitalHuman", "AI Music"];
+  const categories2 =  ["OpenLLM", "StableDiffusion", "DigitalHuman", "AI Audio"];
   
   const [activeCategory, setActiveCategory] = React.useState("ChatGPT");
 
