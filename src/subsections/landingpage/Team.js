@@ -32,6 +32,11 @@ const STARTER_TEAM_ITEMS =  [
       STARTER_TEAM_ITEM_AVATAR: '/img/friend/Andyyang.png',
       STARTER_TEAM_ITEM_NICKNAME: 'Andy yang',
       STARTER_TEAM_ITEM_DESCRIPTION: 'web designer'
+    },
+    {
+      STARTER_TEAM_ITEM_AVATAR: '/img/friend/KC.png',
+      STARTER_TEAM_ITEM_NICKNAME: 'KC',
+      STARTER_TEAM_ITEM_DESCRIPTION: 'NLP Developer'
     }
 ];
 
@@ -66,7 +71,7 @@ function Team() {
               return (
                 <div
                   key={index}
-                  className='w-full px-4 sm:w-1/2 lg:w-1/5 xl:w-1/5'>
+                  className='w-full px-4 sm:w-1/2 lg:w-1/6 xl:w-1/6'>
                   <div className='group mb-8 rounded-xl bg-white px-5 pb-10 pt-12 shadow-testimonial dark:bg-dark dark:shadow-none'>
                     {/* 头像 */}
                     <div className='relative z-10 mx-auto mb-5 h-[120px] w-[120px]'>
