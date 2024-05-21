@@ -21,29 +21,8 @@ async function createConfig() {
       defaultLocale: "en",
       locales: [
         "en",
-        "es",
-        "fr",
-        "ja",
-        "pt",
         "zh-Hans",
-        "zh-tw",
-        "ko",
-        "ru",
-        "ar",
-        "de",
-        "uk",
-        "id",
       ],
-      localeConfigs: {
-        'zh-tw': {
-          label: '繁體中文',
-          direction: 'ltr',
-        },
-        'ur': {
-          label: 'اردو',
-          direction: 'rtl',
-        },
-      },
     },
     scripts: [
       {
@@ -272,16 +251,11 @@ async function createConfig() {
             type: "localeDropdown",
             position: "right",
           },
-          { to: '/blog', label: '📰 Changelog', position: 'right' },
-          { to: '/friends', label: '👬 Blogroll', position: 'right'},
-          {
-            href: "https://chat.learnprompt.pro/",
-            label: "💰 FreeGPT",
-            position: "right",
-          },
+          { to: '/blog', label: '📰 ChangeLog', position: 'right' },
+          { to: '/friends', label: '👬 BlogRoll', position: 'right'},
           {
             to: "/project",
-            label: "🚀  有号",
+            label: "🚀  AiStore",
             position: "right",
           },
           // {

@@ -1,6 +1,6 @@
 {
   "title": {
-    "message": "Learn Prompting"
+    "message": "Learn Prompt"
   },
   "item.label.Learn": {
     "message": "学习"
@@ -14,10 +14,16 @@
   "item.label.Consulting": {
     "message": "咨询"
   },
-  "item.label.Change Log": {
-    "message": "更新日志"
+  "item.label.📰 ChangeLog": {
+    "message": "📰 更新日志"
+  },
+  "item.label.👬 BlogRoll": {
+    "message": "👬 友链"
   },
   "item.label.GitHub": {
     "message": "GitHub"
+  },
+  "item.label.🚀  AiStore": {
+    "message": "🚀 有号"
   }
 }
