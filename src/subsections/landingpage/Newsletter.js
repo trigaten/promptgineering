@@ -44,7 +44,7 @@ class NewsletterSignupForm extends Component {
   style={{margin: 0, borderRadius: 0, backgroundColor: 'transparent'}}
   className="rounded-l-md bg-white text-dark/500 text-sm font-medium tracking-tight ring-0 focus:outline-none w-[250px] md:w-[450px] focus:ring-0"
 /> */}
-            <a href="https://quail.ink/aiwarts" style={{ fontSize: '20px', color: 'white', fontWeight: 'bold', textDecoration: 'underline' }}>🎉 Subscribe for unique insights 🎉</a>
+            <a href="https://quail.ink/aiwarts101" style={{ fontSize: '20px', color: 'white', fontWeight: 'bold', textDecoration: 'underline' }}>🎉 Subscribe for unique insights 🎉</a>
             </div>
           </>
         )}
