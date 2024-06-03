@@ -1,4 +1,143 @@
 export const metadata = {
   sidebar_position: 40,
-  title: "🟢 ",
+  title: "🟢 حل أسئلة الحوارات",
 };
+
+# حل أسئلة الحوارات
+
+يستطيع GPT-3 من خلال استخدام التعليمات الصحيحة كتابة إجابات قصيرة. لتوضيح ذلك سنتحدث عن حل أسئلة الحوارات، وهي وظيفة أسبوعية في العديد من المواد الدراسية الجامعية. إن الجواب لسؤال حوار هو حوالي 100-700 كلمة. إن أي محتوى أطول من ذلك صعب لأن نماذج اللغة الكبيرة لديها ذاكرة محدودة وصعوبة في فهم الصورة العامة لما يكتب.
+
+لنتابع المثال التالي لسؤال حوار بسيط:
+
+"ما هي أكثر مشكلة بيئية تواجه كوكبنا اليوم، وما هي الخطوات التي يمكن للأفراد القيام بها لحل هذه المشكلة؟"
+بالإنجليزية:
+```
+"What are the most pressing environmental issues facing our planet today, and what steps can individuals take to help address these issues?"
+```
+يمكننا تحويل ذلك إلى تعليمة بسيطة لـ GPT-3 عن طريق سبقها بـ "جاوب على التالي".
+التعليمة
+```
+أجب على التالي:
+ما هي أكثر مشكلة بيئية تواجه كوكبنا اليوم، وما هي الخطوات التي يمكن للأفراد القيام بها لحل هذه المشكلة؟
+```
+بالإنجليزية
+```
+Respond to the following:
+What are the most pressing environmental issues facing our planet today, and what steps can individuals take to help address these issues?
+```
+لا تكون النتائج الناتجة عن هذه التعليمة متسقة، وعدد قليل منها يكون عبارة عن جملة أو اثنتين فقط. يجب أن تحتوي الاستجابة النموذجية للمناقشة على فقرات متعددة، لذا فإن هذه النتائج ليست مثالية. يجب أن تعطي التعليمة الجيدة **تعليمات محددة حول التنسيق والمحتوى**. نريد إزالة الغموض في لغتك لتحسين الاتساق والجودة. هذه تعليمةٌ أفضل.
+```
+اكتب مقالة مفصلة للغاية تحتوي على فقرات المقدمة والنص والخاتمة للإجابة على ما يلي:
+
+ما هي القضايا البيئية الأكثر أهميةً التي تواجه كوكبنا اليوم، وما هي الخطوات التي يمكن للأفراد اتخاذها للمساعدة في معالجة هذه القضايا؟
+```
+بالإنجليزية:
+```
+Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following:
+
+What are the most pressing environmental issues facing our planet today, and what steps can individuals take to help address these issues?
+```
+[Response Prompt Example](https://vimeo.com/778327269) 
+تُنشئ التعليمة الثانية خرجًا أطول مع هيكلية أفضل. استخدام الكلمة "مقال" في التعليمة كان مقصودًا لأن GPT-3 يفهم تعريف مقال وبالتالي سيُنشئ إجابات متناسقة ومرتبة.
+
+## أسئلة الحوارات المتعددة ليست فعالة في كتابة التعليمات
+>"الحروب الأهلية هي صراع حول التوسع؟ وافق أو عارض مع ذكر السبب؟"
+هذا سؤال حقيقي من مادة في كلية التاريخ. وليس مصاغًا بشكل صحيح ونهايته مفتوحة. للحصول على إجابة جيدة تحتاج لإعادة كتابة السؤال لتعليمة محددة بشكل جيد. يمكن أن تكون التعليمة المحددة بشكل جيد كالتالي:
+
+" اشرح أسباب الحرب الأهلية وإذا ما كان التوسع يلعب دورًا في الصراع. أضف دلائل لتدعم فرضيتك"
+
+يمكننا إضافة اتجاه التنسيق والسياق.
+التعليمة:
+```
+اكتب جواب حوار مفصل للغاية في هيكلية مقالة جوبًا للتعليمة التالية:
+اشرح أسباب الحرب الأهلية وإذا ما كان التوسع يلعب دورًا في الصراع. أضف دلائل لتدعم فرضيتك 
+```
+بالإنجليزية
+```
+Write a highly detailed discussion response, in the structure of an essay, responding to the following prompt:
+Explain the causes of the Civil War and whether expansion played a role in the conflict. Include evidence to support your argument.
+```
+## أتمتة إعادة صياغة التعليمة المحددة بشكل جيد باستخدام GPT-3
+
+أُنشئ مثال إعادة صياغة باستخدام ChatGPT الخاص بـ OpenAI.
+![استخدام التعليمة في ChatGPT]( https://learnprompting.org/assets/images/short_content_auto-9b17533cb94c799181be8ee128a081b6.webp)
+
+## التكرار
+ستحتاج لفلترة نتائج GPT-3 بعد إنشاء تعليمة فعّالة لسؤال الحوار. هذا يتطلب تعديل الخرج للالتزام ببعض الشروط كعدد الكلمات ودمج المفاهيم من النواتج المُنشئة المختلفة.
+
+إحدى الطرق البسيطة لتكرار المخرجات المتعددة ومراجعتهم لفهم المفاهيم التي يستخدمها GPT-3 والهيكلية التي ستعملها. بعدما تم تقييم المخرجات يمكن اختيار الخرج المناسب وجمعهم في جواب متناسق.
+
+طريقة أخرى للتكرار هو البدء ومن ثم **التوسع خطوة بخطوة**. هذا يتطلب أكثر من تعليمة واحدة: نبدأ بتعليمة بداية لكتابة الفقرة الأولية ثم كتابة التعليمات الأخرى للتوسع فيما كان مكتوبًا.
+التالي هو سؤال حوار فلسفي أولي:
+
+>"هل تم اختراع أم اكتشاف الرياضيات؟ استخدم المنطق لشرح إجابتك"
+
+أضف ذلك إلى تعليمة بسيطة كالتالي:
+التعليمة
+```
+اكتب مقدمة فقرة تجاوب على التالي:
+هل تم اختراع أم اكتشاف الرياضيات؟ استخدم المنطق لشرح إجابتك
+```
+بالإنجليزية:
+```
+Write a beginning paragraph responding to the following:
+
+Is math invented or discovered? Use careful reasoning to explain your answer
+```
+أنشأت عدة أجوبة ووجدت واحدة أعجبتني
+الخرج:
+```
+هناك جدال ما بين الفلاسفة والرياضيين حول إذا ما كانت الرياضيات مكتشفة أو مخترعة. يقول البعض أن المفاهيم والمبادئ الرياضية موجودة بشكل مستقل عن الفكر البشري ويمكن اعتبارها مكتشفة بدلًا من مخترعة. مثلًا مفهوم الأرقام والنسب والأشكال الهندسية موجودة في الطبيعة ويمكن أخذها بشكل تجريدي ودراستها بطريقة منهجية.
+```
+بالإنجليزية:
+```
+There is much debate among philosophers and mathematicians as to whether math is invented or discovered. Some argue that mathematical concepts and principles exist independently of human minds and can therefore be considered as discovered rather than invented. For example, the concept of numbers, ratios, and geometric shapes are observed in the natural world and can be abstracted and studied in a systematic way.
+```
+إنها بداية جيدة، ومن ثم اكتب تعليمة تالية للتوسع:
+التعليمة:
+```
+أنا اكتب مقالة صغيرة مفصلة للإجابة على التعليمة التالية
+هل تم اختراع أم اكتشاف الرياضيات؟ استخدم المنطق لشرح إجابتك
+هذا ما لديّ حتى الآن
+هناك جدال ما بين الفلاسفة والرياضيين حول إذا ما كانت الرياضيات مكتشفة أو مخترعة. يقول البعض أن المفاهيم والمبادئ الرياضية موجودة بشكل مستقل عن الفكر البشري ويمكن اعتبارها مكتشفة بدلًا من مخترعة. مثلًا مفهوم الأرقام والنسب والأشكال الهندسية موجودة في الطبيعة ويمكن أخذها بشكل تجريدي ودراستها بطريقة منهجية.
+اكتب الفقرة التالية من مقالتي.
+```
+بالإنجليزية:
+```
+I am writing a detailed short essay responding to the following prompt:
+
+Is math invented or discovered? Use careful reasoning to explain your answer.
+Here is what I have so far:
+
+There is much debate among philosophers and mathematicians as to whether math is invented or discovered. Some argue that mathematical concepts and principles exist independently of human minds and can therefore be considered as discovered rather than invented. For example, the concept of numbers, ratios, and geometric shapes are observed in the natural world and can be abstracted and studied in a systematic way.
+Write the next paragraph of my essay.
+```
+جرب تعليمة التوسع بالنسخة التجريبية التالية (يجب عليك استخدام مفتاح واجهة برمجة التطبيقات الخاص بـ OpenAI)
+<iframe
+    src="https://embed.learnprompting.org/embed?config=eyJ0b3BQIjowLCJ0ZW1wZXJhdHVyZSI6MCwibWF4VG9rZW5zIjoyNTYsIm91dHB1dCI6Ik9uIHRoZSBvdGhlciBoYW5kLCBzb21lIGFyZ3VlIHRoYXQgbWF0aCBpcyBsYXJnZWx5IGFuIGludmVudGlvbiBvZiB0aGUgaHVtYW4gbWluZC4gTWF0aGVtYXRpY2FsIHByaW5jaXBsZXMgYXJlIGJhc2VkIG9uIGxvZ2ljYWwgcmVhc29uaW5nLCB3aGljaCBpcyBhIGZlYXR1cmUgb2YgdGhlIGh1bWFuIG1pbmQuIEZvciBpbnN0YW5jZSwgRXVjbGlkZWFuIGdlb21ldHJ5IGlzIGJhc2VkIG9uIGFic3RyYWN0IGF4aW9tcyBhbmQgcG9zdHVsYXRlcywgd2hpY2ggYXJlIGFjY2VwdGVkIGFzIHRydWUgd2l0aG91dCBwcm9vZi4gQXMgc3VjaCwgaXQgY2FuIGJlIGFyZ3VlZCB0aGF0IGdlb21ldHJ5IGlzIGFuIGludmVudGlvbiBvZiB0aGUgaHVtYW4gbWluZCByYXRoZXIgdGhhbiBhIGRpc2NvdmVyeS4gU2ltaWxhcmx5LCBtYXRoZW1hdGljYWwgZm9ybXVsYXMgYW5kIGVxdWF0aW9ucyBhcmUgdXNlZCB0byBtb2RlbCBhbmQgcHJlZGljdCBwaHlzaWNhbCBwaGVub21lbmEsIHdoaWNoIGFyZSBhZ2FpbiB0aGUgcmVzdWx0IG9mIGh1bWFuIHJlYXNvbmluZy4iLCJwcm9tcHQiOiJJIGFtIHdyaXRpbmcgYSBkZXRhaWxlZCBzaG9ydCBlc3NheSByZXNwb25kaW5nIHRvIHRoZSBmb2xsb3dpbmcgcHJvbXB0OiBcbklzIG1hdGggaW52ZW50ZWQgb3IgZGlzY292ZXJlZD8gVXNlIGNhcmVmdWwgcmVhc29uaW5nIHRvIGV4cGxhaW4geW91ciBhbnN3ZXIuIFxuXG5IZXJlIGlzIHdoYXQgSSBoYXZlIHNvIGZhcjogVGhlcmUgaXMgbXVjaCBkZWJhdGUgYW1vbmcgcGhpbG9zb3BoZXJzIGFuZCBtYXRoZW1hdGljaWFucyBhcyB0byB3aGV0aGVyIG1hdGggaXMgaW52ZW50ZWQgb3IgZGlzY292ZXJlZC4gU29tZSBhcmd1ZSB0aGF0IG1hdGhlbWF0aWNhbCBjb25jZXB0cyBhbmQgcHJpbmNpcGxlcyBleGlzdCBpbmRlcGVuZGVudGx5IG9mIGh1bWFuIG1pbmRzIGFuZCBjYW4gdGhlcmVmb3JlIGJlIGNvbnNpZGVyZWQgYXMgZGlzY292ZXJlZCByYXRoZXIgdGhhbiBpbnZlbnRlZC4gRm9yIGV4YW1wbGUsIHRoZSBjb25jZXB0IG9mIG51bWJlcnMsIHJhdGlvcywgYW5kIGdlb21ldHJpYyBzaGFwZXMgYXJlIG9ic2VydmVkIGluIHRoZSBuYXR1cmFsIHdvcmxkIGFuZCBjYW4gYmUgYWJzdHJhY3RlZCBhbmQgc3R1ZGllZCBpbiBhIHN5c3RlbWF0aWMgd2F5LiBcblxuV3JpdGUgdGhlIG5leHQgcGFyYWdyYXBoIG9mIG15IGVzc2F5LiIsIm1vZGVsIjoidGV4dC1kYXZpbmNpLTAwMyJ9"
+    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+أنشأت بعض التوسعات باستخدام هذه التعليمة واخترت التي أعجبتني للحصول على النتيجة النهائية.
+الخرج:
+```
+هناك جدال ما بين الفلاسفة والرياضيين حول إذا ما كانت الرياضيات مكتشفة أو مخترعة. يقول البعض أن المفاهيم والمبادئ الرياضية موجودة بشكل مستقل عن الفكر البشري ويمكن اعتبارها مكتشفة بدلًا من مخترعة. مثلًا مفهوم الأرقام والنسب والأشكال الهندسية موجودة في الطبيعة ويمكن أخذها بشكل تجريدي ودراستها بطريقة منهجية.
+ومن جانب آخر، بقول البعض أن الرياضيات هي اختراع العقل البشري والمفاهيم الرياضية مبنية على التفكير المنطقي الذي هو ميزة العقل البشري. مثلًا، الهندسة الإقليدية مبنية على البديهيات والمُسلّمات المقبولة بدون برهان، وبالتالي يمكن القول إن الهندسة هي اختراع العقل البشري بدلًا من اكتشاف، وبشكل مشابه تُستخدم المعادلات والمساواة الرياضية لنمذجة وتوقع الظواهر الفيزيائية التي هي أيضًا نتيجة المنطق البشري.
+```
+بالإنجليزية:
+
+```
+There is much debate among philosophers and mathematicians as to whether
+math is invented or discovered. Some argue that mathematical concepts and principles exist
+independently of human minds and can therefore be considered as discovered rather than invented.
+For example, the concept of numbers, ratios, and geometric shapes are observed in the natural
+world and can be abstracted and studied in a systematic way.
+
+On the other hand, some argue that math is largely an invention of the human mind. Mathematical
+principles are based on logical reasoning, which is a feature of the human mind. For instance,
+Euclidean geometry is based on abstract axioms and postulates, which are accepted as true without
+proof. As such, it can be argued that geometry is an invention of the human mind rather than
+a discovery. Similarly, mathematical formulas and equations are used to model and predict physical
+phenomena, which are again the result of human reasoning.
+```
+باستخدام تعليمات التوسع يمكننا كتابة المزيد بشكل تدريجي وتكرار كل خطوة. هذا مفيد إذا كنت بحاجة **لإنتاج خرج ذو نوعية أفضل وتعديل الخطوات التدريجية**.
