@@ -1,102 +1,48 @@
 export const metadata = {
   sidebar_position: 4,
-  title: "🟢 Zero Shot Chain of Thought",
+  title: "🟢 تسلسل الأفكار بدون أمثلة",
 };
 
-# 🟢 Zero Shot Chain of Thought
+# تسلسل الأفكار بدون أمثلة
 
-Zero Shot Chain of Thought (Zero-shot-CoT) prompting (@kojima2022large) is a
-follow up to <Term term="CoT prompting">CoT prompting</Term> (@wei2022chain), which introduces an incredibly
-simple zero shot prompt. They find that by appending the words "**Let's think step
-by step.**" to the end of a question, LLMs are able to generate a chain of
-thought that answers the question. From this chain of thought, they are able to
-extract more accurate answers.
+تسلسل الأفكار بدون الأمثلة أو (Zero-shot-CoT) هو تكملة لأوامر تسلسل الأفكار، والذي يقدم توجيهًا بدون أمثلة بسيط جدًا. تمت ملاحظة أنه عن طريق إضافة عبارة "لنفكر خطوة بخطوة" في نهاية السؤال، تتمكن النماذج اللغوية من إنشاء سلسلة من الأفكار التي تجيب على السؤال.
 
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/intermediate/zero_shot.webp"
-    width={936}
-    height={386}
-    style={{ width: "500px", margin: "auto" }}
-  />
-</div>
+من هذه السلسلة من الأفكار، يمكنك استخراج إجابات أكثر دقة.
+![Zero Shot CoT](https://learnprompting.org/assets/images/zero_shot-2fcfd390293eb7bf9f7d8371c2f6f5a7.webp) 
 
-<div style={{ textAlign: "center" }}>Zero Shot CoT (Kojima et al.)</div>
+من الناحية التقنية، تتضمن كامل عملية Zero-shot-CoT تعليمتين أو توجيهين منفصلين. في الصورة أدناه، تولد الفقاعة العلوية على اليسار سلسلة من الأفكار، بينما تأخذ الفقاعة العلوية على اليمين مخرج التوجيه الأول (بما في ذلك التوجيه الأول نفسه) وتستخرج الإجابة من سلسلة الأفكار. هذا التوجيه الثاني هو توجيه ذاتي معزز.
 
-Technically, the full Zero-shot-CoT process involves two separate prompts/completions.
-In the below image, the top bubble on the left generates a chain of thought, while the top bubble on
-the right takes in the output from the first prompt (including the first prompt itself),
-and extracts the answer from the chain of thought. This second prompt is a _self augmented_ prompt.
+![Full Zero Shot CoT Process](https://learnprompting.org/assets/images/zero_shot_example-f98e34cb8ed72c5520cfd08c3c1c2f44.webp)  
 
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/intermediate/zero_shot_example.webp"
-    width={1854}
-    height={726}
-    style={{ width: "500px", margin: "auto" }}
-  />
-</div>
+## مثال
+فيما يلي بعض الأمثلة التوضيحية (التي تقوم فقط باستخراج الاستدلال). يُظهر المثال الأول (GPT-3 davinci-003) فشلًا في حل سؤال رياضي بسيط، بينما يستخدم المثال الثاني تعليمة Zero-shot-CoT ويحلّ المشكلة بنجاح. لا تتردد في إدخال مفتاح API الخاص بك لـ OpenAI (انقر فوق "توليد") وتجربة الأمثلة. لاحظ مدى بساطة تعليمة Zero-shot-CoT مقارنةً بتعليمة CoT.
 
-<div style={{ textAlign: "center" }}>
-  Full Zero Shot CoT Process (Kojima et al.)
-</div>
-
-## Example
-
-Here are a few demos (which only perform reasoning extraction). This first
-demo shows GPT-3 (davinci-003) failing a simple math question, while the second demo uses a
-Zero-shot-CoT prompt and successfully solves the problem. Feel free to enter your
-OpenAI API key (Click Generate) and play around with the examples. Note how much simpler
-the Zero-shot-CoT prompt is compared to the CoT prompt.
-
-#### Incorrect
-
+**خاطئة**
 <iframe
-  src="https://embed.learnprompting.org/embed?config=eyJ0b3BQIjoxLCJ0ZW1wZXJhdHVyZSI6MC43LCJtYXhUb2tlbnMiOjI1Niwib3V0cHV0IjoiSm9obiBoYXMgOCBwZWFycy4iLCJwcm9tcHQiOiJJZiBKb2huIGhhcyA1IHBlYXJzLCB0aGVuIGVhdHMgMiwgYW5kIGJ1eXMgNSBtb3JlLCB0aGVuIGdpdmVzIDMgdG8gaGlzIGZyaWVuZCwgaG93IG1hbnkgcGVhcnMgZG9lcyBoZSBoYXZlPyIsIm1vZGVsIjoidGV4dC1kYXZpbmNpLTAwMyJ9"
-  style={{
-    width: "100%",
-    height: "500px",
-    border: "0",
-    borderRadius: "4px",
-    overflow: "hidden",
-  }}
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    src="https://embed.learnprompting.org/embed?config=eyJ0b3BQIjoxLCJ0ZW1wZXJhdHVyZSI6MC43LCJtYXhUb2tlbnMiOjI1Niwib3V0cHV0IjoiSm9obiBoYXMgOCBwZWFycy4iLCJwcm9tcHQiOiJJZiBKb2huIGhhcyA1IHBlYXJzLCB0aGVuIGVhdHMgMiwgYW5kIGJ1eXMgNSBtb3JlLCB0aGVuIGdpdmVzIDMgdG8gaGlzIGZyaWVuZCwgaG93IG1hbnkgcGVhcnMgZG9lcyBoZSBoYXZlPyIsIm1vZGVsIjoidGV4dC1kYXZpbmNpLTAwMyJ9"
+    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
-#### Correct
-
+**صحيحة**
 <iframe
-  src="https://embed.learnprompting.org/embed?config=eyJ0b3BQIjoxLCJ0ZW1wZXJhdHVyZSI6MC43LCJtYXhUb2tlbnMiOjI1Niwib3V0cHV0IjoiSm9obiBzdGFydHMgd2l0aCA1IHBlYXJzLiBIZSBlYXRzIDIgcGVhcnMsIGxlYXZpbmcgaGltIHdpdGggMyBwZWFycy4gSGUgYnV5cyA1IG1vcmUgcGVhcnMsIGdpdmluZyBoaW0gYSB0b3RhbCBvZiA4IHBlYXJzLiBIZSBnaXZlcyAzIHBlYXJzIHRvIGhpcyBmcmllbmQsIGxlYXZpbmcgaGltIHdpdGggb25seSA1IHBlYXJzLiIsInByb21wdCI6IklmIEpvaG4gaGFzIDUgcGVhcnMsIHRoZW4gZWF0cyAyLCBhbmQgYnV5cyA1IG1vcmUsIHRoZW4gZ2l2ZXMgMyB0byBoaXMgZnJpZW5kLCBob3cgbWFueSBwZWFycyBkb2VzIGhlIGhhdmU%2FXG5cbkxldCdzIHRoaW5rIHN0ZXAgYnkgc3RlcC4iLCJtb2RlbCI6InRleHQtZGF2aW5jaS0wMDMifQ%3D%3D"
-  style={{
-    width: "100%",
-    height: "500px",
-    border: "0",
-    borderRadius: "4px",
-    overflow: "hidden",
-  }}
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    src="https://embed.learnprompting.org/embed?config=eyJ0b3BQIjoxLCJ0ZW1wZXJhdHVyZSI6MC43LCJtYXhUb2tlbnMiOjI1Niwib3V0cHV0IjoiSm9obiBzdGFydHMgd2l0aCA1IHBlYXJzLiBIZSBlYXRzIDIgcGVhcnMsIGxlYXZpbmcgaGltIHdpdGggMyBwZWFycy4gSGUgYnV5cyA1IG1vcmUgcGVhcnMsIGdpdmluZyBoaW0gYSB0b3RhbCBvZiA4IHBlYXJzLiBIZSBnaXZlcyAzIHBlYXJzIHRvIGhpcyBmcmllbmQsIGxlYXZpbmcgaGltIHdpdGggb25seSA1IHBlYXJzLiIsInByb21wdCI6IklmIEpvaG4gaGFzIDUgcGVhcnMsIHRoZW4gZWF0cyAyLCBhbmQgYnV5cyA1IG1vcmUsIHRoZW4gZ2l2ZXMgMyB0byBoaXMgZnJpZW5kLCBob3cgbWFueSBwZWFycyBkb2VzIGhlIGhhdmU%2FXG5cbkxldCdzIHRoaW5rIHN0ZXAgYnkgc3RlcC4iLCJtb2RlbCI6InRleHQtZGF2aW5jaS0wMDMifQ%3D%3D"
+    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
-## Results
+## النتائج
 
-Zero-shot-CoT was also effective in improving results on arithmetic, commonsense,
-and symbolic reasoning tasks. However, unsurprisingly, it was usually not as
-effective as CoT prompting. An important use case for Zero-shot-CoT is when obtaining
-few shot examples for CoT prompting is difficult.
+أثبتت عملية Zero-shot-CoT فعالية أيضًا في تحسين النتائج في المهام الحسابية والمنطق السليم والاستدلال الرمزي. ومع ذلك، لا يكون غالبًا بنفس فعالية تعليمات CoT.
 
-## Ablations of Interest
+حالة استخدام مهمة لـ Zero-shot-CoT هي عند الحصول على تعليمات قليلة الأمثلة صعبة التنفيذ في CoT.
 
-Kojima et al. experiment with a number of different Zero-shot-CoT prompts
-(e.g. "Let’s solve this problem by splitting it into steps." or "Let’s think about this logically."), but they find that "Let's think step by step" is most effective for their
-chosen tasks.
+## عوامل الاستبعاد المثيرة للاهتمام
 
-## Notes
+قام Koijma et al وآخرون بتجربة عدد من تعليمات Zero-shot-CoT المختلفة (على سبيل المثال "دعونا نحل هذه المشكلة عن طريق تقسيمها إلى خطوات." أو "دعونا نفكر في ذلك بشكل منطقي.") ، ولكنهم يجدون أن عبارة "لنفكر خطوة بخطوة" هي الأكثر فعالية للمهام المطلوبة. 
 
-The extraction step often must be task specific, making Zero-Shot-CoT less
-generalizable than it appears at first.
+## ملاحظات
 
-Anecdotally, I've found that Zero-shot-CoT style prompts are sometimes effective
-in improving the length of completions for generative tasks. For example, consider
-the standard prompt `Write a story about a frog and a mushroom who become friends.`
-Appending the words `Let's think step by step.` to the end of this prompt leads to
-a much longer completion.
+غالبًا ما يجب أن تكون خطوة الاستخراج مهمة محددة، مما يجعل Zero-Shot-CoT أقل قابلية للتعميم مما يبدو في البداية.
+
+بشكل شخصي، لقد وجدت أن التعليمات بنمط Zero-shot-CoT في بعض الأحيان فعالة في تحسين طول الاستكمالات الخاصة بالمهام الإنتاجية. على سبيل المثال، اعتبر التعليمة المعيارية التالية: "اكتب قصة عن ضفدع وفطر يصبحان صديقين" مع إضافة عبارة "لنفكر خطوة بخطوة" في نهاية هذه التعليمة يؤدي إلى استكمال أطول بكثير.

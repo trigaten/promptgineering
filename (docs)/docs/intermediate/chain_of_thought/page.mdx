@@ -1,108 +1,45 @@
 export const metadata = {
   sidebar_position: 3,
-  title: "🟢 Chain of Thought Prompting",
-  description: "Dive into the online guide about Chain of Thought examples. Enhance your engineering skills with AI in this course at Learn Prompting. Start now!",
+  title: "🟢 تعليمات سلسلة الأفكار",
+  description: "غص في هذا الدليل الذي يحتوي أمثلة تعليمات سلسلة الأقكار. طور مهاراتك في هندسة الأوامر باستخدام الذكاء الاصطناعي في هذه الدورة في موقع Learn Prompting. ابدأ الآن!",
 };
 
-# 🟢 Chain of Thought Prompting
+انغمس في الدليل عبر الإنترنت حول أمثلة سلسلة الفكر. عزز مهاراتك الهندسية باستخدام الذكاء الاصطناعي في هذه الدورة التدريبية في Learn Prompting. ابدأ الآن!
 
-## What is Chain of Thought Prompting?
+# تعليمات سلسلة الأفكار
 
-Chain of thought (CoT) prompting (@wei2022chain) is a recent advancement in prompting methods 
-that encourage Large Language Models (LLMs) to explain their reasoning. 
-This method contrasts with standard prompting by not only seeking an answer 
-but also requiring the model to explain its steps to arrive at that answer. 
+تعد تعليمات سلسلة الأفكار (CoT) إحدى طرق هندسة التعليمات المطورة حديثًا التي تشجع النماذج اللغوية للذكاء الاصطناعي على شرح استدلالها.
 
-The below image(@wei2022chain) shows a <Term term="few shot standard prompt">
-few shot standard prompt</Term> (left) compared to a chain of thought prompt (right). This comparison between a few-shot standard prompt and a chain-of-thought prompt 
-illustrates the difference: while the standard approach directly seeks a solution, 
-the CoT approach guides the LLM to unfold its reasoning, 
-often leading to more accurate and interpretable results. 
+توضح الصورة أدناه التعليمة قليلة الأمثلة المعيارية (اليسار) مقارنةً بتعليمة سلسلة الأفكار (اليمين).
 
+![Chain of Thought Prompting](https://learnprompting.org/assets/images/chain_of_thought_example-ad98abdca61405f66417751bdb3fba05.webp) 
 
+الفكرة الرئيسية من CoT هي أنه عند عرض بعض الأمثلة عن تعليمات قليلة الأمثلة على النماذج اللغوية حيث يتم شرح عملية الاستدلال في هذه الأمثلة، ستُظهر النماذج اللغوية أيضًا عملية الاستدلال عند الإجابة على التعليمة. يؤدي تفسير الاستدلال هذا في كثير من الأحيان إلى نتائج أكثر دقة.
 
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/basics/chain_of_thought_example.webp"
-    width={1788}
-    height={900}
-    style={{ width: "750px", margin: "auto" }}
-  />
-</div>
+## مثال
+فيما يلي بعض الأمثلة التوضيحية. يُظهر الأول GPT-3 (davinci-003)‎ فشلاً في حل مشكلة كلمة بسيطة. يُظهر الثاني GPT-3 (davinci-003)‎ حلاً ناجحًا لنفس المشكلة باستخدام تعليمة سلسلة الأفكار.
 
-<div style={{ textAlign: "center" }}>Regular Prompting vs CoT (Wei et al.)</div>
-
-The main idea of CoT is that by showing the LLM some few shot <Term term="exemplars">exemplars</Term> where the reasoning
-process is explained in the exemplars, the LLM will also show the reasoning process
-when answering the prompt. This explanation of reasoning often leads to more accurate
-results.
-
-## How to Use Chain-of-Thought Prompting
-
-Here are a few demos. The first shows GPT-3 (davinci-003)
-failing to solve a simple word problem. The second shows GPT-3 (davinci-003) succesfully solving the same problem, by using CoT prompting.
-
-#### Incorrect
-
+**خاطئ**
 <iframe
-  src="https://embed.learnprompting.org/embed?config=eyJ0b3BQIjowLCJ0ZW1wZXJhdHVyZSI6MCwibWF4VG9rZW5zIjoyNTYsIm91dHB1dCI6Ik9wdGlvbiAxIGlzIGEgZmFzdGVyIHdheSB0byBnZXQgdG8gd29yay4iLCJwcm9tcHQiOiJXaGljaCBpcyBhIGZhc3RlciB3YXkgdG8gZ2V0IHRvIHdvcms%2FXG5PcHRpb24gMTogVGFrZSBhIDEwMDAgbWludXRlIGJ1cywgdGhlbiBhIGhhbGYgaG91ciB0cmFpbiwgYW5kIGZpbmFsbHkgYSAxMCBtaW51dGUgYmlrZSByaWRlLlxuT3B0aW9uIDI6IFRha2UgYW4gODAwIG1pbnV0ZSBidXMsIHRoZW4gYW4gaG91ciB0cmFpbiwgYW5kIGZpbmFsbHkgYSAzMCBtaW51dGUgYmlrZSByaWRlLiIsIm1vZGVsIjoidGV4dC1kYXZpbmNpLTAwMyJ9"
-  style={{
-    width: "100%",
-    height: "500px",
-    border: "0",
-    borderRadius: "4px",
-    overflow: "hidden",
-  }}
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    src="https://embed.learnprompting.org/embed?config=eyJ0b3BQIjowLCJ0ZW1wZXJhdHVyZSI6MCwibWF4VG9rZW5zIjoyNTYsIm91dHB1dCI6Ik9wdGlvbiAxIGlzIGEgZmFzdGVyIHdheSB0byBnZXQgdG8gd29yay4iLCJwcm9tcHQiOiJXaGljaCBpcyBhIGZhc3RlciB3YXkgdG8gZ2V0IHRvIHdvcms%2FXG5PcHRpb24gMTogVGFrZSBhIDEwMDAgbWludXRlIGJ1cywgdGhlbiBhIGhhbGYgaG91ciB0cmFpbiwgYW5kIGZpbmFsbHkgYSAxMCBtaW51dGUgYmlrZSByaWRlLlxuT3B0aW9uIDI6IFRha2UgYW4gODAwIG1pbnV0ZSBidXMsIHRoZW4gYW4gaG91ciB0cmFpbiwgYW5kIGZpbmFsbHkgYSAzMCBtaW51dGUgYmlrZSByaWRlLiIsIm1vZGVsIjoidGV4dC1kYXZpbmNpLTAwMyJ9"
+    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
-#### Correct
-
+**صحيح**
 <iframe
-  src="https://embed.learnprompting.org/embed?config=eyJ0b3BQIjowLCJ0ZW1wZXJhdHVyZSI6MCwibWF4VG9rZW5zIjoyNTYsIm91dHB1dCI6Ik9wdGlvbiAxIHdpbGwgdGFrZSAxMDAwKzMwKzEwID0gMTA0MCBtaW51dGVzLlxuT3B0aW9uIDIgd2lsbCB0YWtlIDgwMCs2MCszMCA9IDg5MCBtaW51dGVzLlxuU2luY2UgT3B0aW9uIDIgdGFrZXMgODkwIG1pbnV0ZXMgYW5kIE9wdGlvbiAxIHRha2VzIDEwNDAgbWludXRlcywgT3B0aW9uIDIgaXMgZmFzdGVyLiIsInByb21wdCI6IldoaWNoIGlzIGEgZmFzdGVyIHdheSB0byBnZXQgaG9tZT9cbk9wdGlvbiAxOiBUYWtlIGFuIDEwIG1pbnV0ZXMgYnVzLCB0aGVuIGFuIDQwIG1pbnV0ZSBidXMsIGFuZCBmaW5hbGx5IGEgMTAgbWludXRlIHRyYWluLlxuT3B0aW9uIDI6IFRha2UgYSA5MCBtaW51dGVzIHRyYWluLCB0aGVuIGEgNDUgbWludXRlIGJpa2UgcmlkZSwgYW5kIGZpbmFsbHkgYSAxMCBtaW51dGUgYnVzLlxuT3B0aW9uIDEgd2lsbCB0YWtlIDEwKzQwKzEwID0gNjAgbWludXRlcy5cbk9wdGlvbiAyIHdpbGwgdGFrZSA5MCs0NSsxMD0xNDUgbWludXRlcy5cblNpbmNlIE9wdGlvbiAxIHRha2VzIDYwIG1pbnV0ZXMgYW5kIE9wdGlvbiAyIHRha2VzIDE0NSBtaW51dGVzLCBPcHRpb24gMSBpcyBmYXN0ZXIuXG5cbldoaWNoIGlzIGEgZmFzdGVyIHdheSB0byBnZXQgdG8gd29yaz9cbk9wdGlvbiAxOiBUYWtlIGEgMTAwMCBtaW51dGUgYnVzLCB0aGVuIGEgaGFsZiBob3VyIHRyYWluLCBhbmQgZmluYWxseSBhIDEwIG1pbnV0ZSBiaWtlIHJpZGUuXG5PcHRpb24gMjogVGFrZSBhbiA4MDAgbWludXRlIGJ1cywgdGhlbiBhbiBob3VyIHRyYWluLCBhbmQgZmluYWxseSBhIDMwIG1pbnV0ZSBiaWtlIHJpZGUuIiwibW9kZWwiOiJ0ZXh0LWRhdmluY2ktMDAzIn0%3D"
-  style={{
-    width: "100%",
-    height: "500px",
-    border: "0",
-    borderRadius: "4px",
-    overflow: "hidden",
-  }}
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    src="https://embed.learnprompting.org/embed?config=eyJ0b3BQIjowLCJ0ZW1wZXJhdHVyZSI6MCwibWF4VG9rZW5zIjoyNTYsIm91dHB1dCI6Ik9wdGlvbiAxIHdpbGwgdGFrZSAxMDAwKzMwKzEwID0gMTA0MCBtaW51dGVzLlxuT3B0aW9uIDIgd2lsbCB0YWtlIDgwMCs2MCszMCA9IDg5MCBtaW51dGVzLlxuU2luY2UgT3B0aW9uIDIgdGFrZXMgODkwIG1pbnV0ZXMgYW5kIE9wdGlvbiAxIHRha2VzIDEwNDAgbWludXRlcywgT3B0aW9uIDIgaXMgZmFzdGVyLiIsInByb21wdCI6IldoaWNoIGlzIGEgZmFzdGVyIHdheSB0byBnZXQgaG9tZT9cbk9wdGlvbiAxOiBUYWtlIGFuIDEwIG1pbnV0ZXMgYnVzLCB0aGVuIGFuIDQwIG1pbnV0ZSBidXMsIGFuZCBmaW5hbGx5IGEgMTAgbWludXRlIHRyYWluLlxuT3B0aW9uIDI6IFRha2UgYSA5MCBtaW51dGVzIHRyYWluLCB0aGVuIGEgNDUgbWludXRlIGJpa2UgcmlkZSwgYW5kIGZpbmFsbHkgYSAxMCBtaW51dGUgYnVzLlxuT3B0aW9uIDEgd2lsbCB0YWtlIDEwKzQwKzEwID0gNjAgbWludXRlcy5cbk9wdGlvbiAyIHdpbGwgdGFrZSA5MCs0NSsxMD0xNDUgbWludXRlcy5cblNpbmNlIE9wdGlvbiAxIHRha2VzIDYwIG1pbnV0ZXMgYW5kIE9wdGlvbiAyIHRha2VzIDE0NSBtaW51dGVzLCBPcHRpb24gMSBpcyBmYXN0ZXIuXG5cbldoaWNoIGlzIGEgZmFzdGVyIHdheSB0byBnZXQgdG8gd29yaz9cbk9wdGlvbiAxOiBUYWtlIGEgMTAwMCBtaW51dGUgYnVzLCB0aGVuIGEgaGFsZiBob3VyIHRyYWluLCBhbmQgZmluYWxseSBhIDEwIG1pbnV0ZSBiaWtlIHJpZGUuXG5PcHRpb24gMjogVGFrZSBhbiA4MDAgbWludXRlIGJ1cywgdGhlbiBhbiBob3VyIHRyYWluLCBhbmQgZmluYWxseSBhIDMwIG1pbnV0ZSBiaWtlIHJpZGUuIiwibW9kZWwiOiJ0ZXh0LWRhdmluY2ktMDAzIn0%3D"
+    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
-## Chain-of-Thought Results
+## النتائج
 
-CoT has been shown to be effective in improving results on tasks like
-arithmetic, commonsense, and symbolic reasoning tasks (@wei2022chain).
-In particular, prompted PaLM 540B(@chowdhery2022palm) achieves 57% solve
-rate accuracy on GSM8K(@cobbe2021training) (SOTA at the time).
+تم إظهار فعالية CoT في تحسين النتائج في مهام مثل الحسابات والمنطق السليم ومهام الاستدلال الرمزية. على وجه الخصوص، يحقق PaLM 540B2 الموجه نسبة دقة في حل المشكلة تبلغ 57٪ على GSM8K3 (SOTA)‎ في نفس الوقت. 
 
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/intermediate/prompted_palm.webp"
-    width={798}
-    height={774}
-    style={{ width: "300px", margin: "auto" }}
-  />
-</div>
+![Chain of Thought Prompting2](https://learnprompting.org/assets/images/prompted_palm-f378b4af8aff82ed8a0fdcd33e934b7b.webp) 
+## القيود
+وفقًا لـ Wei et al.، "تؤدي CoT إلى تحسينات في الأداء فقط عند استخدام نماذج تحتوي على 100 مليار بارامتر". حيث كتبت النماذج الأصغر سلاسل أفكار غير منطقية، مما أدى إلى نتيجة ذو دقة أسوأ من نتيجة التعليمة المعيارية. عادةً ما تحصل النماذج على زيادات في الأداء من توجيه CoT بنسبة تتناسب مع حجم النموذج.
 
-<div style={{ textAlign: "center" }}>
-  Comparison of models on the GSM8K benchmark (Wei et al.)
-</div>
+> ملاحظات: لم تتم أذيّة أي نماذج لغات أثناء كتابة هذا الفصل. 😊
 
-## Limitations of Chain-of-Thought
-
-Importantly, according to Wei et al., "CoT only yields performance gains when used with models of ∼100B parameters". Smaller models wrote illogical chains of thought, which led to worse accuracy than standard prompting. Models usually get performance boosts from CoT prompting in a manner proportional to the size of the model.
-
-## Notes
-
-No language models were ~~hurt~~ finetuned in the process of writing this chapter 😊.
-
-## Conclusion
-
-CoT prompting significantly advances how we interact with Large Language Models, offering a method that encourages an articulated reasoning process. 
-This approach has improved the accuracy and interpretability of model outputs, particularly in complex reasoning tasks. 
-Its effectiveness is more pronounced in larger models, and CoT prompting underscores the potential for 
-developing AI systems that provide correct answers and transparent 
-insights into their thought processes, bridging the gap between human reasoning and 
-artificial intelligence.
