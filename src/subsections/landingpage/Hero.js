@@ -63,6 +63,7 @@ function Hero() {
         </div>
         <div className="flex items-center justify-center pt-6">
           <a href="https://learnprompting.org/docs/intro">
+          {/* <a href="https://learn-prompting.webflow.io"> */}
             <Button
               onClick={() =>
                 React.useEffect(() => {
@@ -70,6 +71,7 @@ function Hero() {
                 }, [])
               }
               text={"Start Learning"}
+              // text={"See our Latest Offerings"}
               icon={
                 <RxArrowTopRight
                   className="inline-block text-white"
