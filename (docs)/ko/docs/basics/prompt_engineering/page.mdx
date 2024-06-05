@@ -5,17 +5,17 @@ export const metadata = {
 
 # 🟢 Prompt Engineering
 
-<Takeaways>- What is prompt engineering?</Takeaways>
+<Takeaways>- prompt engineering이란 무엇인가?</Takeaways>
 
-## What Happens When a Prompt Doesn't Work?
+## Prompt가 작동하지 않으면 무슨 일이 일어날까요?
 
-Sometimes Gen AIs give incorrect outputs to prompts. For example, they are not very good at multiplying numbers, and will often confidently give you an incorrect answer. Try giving the following prompt to ChatGPT:
+때때로 Gen AI는 prompts에 대해 잘못된 output을 주기도 합니다. 예를 들어, Gen AI는 곱셈을 매우 못하는데, 자신만만하게 잘못된 답변을 전달합니다. 아래 prompt를 ChatGPT에 작성해봅시다:
 
 <AIInput>What is 923 * 99?</AIInput>
 
 <AIOutput>923 * 99 equals 91,677.</AIOutput>
 
-ChatGPT gave an incorrect answer (the correct answer is 91,377). We can modify our prompt, and tell ChatGPT to think through its steps.
+ChatGPT가 잘못된 답변을 하는 걸 확인할 수 있습니다 (정답은 91,377). 이제 우리는 우리의 prompt를 변경하고, ChatGPT가 단계적으로 생각할 수 있도록 할 것입니다.
 
 <AIInput>
 What is 923 * 99? Let's go step by step. Always write out the full number of 0s for each term.
@@ -39,7 +39,7 @@ Therefore, 923 multiplied by 99 is equal to 91,377.
 
 </AIOutput>
 
-Surprisingly, these additional instructions, ChatGPT is able to solve the problem. This worked because ChatGPT wrote out all of its work, and thus did not make mistakes. Gen AI's mathematical abilities can be improved by prompt engineering. Now, let's try a different example.
+놀랍게도, 이 추가 지침을 통해 ChatGPT로 문제를 풀 수 있습니다. 이는 ChatGPT가 모든 작업을 작성함에 따라 실수하지 않았기 때문입니다. Gen AI의 수학적 능력은 Prompt engineering을 통해 향상될 수 있습니다. 이제, 다른 예제를 시도해봅시다.
 
 <Caution>
   Since ChatGPT is
@@ -47,9 +47,9 @@ Surprisingly, these additional instructions, ChatGPT is able to solve the proble
   this prompt sometimes won't work. You may see answers like 91,177 or 91,077.
 </Caution>
 
-### ArchaeologistAI Example
+### ArchaeologistAI 예시
 
-This time, we will ask ChatGPT to write a marketing tweet about a new, fictional AI product we are thinking of creating: ArchaeologistAI. ArchaeologistAI tells stories about famous archaeologists.
+이번 예시에서는, ChatGPT에게 우리가 만들려고 하는 새로운 가상 AI 제품인 ArchaeologistAI에 대한 마케팅 트윗을 작성해달라고 요청할 것입니다. ArchaeologistAI는 유명한 고고학자들의 이야기를 들려주는 AI입니다.
 
 <AIInput>Write a tweet about ArchaeologistAI</AIInput>
 
@@ -60,7 +60,7 @@ This time, we will ask ChatGPT to write a marketing tweet about a new, fictional
   what hidden treasures and insights it unveils! #AI #Archaeology"
 </AIOutput>
 
-This Tweet is not accurate, since ArchaeologistAI only tells stories, and does not discover new things. However, this is not ChatGPT's fault! It did not know anything about ArchaeologistAI. Let's include relevant information in the prompt.
+이 트윗의 경우, ArchaeologistAI에 대한 스토리만 이야기할 뿐 새로운 정보를 전달하지 않기 때문에 적절하지 않습니다. 그러나 이는 ChatGPT의 잘못이 아닙니다! ArchaeologistAI에 대해 아무것도 몰랐기 때문입니다. 이제 관련된 정보를 prompt에 추가해봅시다.
 
 <AIInput>
   Write a tweet about ArchaeologistAI: ArchaeologistAI tells stories about
@@ -75,7 +75,7 @@ This Tweet is not accurate, since ArchaeologistAI only tells stories, and does n
   #Archaeology"
 </AIOutput>
 
-This is much better! Now let's try to make ChatGPT write the Tweet in the style of Indiana Jones.
+훨씬 낫네요! 이제 ChatGPT가 인디아나 존스 스타일로 트윗을 작성하도록 만들어봅시다.
 
 <AIInput>
   Write a tweet about ArchaeologistAI, in the style of Indiana Jones:
@@ -90,8 +90,8 @@ This is much better! Now let's try to make ChatGPT write the Tweet in the style 
   #ArchaeologistAI #UnearthTheLegends"
 </AIOutput>
 
-Alright, that may be the message we need to target archaeology fans! By testing multiple prompts, we can see which one gives the best output.
+Alright, that may be the message we need to target archaeology fans! 다양한 Prompt를 테스트하면서, 어떤 것이 최상의 결과를 내는지 확인할 수 있습니다.
 
-## Conclusion
+## 결론
 
-This process of refining our prompt over time is known as prompt engineering. You will never write the perfect prompt on your first try, so it is important to get good at refining your prompt. Being good at prompt engineering mostly comes from lots of practice (trial and error). The rest of the articles in this section will introduce you to different prompting strategies which you can use in your prompt engineering process.
+우리가 계속해서 프롬프트를 개선하는 이 과정을 프롬프트 엔지니어링이라고 합니다. 처음 시도할 때 완벽한 프롬프트를 작성할 수는 없으니, 프롬프트를 개선하는 데 능숙해지는 것이 중요합니다. 프롬프트 엔지니어링에 능숙해지는 것은 대부분 연습(시행착오)을 통해 얻게 됩니다. 이 섹션의 나머지 글들은 프롬프트 엔지니어링 과정에서 사용할 수 있는 다양한 프롬프팅 전략을 소개할 것입니다.
