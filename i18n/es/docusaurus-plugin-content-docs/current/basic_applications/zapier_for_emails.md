@@ -21,7 +21,7 @@ Este artículo contendrá un ejemplo de lo que Zapier+GPT-3 puede hacer con solo
 En este artículo te mostraremos cómo configurar un sistema simple en Zapier en el que los **correos electrónicos se resumen y se almacenan**. ¿Tienes una reunión con alguien? Consulta rápidamente los resúmenes de los correos electrónicos que has intercambiado con esa persona. Configurar esto lleva unos 20 minutos.
 
 :::caution
-Es útil conocer Zapier de antemano para este artículo. Si no lo conoces, puedes revisar esto:[articulo](https://zapier.com/learn/).
+Es útil conocer Zapier de antemano para este artículo. Si no lo conoces, puedes revisar éste [artículo](https://zapier.com/learn/).
 :::
 
 ## Idea General
