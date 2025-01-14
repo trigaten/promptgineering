@@ -1,4 +1,13 @@
-# Learn Prompting
+<p align="center">
+  <img height="100" src="https://github.com/trigaten/Learn_Prompting/blob/docs/assets/astronaut.webp" alt="Learn Prompting, astronaut">
+</p>
+
+<h1 align="center">
+    <strong>Learn Prompting — your go-to resource for mastering Generative AI.</strong>
+</h1>
+<p align="center">
+Learn prompt engineering and generative AI with our free resources, courses, and on-demand webinars. Trusted by 3M+ users. Cited by OpenAI and Google.
+
 
 [![Twitter](https://img.shields.io/twitter/url?label=Follow%20%40learnprompting&style=social&url=https%3A%2F%2Ftwitter.com%2Flearnprompting)](https://twitter.com/learnprompting)
 [![](https://dcbadge.vercel.app/api/server/7enStJXQzD?compact=true&style=flat)](https://discord.gg/7enStJXQzD)
