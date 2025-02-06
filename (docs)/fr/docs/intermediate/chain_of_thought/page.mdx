@@ -1,15 +1,23 @@
 export const metadata = {
   sidebar_position: 3,
-  locale: "en-us",
-  style: "chicago",
   title: "🟢 Chain of Thought Prompting",
+  description: "Plongez dans le guide en ligne sur les exemples de Chain of Thought. Améliorez vos compétences en ingénierie avec l'IA dans ce cours sur Learn Prompting. Commencez maintenant !",
 };
 
-# 🟢 Chain of Thought Prompting
+# 🟢 Chain of Thought Prompting (chaîne de pensée)
 
-Chain of Thought (CoT) prompting (@wei2022chain) is a recently developed prompting
-method, which encourages the LLM to explain its reasoning. The below image(@wei2022chain)
-shows a <Term term="few shot standard prompt">few shot standard prompt</Term> (left) compared to a chain of thought prompt (right).
+## Qu'est-ce que le Chain of Thought Prompting ?
+
+Le Chain of thought (CoT) prompting (@wei2022chain) est une avancée récente dans les méthodes de prompting 
+qui encourage les modèles de langage de grande taille (LLMs) à expliquer leur raisonnement.
+Cette méthode se distingue du prompting standard en ne cherchant pas seulement une réponse,
+mais en exigeant également que le modèle explique les étapes pour parvenir à cette réponse.
+
+L'image ci-dessous (@wei2022chain) montre un <Term term="few shot standard prompt">
+few shot standard prompt</Term> (à gauche) comparé à un chain of thought prompt (à droite). Cette comparaison entre un few-shot standard prompt et un chain-of-thought prompt
+illustre la différence : tandis que l'approche standard cherche directement une solution,
+l'approche CoT guide le LLM à dérouler son raisonnement,
+ce qui conduit souvent à des résultats plus précis et interprétables.
 
 <div style={{ textAlign: "center" }}>
   <Image
@@ -20,17 +28,17 @@ shows a <Term term="few shot standard prompt">few shot standard prompt</Term> (l
   />
 </div>
 
-<div style={{ textAlign: "center" }}>Regular Prompting vs CoT (Wei et al.)</div>
+<div style={{ textAlign: "center" }}>Prompting régulier vs CoT (Wei et al.)</div>
 
-The main idea of CoT is that by showing the LLM some few shot <Term term="exemplars">exemplars</Term> where the reasoning
-process is explained in the exemplars, the LLM will also show the reasoning process
-when answering the prompt. This explanation of reasoning often leads to more accurate
-results.
+L'idée principale du CoT est que, en montrant au LLM quelques <Term term="exemplars">exemplars</Term> où le processus de raisonnement
+est expliqué dans les exemplars, le LLM montrera également le processus de raisonnement
+lors de la réponse au prompt. Cette explication du raisonnement conduit souvent à des
+résultats plus précis.
 
-## Example
+## Comment utiliser le Chain-of-Thought Prompting
 
-Here are a few demos. The first shows GPT-3 (davinci-003)
-failing to solve a simple word problem. The second shows GPT-3 (davinci-003) succesfully solving the same problem, by using CoT prompting.
+Voici quelques démonstrations. La première montre GPT-3 (davinci-003)
+incapable de résoudre un simple problème de mots. La seconde montre GPT-3 (davinci-003) résolvant avec succès le même problème, en utilisant le CoT prompting.
 
 #### Incorrect
 
@@ -60,12 +68,12 @@ failing to solve a simple word problem. The second shows GPT-3 (davinci-003) suc
   sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
-## Results
+## Résultats du Chain-of-Thought
 
-CoT has been shown to be effective in improving results on tasks like
-arithmetic, commonsense, and symbolic reasoning tasks (@wei2022chain).
-In particular, prompted PaLM 540B(@chowdhery2022palm) achieves 57% solve
-rate accuracy on GSM8K(@cobbe2021training) (SOTA at the time).
+Le CoT a démontré son efficacité pour améliorer les résultats sur des tâches telles que
+l'arithmétique, le raisonnement de bon sens et les tâches de raisonnement symbolique (@wei2022chain).
+En particulier, le prompting du PaLM 540B (@chowdhery2022palm) atteint un taux de résolution
+de 57 % sur le benchmark GSM8K (@cobbe2021training) (SOTA à l'époque).
 
 <div style={{ textAlign: "center" }}>
   <Image
@@ -77,13 +85,22 @@ rate accuracy on GSM8K(@cobbe2021training) (SOTA at the time).
 </div>
 
 <div style={{ textAlign: "center" }}>
-  Comparison of models on the GSM8K benchmark (Wei et al.)
+  Comparaison des modèles sur le benchmark GSM8K (Wei et al.)
 </div>
 
-## Limitations
+## Limitations du Chain-of-Thought
 
-Importantly, according to Wei et al., "CoT only yields performance gains when used with models of ∼100B parameters". Smaller models wrote illogical chains of thought, which led to worse accuracy than standard prompting. Models usually get performance boosts from CoT prompting in a manner proportional to the size of the model.
+Il est important de noter, selon Wei et al., que "le CoT ne procure des gains de performance que lorsqu'il est utilisé avec des modèles d’environ 100B de paramètres". Les modèles plus petits ont produit des chaînes de pensée illogiques, ce qui a conduit à une précision inférieure à celle du prompting standard. Les modèles obtiennent généralement des gains de performance grâce au prompting CoT de manière proportionnelle à la taille du modèle.
 
 ## Notes
 
-No language models were ~~hurt~~ finetuned in the process of writing this chapter 😊.
+Aucun modèle de langage n’a été ~~blessé~~ affiné lors de la rédaction de ce chapitre 😊.
+
+## Conclusion
+
+Le prompting CoT avance de manière significative la façon dont nous interagissons avec les modèles de langage de grande taille, offrant une méthode qui encourage un processus de raisonnement articulé.
+Cette approche a amélioré la précision et l'interprétabilité des sorties des modèles, notamment dans les tâches de raisonnement complexes.
+Son efficacité est plus prononcée dans les modèles plus grands, et le prompting CoT souligne le potentiel pour
+le développement de systèmes d'IA qui fournissent des réponses correctes et des
+aperçus transparents sur leurs processus de pensée, comblant le fossé entre le raisonnement humain et
+l'intelligence artificielle.
