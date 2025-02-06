@@ -1,54 +1,48 @@
 export const metadata = {
-  sidebar_position: 90,
-  title: "🟢 Fix Deformed Generations",
+  sidebar_position: 40,
+  title: "🟢 إصلاح التوليدات المشوهة",
 };
 
-# 🟢 Fix Deformed Generations
+# إصلاح التوليدات المشوهة
 
-Deformed generations, particularly on human body parts (e.g. hands, feet), are a common issue with many models. This can be dealt with to some extent with good negative prompts(@blake2022with). The following example is adapted from [this Reddit post](https://www.reddit.com/r/StableDiffusion/comments/z7salo/with_the_right_prompt_stable_diffusion_20_can_do/).
+التوليدات المشوهة، خاصة على أجزاء الجسم البشري (مثل اليدين، القدمين)، هي مشكلة شائعة مع العديد من النماذج. يمكن التعامل مع هذا إلى حد ما باستخدام تعليمات سلبية جيدة. متبنى المثال التالي من [هذا المنشور على Reddit](https://www.reddit.com/r/StableDiffusion/comments/z7salo/with_the_right_prompt_stable_diffusion_20_can_do/).
 
-## Example
+## مثال
 
-Using Stable Diffusion v1.5 and the following prompt, we generate a nice image of Brad Pitt, except for his hands of course!
+باستخدام Stable Diffusion v1.5 والتعليمة التالية، نقوم بإنشاء صورة جميلة لبراد بيت، باستثناء يديه بالطبع!
 
-<AIInput>
-  studio medium portrait of Brad Pitt waving his hands, detailed, film, studio
-  lighting, 90mm lens, by Martin Schoeller:6
-</AIInput>
+التعليمة:
 
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/images_chapter/bad_pitt.webp"
-    className="img-docs"
-    width={512}
-    height={512}
-    style={{ width: "250px", margin: "auto" }}
-  />
-</div>
+```
+صورة فنية للوجه متوسط لبراد بيت يلوح بيديه، مفصل، فيلم، إضاءة استوديو، عدسة 90 ملم، بواسطة مارتن شولر:6
+```
 
-Using a robust negative prompt, we can generate much more convincing hands.
+بالإنجليزية:
 
-<AIInput>
-  studio medium portrait of Brad Pitt waving his hands, detailed, film, studio
-  lighting, 90mm lens, by Martin Schoeller:6 | disfigured, deformed hands,
-  blurry, grainy, broken, cross-eyed, undead, photoshopped, overexposed,
-  underexposed, lowres, bad anatomy, bad hands, extra digits, fewer digits, bad
-  digit, bad ears, bad eyes, bad face, cropped: -5
-</AIInput>
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/images_chapter/good_pitt.webp"
-    width={1028}
-    height={1032}
-    style={{ width: "250px", margin: "auto" }}
-  />
-</div>
+```
+studio medium portrait of Brad Pitt waving his hands, detailed, film, studio lighting, 90mm lens, by Martin Schoeller:6
+```
 
-Using a similar negative prompt can help with other body parts as well. Unfortunately, this technique is not consistent, so you may need to attempt multiple generations
-before getting a good result.
-In the future, this type of prompting should be unnecessary since models will improve.
-However, currently it is a very useful technique.
+![Brad Pitt](https://learnprompting.org/assets/images/bad_pitt-0a78738e39d116b1ec1c7e74b498b032.webp)
 
-# Notes
+باستخدام تعليمة سلبية قوية، يمكننا إنشاء أيدي أكثر إقناعًا بكثير.
 
-Improved models such as [Protogen](https://civitai.com/models/3666/protogen-x34-official-release) are often better with hands, feet, etc.
+التعليمة:
+
+```
+صورة فنية للوجه متوسط لبراد بيت يلوح بيديه، مفصل، فيلم، إضاءة استوديو، عدسة 90 ملم، بواسطة مارتن شولر:6 | مشوهة، يدين مشوهتين، غير واضحة، ذات حبوب، مكسورة، أحول العينين، غير ميتة، معدلة ببرنامج الفوتوشوب، مفرطة التعريض، غير معرضة بشكل كاف، جودة منخفضة، تشوه التشريح، أيدي سيئة، أصابع إضافية، أقل أصابع، إصبع سيء، أذن سيئة، عيون سيئة، وجه سيء، قصير: -5
+```
+
+بالإنجليزية:
+
+```
+studio medium portrait of Brad Pitt waving his hands, detailed, film, studio lighting, 90mm lens, by Martin Schoeller:6 | disfigured, deformed hands, blurry, grainy, broken, cross-eyed, undead, photoshopped, overexposed, underexposed, lowres, bad anatomy, bad hands, extra digits, fewer digits, bad digit, bad ears, bad eyes, bad face, cropped: -5
+```
+
+![Brad Pitt2](https://learnprompting.org/assets/images/good_pitt-ab97efa681b66b1af571472dcca1bf06.webp)
+
+يمكن أن يساعد استخدام تعليمة سلبية مماثلة مع أجزاء الجسم الأخرى أيضًا. للأسف، هذه التقنية غير متناسقة لذا قد تحتاج إلى تجربة العديد من التجارب قبل الحصول على نتيجة جيدة. في المستقبل، يجب أن تكون هذه النوعية من التعليمات غير ضرورية بمرور الوقت حيث تتحسن النماذج. ومع ذلك، حاليًا، هي تقنية مفيدة جداً.
+
+## ملاحظات
+
+النماذج المحسّنة مثل [Protogen](https://civitai.com/models/3666/protogen-x34-official-release) غالبًا ما تكون أفضل في التعامل مع الأيدي والقدمين، وما إلى ذلك.

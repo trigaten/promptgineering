@@ -1,56 +1,21 @@
 export const metadata = {
-  sidebar_position: 3,
-  title: "🟡 LLMs that Reason and Act",
+  sidebar_position: 40,
+  title: "🟢 نموذج لغات كبيرة يفكّر ويتصرّف",
 };
 
-# 🟡 LLMs that Reason and Act
+# نموذج لغات كبيرة يفكّر ويتصرّف
 
-ReAct(@yao2022react)(reason, act) is a paradigm for enabling language models to solve complex
-tasks using natural language reasoning. ReAct is designed for tasks in which the LLM is
-allowed to perform certain actions. For example, as in a MRKL system, a LLM may be able
-to interact with external APIs to retrieve information. When asked a question, the LLM
-could choose to perform an action to retrieve information, and then answer the question
-based on the retrieved information.
+نموذج ردّ الفعل ReAct (التفكير المنطقي، التصرف) هو صيغةٌ لتفعيل نموذج لغاتٍ يحلّ المهام المعقّدة باستخدام اللغات المنطقية الطبيعيّة. تم تصميم ردّ الفعل لأجل المهام التي تسمح لنماذج اللغات الكبيرة بأداء مجموعةٍ من التصرفات. كمثال، كما في نظام MRKL ، يمكن لنماذج اللغات الكبيرة التفاعل مع واجهات تطبيقات خارجيّة لاستيراد المعلومات. وعندما يتمّ سؤالها ستتمكّن من الاختيار والتصرّف لاستيراد المعلومات، ثمّ الإجابة على السؤال اعتماداً عليها.
 
-ReAct Systems can be thought of as MRKL systems, with the added ability to **reason
-about** the actions they can perform.
+يمكن أن نعتمد على أنظمة ReAct بشكلٍ مشابهٍ لأنظمة MRKL، ومع إضافة القدرة على التفكير بالفعل الذي يجب أن تقوم به.
 
-Examine the following image. The question in the top box is sourced from HotPotQA(@yang2018hotpotqa),
-a question answering dataset that requires complex reasoning. ReAct is able to answer the question by
-first reasoning about the question (Thought 1), and then performing an action (Act 1) to send a query
-to Google. It then receives an observation (Obs 1), and continues with this thought, action, observation
-loop until it reaches a conclusion (Act 3).
+تمعّن بالصورة التالية. السؤال الموجود في المربّع العلوي مصدره HotPotQA2، وهو سؤال يجيب على مجموعة بيانات يتطلب تفكيرًا معقدًا. يمكن لنموذج ReAct الإجابة على السؤال من خلال التفكير أولاً في السؤال (الفكرة 1)، ثم تنفيذ إجراء (الفصل 1) لإرسال استعلام إلى Google. ثم يتلقى ملاحظة (Obs 1)، ويستمر في حلقة التفكير والفعل والملاحظة حتى يصل إلى نتيجة (الفصل 3).
+![ReAct System](https://learnprompting.org/assets/images/react_qa-c10be33ab46c41e5bf4dee9066df3e41.webp)
 
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/advanced/react_qa.webp"
-    width={1028}
-    height={762}
-    style={{ width: "500px", margin: "auto" }}
-  />
-</div>
+قد يتعرّف القراء الذين يملكون معرفة بالتعلّم المعزز على هذه العملية المشابهة للحلقة الواقعيّة الكلاسيكية للحالة، والإجراء، والمكافأة، والحالة،... توفر أنظمة ردّ الفعل بعض الصيغ الرسمية لهذا في ورقتهم البحثية.
 
-<div style={{ textAlign: "center" }}>ReAct System (Yao et al.)</div>
+## النتائج
 
-Readers with knowledge of reinforcement learning may recognize this process as similar to the classic
-RL loop of state, action, reward, state,... ReAct provides some formalization for
-this in their paper.
+استخدمت Google برنامج PaLM3 في تجاربها مع نماذج ReAct. تُظهر المقارنات مع التعليمات القياسية (السؤال فقط) وسلسلة الأفكار والتكوينات الأخرى أن أداء نموذج ReAct واعد لمهام الاستدلال المعقدة. كما تجري Google دراساتٍ على مجموعة بيانات FEVER4، والتي تغطي استخلاص الحقائق والتحقق منها.
 
-## Results
-
-Google used the PaLM(@chowdhery2022palm) LLM in experiments with ReAct.
-Comparisons to standard prompting (question only), CoT, and other configurations
-show that ReAct's performance is promising for complex reasoning tasks. Google
-also performs studies on the FEVER dataset(@thorne2018fever), which covers
-fact extraction and verification.
-
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/advanced/react_performance.webp"
-    width={1286}
-    height={488}
-    style={{ width: "500px", margin: "auto" }}
-  />
-</div>
-
-<div style={{ textAlign: "center" }}>ReAct Results (Yao et al.)</div>
+![ReAct Results](https://learnprompting.org/assets/images/react_performance-80d12fa8026a0599d05fd2dabcc8a283.webp)

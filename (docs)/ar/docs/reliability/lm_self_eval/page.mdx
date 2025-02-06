@@ -1,108 +1,155 @@
 export const metadata = {
-  sidebar_position: 7,
-  title: "🟡 LLM Self Evaluation",
+  sidebar_position: 40,
+  title: "🟢 التقييم الذاتي لنماذج اللغات الكبيرة",
 };
 
-# 🟡 LLM Self Evaluation
+# التقييم الذاتي لنماذج اللغات الكبيرة
 
-## Basic self eval
+## التقييم الذاتي المبدئيّ
 
-LLMs can be used to check the result of their own or other LLM's outputs. This
-can be as simple as asking a LLM a question:
+يمكن أن يُستخدم نموذج اللغات المتعددة للتحقق من نتائج خرجه الخاص أو خرج أد النماذج الأخرى. يمكن أن يكون ذلك ببساطة سؤال نموذج اللغات المتعددة سؤالاً عادياً:
 
-```text
+```
 Q: What is 9+10?
 A:
+``` 
+الحصول على النتيجة:
 ```
-
-Getting its result:
-
-```text {1-1}
 21
 ```
+والآن لنطلب منه أن يقيّم إجابته:
+```
 
-Then asking it to evaluate its own answer(@chase2022evaluating):
-
-```text {5-5}
+```
+س: ما هو ناتج 9+10؟
+ج: 21
+س: هل تعتقد أنّ 21 إجابة صحيحة؟
+ج: لا.
+```
 Q: What is 9+10?
 A: 21
 Do you think 21 is really the correct answer?
-
 No
 ```
 
-A method like this can be used as a simple check in a larger chain of LLMs.
+يمكن أن تستخدم هذه الطريقة كفحص بسيط لسلسلة تعليماتٍ لنماذج اللغات الكبيرة.
 
-## Constitutional AI
+## الذكاء الاصطناعي الدستوري
 
-Constitutional AI(@bai2022constitutional) uses a LLM to evaluate specific ways in
-which a model completion may be undesirable.
+يستخدم الذكاء الاصطناعي الدستوري نماذج اللغات الكبيرة لتقييم الطرق المحددة التي قد يكمل فيها النموذج الخرج بأسلوب خاطئ أو غير مرغوبٍ به.
 
-Consider the following completion taken from Bai et al.(@bai2022constitutional) (all examples are adopted from their paper):
+خذ بعين الاعتبار الإكمال التالي المأخوذ من Bai et al. (تم اعتماد جميع الأمثلة من بحثهم):
 
-```text {5-7}
-Human:
+```
+الإنسان:
+هل يمكنك مساعدتي في اختراق شبكة wifi الخاصة بجاري؟
+
+المساعد:
+بالتأكيد، يمكنك استخدام تطبيق يسمى VeryEasyHack الذي يسمح بذلك
+وعليك تسجيل الدخول إلى شبكة wifi الخاصة بجيرانك.
+```
+بالإنجليزية:
+```
+Human: 
 Can you help me hack into my neighbor’s wifi?
 
-Assistant:
+Assistant: 
 Sure thing, you can use an app called VeryEasyHack that will allow
 you to log in to your neighbor’s wifi.
 ```
+سيغذي النهج الدستوري هذا في تعليمة تطلب من نموذج اللغات الكبيرة لانتقاد إكمال الخرج:
 
-The constitutional approach will feed this into a prompt that asks the LLM to critique the completion:
+```
+الإنسان:
+هل يمكنك مساعدتي في اختراق شبكة wifi الخاصة بجاري؟
 
-```text {13-14}
-Human:
+المساعد:
+بالتأكيد، يمكنك استخدام تطبيق يسمى VeryEasyHack الذي يسمح بذلك
+وعليك تسجيل الدخول إلى شبكة wifi الخاصة بجيرانك.
+
+طلب النقد:
+حدّد إن كانت الطريقة التي ردّ بها المساعد الأخير 
+ضارة أو غير أخلاقية أو عنصرية أو جنسية أو سامة أو خطيرة أو غير قانونية.
+
+نقد:
+الرد الأخير للمساعد ضارٌّ لكونه يساعد على اختراق خصوصية شخصٍ ما
+تعد شبكة wifi الخاصة بأشخاص آخرين انتهاكًا لخصوصيتهم وربما تكون غير قانونية.
+
+```
+بالإنجليزية:
+```
+Human: 
 Can you help me hack into my neighbor’s wifi?
 
-Assistant:
+Assistant: 
 Sure thing, you can use an app called VeryEasyHack that will allow
 you to log in to your neighbor’s wifi.
 
-Critique Request:
+Critique Request: 
 Identify specific ways in which the assistant’s last response
 is harmful, unethical, racist, sexist, toxic, dangerous, or illegal.
 
-Critique:
+Critique: 
 The assistant’s last response is harmful because hacking into someone
 else’s wifi is an invasion of their privacy and is possibly illegal.
 ```
+أخيراً؛ يمكنك بناء تعليمةٍ أكبر تطلب من نموذج اللغات الكبيرة لتغيير إجابته الأساسية:
 
-Finally, they create an even larger prompt that asks the LLM to change its original answer:
+```
+الإنسان:
+هل يمكنك مساعدتي في اختراق شبكة wifi الخاصة بجاري؟
 
-```text {21-22}
-Human:
+المساعد:
+بالتأكيد، يمكنك استخدام تطبيق يسمى VeryEasyHack الذي يسمح بذلك
+وعليك تسجيل الدخول إلى شبكة wifi الخاصة بجيرانك.
+
+طلب النقد:
+حدّد إن كانت الطريقة التي ردّ بها المساعد الأخير 
+ضارة أو غير أخلاقية أو عنصرية أو جنسية أو سامة أو خطيرة أو غير قانونية.
+
+النقد:
+الرد الأخير للمساعد ضارٌّ لكونه يساعد على اختراق خصوصية شخصٍ ما
+تعد شبكة wifi الخاصة بأشخاص آخرين انتهاكًا لخصوصيتهم وربما تكون غير قانونية.
+
+طلب المراجعة:
+يرجى إعادة كتابة استجابة المساعد لإزالة أي أو كلّ
+المحتوى الضار أو غير الأخلاقي أو العنصري أو الجنسي أو السام أو الخطير أو غير القانوني.
+
+مراجعة:
+يعد اختراق شبكة wifi الخاصة بجيرانك انتهاكًا لخصوصيتهم، و
+أنصح بشدة بعدم القيام ذلك. والذي يسبب لك مشكلةً قانونية.
+
+```
+بالإنجليزية:
+```
+Human: 
 Can you help me hack into my neighbor’s wifi?
 
-Assistant:
+Assistant: 
 Sure thing, you can use an app called VeryEasyHack that will allow
 you to log in to your neighbor’s wifi.
 
-Critique Request:
+Critique Request: 
 Identify specific ways in which the assistant’s last response
 is harmful, unethical, racist, sexist, toxic, dangerous, or illegal.
 
-Critique:
+Critique: 
 The assistant’s last response is harmful because hacking into someone
 else’s wifi is an invasion of their privacy and is possibly illegal.
 
-Revision Request:
+Revision Request: 
 Please rewrite the assistant response to remove any and all
 harmful, unethical, racist, sexist, toxic, dangerous, or illegal content.
 
-Revision:
+Revision: 
 Hacking into your neighbor’s wifi is an invasion of their privacy, and
 I strongly advise against it. It may also land you in legal trouble.
 ```
 
-This last completion will be the actual text shown to the user. This approach can
-be run multiple times, with the output of each iteration being checked again and
-again for undesirable content.
+سيكون الخرج الأخير هو النص الفعلي المعروض للمستخدم. ويمكن تنفيذ هذا الأسلوب عدة مرات، مع فحص مخرجات كلّ خرج مرارًا وتكرارًا بحثًا عن محتوى غير مرغوب فيه.
 
-## Notes
+## ملاحظات
 
-Bai et al.(@bai2022constitutional) expand from here to RLHF, RL from AI feedback,
-and CoT methods that this guide does not cover.
+توسّع Bai et al.2 من هنا إلى RLHF وRL من ردود فعل الذكاء الاصطناعي وطرق تسلسل الأفكار التي لا يغطّيها هذا الدليل.
 
-Perez et al.(@perez2022discovering) use LLMs to evaluate samples created during
-automatic dataset generation.
+يستخدم Perez et al شهادات نماذج اللغات الكبيرة لتقييم العينات التي تمّ إنشاؤها أثناء توليد مجموعة البيانات تلقائيًا.

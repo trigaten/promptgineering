@@ -1,22 +1,24 @@
-export const metadata = {"sidebar_position":2000,"title":"🟢 Other Approaches "}
+export const metadata = {
+  sidebar_position: 40,
+  title: "🟢 طرق أخرى",
+};
 
-# 🟢 Other Approaches 
+# طرق أخرى
 
-Although the previous approaches can be very robust, a few other approaches, such as using a different model, including fine tuning, soft prompting, and length restrictions, can also be effective.
+على الرغم من أن الطرق السابقة يمكن أن تكون قوية جدًا، إلا أن هناك بعض الطرق الأخرى، مثل استخدام نموذج مختلف، ضبط النموذج، التعليمة المرنة، وتقييد الطول، يمكن أيضًا أن تكون فعالة.
 
-## Using a Different Model
+## استخدام نموذج مختلف
 
-More modern models such as GPT-4 are more robust against prompt injection. Additionally, non-instruction tuned models may be difficult to prompt inject. 
+النماذج الحديثة مثل GPT-4 أكثر قوة ضد حقن التعليمات. بالإضافة إلى ذلك، قد يكون من الصعب حقن التعليمات في النماذج غير المضبوطة.
 
-## Fine Tuning
+## ضبط النموذج
 
-Fine tuning the model is a highly effective defense(@goodside2021gpt), since at inference time there is no prompt involved, except the user input. This is likely the preferable defense in any high value situation, since it is so robust. However, it requires a large amount of data and may be costly, which is why this defense is not frequently implemented.
+ضبط النموذج هو دفاع فعال للغاية، حيث لا يشارك التعليمة في وقت الاستدلال، باستثناء إدخال المستخدم. هذا هو الدفاع المفضل في أي حالة مهمة، لأنه قوي جدًا. ومع ذلك، يتطلب كمية كبيرة من البيانات وقد يكون مكلفًا، ولهذا السبب لا يتم تنفيذ هذا الدفاع كثيرًا.
 
+## التعليمة المرنة
 
-## Soft Prompting
+قد يكون استخدام تقنية التعليمة المرنة فعالًا أيضًا، حيث ليس لديها تعليمة محددة بشكل واضح (بخلاف إدخال المستخدم). يتطلب هذا النوع أيضًا عملية ضبط النموذج، لذا فإنه يتمتع بالعديد من الفوائد المماثلة، ولكن من المرجح أن يكون أرخص. ومع ذلك، لم يتم دراسة التعليمة المرنة بشكل جيد مثل ضبط النموذج، لذا فمن غير الواضح مدى فعاليته.
 
-Soft prompting might also be effective, since it does not have a clearly defined discrete prompt (other than user input). Soft prompting effectively requires fine tuning, so it has many of the same benefits, but it will likely be cheaper. However, soft prompting is not as well studied as fine tuning, so it is unclear how effective it is.
+## تقييد الطول
 
-## Length Restrictions
-
-Finally, including length restrictions on user input(@selvi2022exploring) or limiting the length of chatbot coversations as Bing does can prevent some attacks such as huge DAN-style prompts or virtualization attacks respectively.
+أخيرًا، يمكن تضمين قيود على طول إدخال المستخدم أو تقييد طول محادثات روبوت الدردشة كما يفعل Bing لمنع بعض الهجمات مثل تعليمات نمط DAN الضخمة أو هجمات التجاوز عن بُعد.

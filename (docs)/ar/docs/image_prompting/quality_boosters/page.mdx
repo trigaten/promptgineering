@@ -1,47 +1,39 @@
-export const metadata = { sidebar_position: 5, title: "🟢 Quality Boosters" };
+export const metadata = {
+  sidebar_position: 40,
+  title: "🟢 معززات الجودة",
+};
 
-# 🟢 Quality Boosters
+# معززات الجودة
 
-Quality boosters(@oppenlaender2022taxonomy) are terms added to a prompt to improve
-certain non-style-specific qualities of the generated image. For example "amazing", "beautiful", and "good quality" are all quality boosters that can be used to improve the quality of the generated image.
+تعزيز الجودة هو مصطلح يتم إضافته إلى تعليمة لتحسين بعض الصفات غير المحددة للأسلوب في الصورة المولدة. على سبيل المثال، "رائع"، "جميل"، و"جودة جيدة" هي جميعًا تعزيزات للجودة يمكن استخدامها لتحسين جودة الصورة المولدة.
 
-# Example
+## مثال
 
-Recall from the other page the pyramids generated with DALLE, and the prompt `pyramid`.
+تذكر من الصفحة الأخرى الأهرامات التي تم إنشاؤها بواسطة DALLE، وتعليمة `هرم`.
+[Pyramide](https://learnprompting.org/assets/images/pyramids-dbd24886538cd0b91495876e2ad5f70f.webp)
+الآن انظر إلى الأهرامات التي تم إنشاؤها باستخدام هذه التعليمة:
 
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/images_chapter/pyramids.webp"
-    className="img-docs"
-    width={2340}
-    height={592}
-    style={{ width: "750px", margin: "auto" }}
-  />
-</div>
+التعليمة:
 
-Now take at pyramids generated with this prompt:
-
-<AIInput>A beautiful, majestic, incredible pyramid, 4K</AIInput>
-
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/images_chapter/special_pyramids.webp"
-    className="img-docs"
-    width={2314}
-    height={568}
-    style={{ width: "750px", margin: "auto" }}
-  />
-</div>
-
-These are much more scenic and impressive!
-
-Here is a list of a number of quality boosters:
-
-```text
-High resolution, 2K, 4K, 8K, clear, good lighting, detailed, extremely detailed, sharp focus, intricate, beautiful, realistic+++, complementary colors, high quality, hyper detailed, masterpiece, best quality, artstation, stunning
+```
+أهرام جميلة، سامية، لا تصدق، 4K.
 ```
 
-## Notes
+بالإنجليزية:
 
-Similar to the note on the previous page, our working definition of quality boosters differs from Oppenlaender et al.(@oppenlaender2022taxonomy). This being said, it is
-sometimes difficult to exactly distinguish between quality boosters and style modifiers.
+```
+A beautiful, majestic, incredible pyramid, 4K
+```
+
+[Pyramide2](https://learnprompting.org/assets/images/special_pyramids-50f3bca3db5e95b3ae5ebb75ab00da47.webp)
+هذه تصويرية أكثر ومثيرة للإعجاب!
+
+إليك قائمة بعدد من معززات الجودة:
+
+```
+دقة عالية، 2K، 4K، 8K، واضحة، إضاءة جيدة، مفصلة، مفصلة للغاية، تركيز حاد، معقدة، جميلة، واقعية +++, ألوان متكاملة، جودة عالية، تفصيل هائل، رائعة، أفضل جودة، ArtStation، رائعة.
+```
+
+## ملاحظات
+
+شبيهًا بالمذكرة على الصفحة السابقة، يختلف تعريفنا العملي لتعزيزات الجودة عن تعريف أوبنلاندر وآخرين. ومع ذلك، من الصعب في بعض الأحيان تمييز دقيق بين تعزيزات الجودة ومعدلات الأسلوب.

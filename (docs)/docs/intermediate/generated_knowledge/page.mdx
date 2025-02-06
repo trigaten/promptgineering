@@ -1,21 +1,31 @@
 export const metadata = {
   sidebar_position: 7,
-  title: "🟡 Generated Knowledge",
+  title: "🟡 المعرفة المولَّدة",
 };
 
-# 🟡 Generated Knowledge
+# المعرفة المولَّدة
 
-The idea behind the generated knowledge approach(@liu2021generated) is to ask the <Term term="LLM">LLM</Term> to generate potentially useful information about a given question/prompt before generating a final response.
+الهدف من منهج المعرفة المولّدة هي مطالبة نماذج اللغات الكبيرة بإنشاء معلومات مفيدة محتملة حول سؤال/تعليمة معينة قبل توليد الرد النهائي.
 
-For example, say you want to write a small blog post about some animal, like [Spirit bears](https://en.wikipedia.org/wiki/Kermode_bear). Before asking the <Term term="LLM">LLM</Term> to write the blog post, you can ask it to generate some facts about Spirit bears. This will help the LLM write a more informative blog post. There are two simple ways of going about this.
+على سبيل المثال، لنفترض أنك تريد كتابة مقالٍ حول حيوانٍ ما، [كالدببة الروحية] (https://en.wikipedia.org/wiki/Kermode_bear). قبل أن تطلب من نموذج اللغة الكبيرة كتابة مشاركة المدونة، يمكنك أن تطلب منها توليد بعض الحقائق حول الدببة الروحية. وسيساعد ذلك في كتابة منشور مدونّة أكثر إفادة. وهناك طريقتان بسيطتان للقيام بذلك.
 
-## Single prompt approach
+## نهج التعليمة الواحدة
+النّهج الأوّل هو أن تطلب من نماذج اللغات الكبيرة لتوليد المعرفة ثمّ كتابة التدوين، وكلّ ذلك في تعليمة واحدة.
 
-The first approach asks the LLM to generate knowledge then write the post, all with a single prompt.
+```
+أنشئ أربع حقائق عن دب الكيرمود، ثمّ استخدم هذه الحقائق لكتابة مقالٍ قصير باستخدام هذه المعلومات:
+دببة الكيرمود، والمعروفة أيضًا باسم الدببة الروحيّة، هي نوعٌ نادر من الدببة السود الأمريكية التي توجد في المناطق الساحلية في كولومبيا البريطانية و كندا.
 
-```text {3-13}
-Generate 4 facts about the Kermode bear, then use these facts to write a short blog post using the information:
+1. دب الكيرمود هو نوعٌ فريد من الدببة السود الأمريكية، إلا أنّ حوالي 10% منها يمتلك فراءً أبيض.
+2. دببة الكيرمود هي رمزٌ لشعوب الأمّة الأولى في كولومبيا البريطانية، ويعتبر حيوانًا روحيًا.
+3. دببة الكيرمود جزٌء مهمٌّ من النظام البيئي، حيث يساعد على نثر البذور والحفاظ على توازن الغابة.
+4. دببة الكيرمود هي نوعٌ محميٌّ، وتتم مراقبة عددها عن كثب من قبل الحكومة المحلية.
 
+يعتبر دب الكيرمود حيوانًا فريدًا ومميزًا يتواجد في المناطق الساحلية في كولومبيا البريطانية و كندا. ويمتلك حوالي 10% من هذا النوع فراءً أبيض، مما يجعلهم مميّزين ونادرين. دب الكيرمود هو رمز لشعوب الأمة الأولى في كولومبيا البريطانية، ويعتبر حيوانًا روحيًا. وهو جزءٌ مهمٌّ من النظام البيئي، حيث يساعد على نثر البذور والحفاظ على توازن الغابة. دب الكيرمود هو نوع محميٌّ، وتتم مراقبة أعداد هذا النوع عن كثب من قبل الحكومة المحلية. إنه حيوان جميلٌ وعريق، ومن المهم أن نقوم بدورنا لحماية هذا النوع من الدببة.
+```
+
+ بالإنجليزية:
+```
 The Kermode bear, also known as the spirit bear, is a rare subspecies of the American black bear that is found in the coastal regions of British Columbia, Canada.
 
 1. The Kermode bear is a unique subspecies of the American black bear, with approximately 10% of the population having white fur.
@@ -29,13 +39,20 @@ The Kermode bear, also known as the spirit bear, is a rare subspecies of the Ame
 The Kermode bear is a unique and special animal that is found in the coastal regions of British Columbia, Canada. Approximately 10% of the population of this subspecies of the American black bear have white fur, making them a rare sight. The Kermode bear is a symbol of the First Nations people of British Columbia, and is seen as a spirit animal. It is an important part of the ecosystem, helping to disperse seeds and maintain the balance of the forest. The Kermode bear is a protected species, and its population is monitored closely by the provincial government. It is a beautiful and majestic animal, and it is important that we do our part to protect and conserve this species.
 ```
 
-## Dual prompt approach
+## نهج التعليمات المزدوجة
 
-In this approach, we first prompt the <Term term="LLM">LLM</Term> to generate facts about the bear:
+في هذا النّهج، سنكتب التعليمة لنماذج اللغات الكبيرة لتوليد الحقائق حول الدّب:
+```
+أعطني 10 حقائق عن دببة الكيرمود:
+1. دببة الكيرمود، المعروفة بكونها الدببة الروحية، هي فصيلةٌ نادرةٌ من الدببة الأمريكية السوداء الموجودة في كولومبيا البريطانيّة وكندا.
+2. دببة الكيرمود تمتلك فراءً أبيض فريدًا، أتى من المورثة المتنحية.
+3. ويشكّل دب الكيرمود رمزاً للأمل والتجدّد للأمة الأولى من شعب كولومبيا البريطانيّة.
+4. فصيلة دببة الكيرمود محميّةٌ ومدرجةٌ ضمن الأنواع التي تثير قلقًا خاصًا من قبل اللجنة المعنية بحالة الحياة البرية المهددة بالانقراض في كندا.
+```
 
-```text {3-9}
+بالإنجليزيّة:
+```
 Generate 10 facts about the Kermode bear:
-
 1. The Kermode bear, also known as the Spirit Bear, is a rare subspecies of the American black bear found in British Columbia, Canada.
 
 2. The Kermode bear has a unique white or cream-colored coat, which is caused by a recessive gene.
@@ -45,9 +62,21 @@ Generate 10 facts about the Kermode bear:
 4. The Kermode bear is a protected species and is listed as a species of special concern by the Committee on the Status of Endangered Wildlife in Canada.
 ```
 
-Then, we feed that information into another prompt to write the blog post:
+ثمّ، نضيف هذه المعلومات إلى تعليمةٍ أخرى لكتابة المنشور:
 
-```text {12-14}
+```
+1. دببة الكيرمود، المعروفة بكونها الدببة الروحية، هي فصيلةٌ نادرةٌ من الدببة الأمريكية السوداء الموجودة في كولومبيا البريطانيّة وكندا.
+2. دببة الكيرمود تمتلك فراءً أبيض فريدًا، أتى من المورثة المتنحية.
+3. ويشكّل دب الكيرمود رمزاً للأمل والتجدّد للأمة الأولى من شعب كولومبيا البريطانيّة.
+4. فصيلة دببة الكيرمود محميّةٌ ومدرجةٌ ضمن الأنواع التي تثير قلقًا خاصًا من قبل اللجنة المعنية بحالة الحياة البرية المهددة بالانقراض في كندا.
+
+استخدم الحقائق المذكورة أعلاه لكتابة مقالٍ من فقرة واحدة حول دب الكيرمود:
+
+دب الكيرمود، المعروف أيضًا باسم الدب الروحي، هو نوع فرعيٌّ نادرٌ من الدب الأمريكية السوداء الموجودة في كولومبيا البريطانية وكندا. يمتلك هذا الدب الفريد فراءً أبيض اللون، وهو ناجمٌ عن مورّثةٍ متنحية، وهو رمزٌ للأمل والتجدد لشعب الأمة الأولى في كولومبيا البريطانية. يعد دب الكيرمود من الأنواع المحمية وهو مدرجٌ كأحد الأنواع ذات الاهتمام الخاص من قبل اللجنة المعنية بحالة الحياة البرية المهددة بالانقراض في كندا، ما يجعله جزءًا مهمًا من التنوع الحيوي في المنطقة.
+```
+
+بالإنجليزية:
+```
 1. The Kermode bear, also known as the Spirit Bear, is a rare subspecies of the American black bear found in British Columbia, Canada.
 
 2. The Kermode bear has a unique white or cream-colored coat, which is caused by a recessive gene.
@@ -58,149 +87,79 @@ Then, we feed that information into another prompt to write the blog post:
 
 Use the above facts to write a one paragraph blog post about the Kermode bear:
 
-
-
 The Kermode bear, also known as the Spirit Bear, is a rare subspecies of the American black bear found in British Columbia, Canada. This unique bear has a white or cream-colored coat, caused by a recessive gene, and is a symbol of hope and renewal for the First Nations people of British Columbia. The Kermode bear is a protected species and is listed as a species of special concern by the Committee on the Status of Endangered Wildlife in Canada, making it an important part of the region's biodiversity.
 ```
 
-I recommend this second approach since it can produce longer content more reliably.
+ونحن نوصي بالنهج الثاني لأنّه يمكن أن ينتج محتوًى أطول وأكثر موثوقية.
 
-## Another use case
-
-The generated knowledge approach was actually introduced for a completely different task, that of answering difficult questions. Consider the following question, which GPT-3 answers incorrectly:
-
-<iframe
-  src="https://embed.learnprompting.org/embed?config=eyJ0b3BQIjoxLCJ0ZW1wZXJhdHVyZSI6MCwibWF4VG9rZW5zIjo0MSwib3V0cHV0IjoiU291dGggQWZyaWNhIGlzIGxhcmdlciB0aGFuIENvbmdvLiIsInByb21wdCI6IldoaWNoIGNvdW50cnkgaXMgbGFyZ2VyLCBDb25nbyBvciBTb3V0aCBBZnJpY2E%2FIiwibW9kZWwiOiJ0ZXh0LWRhdmluY2ktMDAzIn0%3D"
-  style={{
-    width: "100%",
-    height: "200px",
-    border: "0",
-    borderRadius: "4px",
-    overflow: "hidden",
-  }}
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>
-
-<Note>This example may not be accurate. We are working to revise it.</Note>
-
-<br />
-
-If we first ask <Term term="LLM">LLM</Term> to generate facts about Congo and South Africa, we can then use that information to answer the question correctly. In theory, this is similar to <Term term="CoT prompting">CoT prompting</Term>, since we are effectively getting the LLM to generate intermediate reasoning in the form of related facts.
-
-Let's start with the first step, _knowledge generation_. We can ask the <Term term="LLM">LLM</Term> to generate facts about Congo and South Africa:
+## حالة استخدامٍ أخرى
+لقد تمّ تقديم نهج توليد المعرفة لمهمّة مختلفةٍ تماماً، وهي الإجابة على الأسئلة الصعبة. لنأخذ بعين الاعتبار السؤال التالي، حيث يجيب عليه GPT-3 بشكلٍ خاطئ:
 
 <iframe
-  src="https://embed.learnprompting.org/embed?config=eyJ0b3BQIjoxLCJ0ZW1wZXJhdHVyZSI6MCwibWF4VG9rZW5zIjo0MSwib3V0cHV0IjoiU291dGggQWZyaWNhIGlzIHRoZSAyNXRoIGxhcmdlc3QgY291bnRyeSBpbiB0aGUgd29ybGQsIHdpdGggYW4gYXJlYSBvZiAxLDIyMSwwMzcgc3F1YXJlIGtpbG9tZXRlcnMgKDQ3MSw0NDUgc3F1YXJlIG1pbGVzKS4gQ29uZ28sIG9uIHRoZSBvdGhlciBoYW5kLCBpcyB0aGUgMTF0aCBsYXJnZXN0IGNvdW50cnkgaW4gdGhlIHdvcmxkLCB3aXRoIGFuIGFyZWEgb2YgMiwzNDQsODU4IHNxdWFyZSBraWxvbWV0ZXJzICg5MDUsNTY3IHNxdWFyZSBtaWxlcykuIFNvdXRoIEFmcmljYSBpcyBhbG1vc3QgaGFsZiB0aGUgc2l6ZSBvZiBDb25nbywgd2l0aCBhIHBvcHVsYXRpb24gb2YgNTcuNyBtaWxsaW9uIGNvbXBhcmVkIHRvIENvbmdvJ3MgcG9wdWxhdGlvbiBvZiA4NC4zIG1pbGxpb24uIFNvdXRoIEFmcmljYSBpcyB0aGUgbW9zdCBwb3B1bG91cyBjb3VudHJ5IGluIHRoZSByZWdpb24sIHdoaWxlIENvbmdvIGlzIHRoZSBzZWNvbmQgbW9zdCBwb3B1bG91cy4iLCJwcm9tcHQiOiJHZW5lcmF0ZSBzb21lIGtub3dsZWRnZSBhYm91dCB0aGUgc2l6ZXMgb2YgU291dGggQWZyaWNhIGFuZCBDb25nbzoiLCJtb2RlbCI6InRleHQtZGF2aW5jaS0wMDMifQ%3D%3D"
-  style={{
-    width: "100%",
-    height: "500px",
-    border: "0",
-    borderRadius: "4px",
-    overflow: "hidden",
-  }}
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    src="https://embed.learnprompting.org/embed?config=eyJ0b3BQIjoxLCJ0ZW1wZXJhdHVyZSI6MCwibWF4VG9rZW5zIjo0MSwib3V0cHV0IjoiU291dGggQWZyaWNhIGlzIGxhcmdlciB0aGFuIENvbmdvLiIsInByb21wdCI6IldoaWNoIGNvdW50cnkgaXMgbGFyZ2VyLCBDb25nbyBvciBTb3V0aCBBZnJpY2E%2FIiwibW9kZWwiOiJ0ZXh0LWRhdmluY2ktMDAzIn0%3D"
+    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
-<br />
+> ملاحظة: قد لا يكون هذا المثال دقيقاً. ونحن نعمل على مراجعة ذلك.
 
-Next, let's use that knowledge to answer the question correctly. This is the _knowledge integration_ step!
+إن طلبنا من نماذج اللغات الكبيرة تقديم حقائق حول كونغو وأفريقيا الجنوبية، ثمّ يمكننا استخدام تلك المعلومات للإجابة عن السؤال بالشكل الصحيح. ونظريًّا، هذا النهج مشابهٌ لتسلسل الأفكار ، لكوننا نطلب من نماذج اللغات الكبيرة أن تولّد المنطق الوسيط على شكل حقائق ذات صلة.
+
+لنبدأ مع الخطوة الأولى، توليد المعرفة. يمكننا أن نطلب من نماذج اللغات الكبيرة توليد حقائق حول كونغو وأفريقيا الجنوبية:
 
 <iframe
-  src="https://embed.learnprompting.org/embed?config=eyJ0b3BQIjoxLCJ0ZW1wZXJhdHVyZSI6MCwibWF4VG9rZW5zIjo0MSwib3V0cHV0IjoiQ29uZ28gaXMgbGFyZ2VyIHRoYW4gU291dGggQWZyaWNhLlxuIiwicHJvbXB0IjoiU291dGggQWZyaWNhIGlzIHRoZSAyNXRoIGxhcmdlc3QgY291bnRyeSBpbiB0aGUgd29ybGQsIHdpdGggYW4gYXJlYSBvZiAxLDIyMSwwMzcgc3F1YXJlIGtpbG9tZXRlcnMgKDQ3MSw0NDUgc3F1YXJlIG1pbGVzKS4gQ29uZ28sIG9uIHRoZSBvdGhlciBoYW5kLCBpcyB0aGUgMTF0aCBsYXJnZXN0IGNvdW50cnkgaW4gdGhlIHdvcmxkLCB3aXRoIGFuIGFyZWEgb2YgMiwzNDQsODU4IHNxdWFyZSBraWxvbWV0ZXJzICg5MDUsNTY3IHNxdWFyZSBtaWxlcykuIFNvdXRoIEFmcmljYSBpcyBhbG1vc3QgaGFsZiB0aGUgc2l6ZSBvZiBDb25nbywgd2l0aCBhIHBvcHVsYXRpb24gb2YgNTcuNyBtaWxsaW9uIGNvbXBhcmVkIHRvIENvbmdvJ3MgcG9wdWxhdGlvbiBvZiA4NC4zIG1pbGxpb24uIFNvdXRoIEFmcmljYSBpcyB0aGUgbW9zdCBwb3B1bG91cyBjb3VudHJ5IGluIHRoZSByZWdpb24sIHdoaWxlIENvbmdvIGlzIHRoZSBzZWNvbmQgbW9zdCBwb3B1bG91cy5cblxuV2hpY2ggY291bnRyeSBpcyBsYXJnZXIsIENvbmdvIG9yIFNvdXRoIEFmcmljYT8iLCJtb2RlbCI6InRleHQtZGF2aW5jaS0wMDMifQ%3D%3D"
-  style={{
-    width: "100%",
-    height: "500px",
-    border: "0",
-    borderRadius: "4px",
-    overflow: "hidden",
-  }}
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    src="https://embed.learnprompting.org/embed?config=eyJ0b3BQIjoxLCJ0ZW1wZXJhdHVyZSI6MCwibWF4VG9rZW5zIjo0MSwib3V0cHV0IjoiU291dGggQWZyaWNhIGlzIHRoZSAyNXRoIGxhcmdlc3QgY291bnRyeSBpbiB0aGUgd29ybGQsIHdpdGggYW4gYXJlYSBvZiAxLDIyMSwwMzcgc3F1YXJlIGtpbG9tZXRlcnMgKDQ3MSw0NDUgc3F1YXJlIG1pbGVzKS4gQ29uZ28sIG9uIHRoZSBvdGhlciBoYW5kLCBpcyB0aGUgMTF0aCBsYXJnZXN0IGNvdW50cnkgaW4gdGhlIHdvcmxkLCB3aXRoIGFuIGFyZWEgb2YgMiwzNDQsODU4IHNxdWFyZSBraWxvbWV0ZXJzICg5MDUsNTY3IHNxdWFyZSBtaWxlcykuIFNvdXRoIEFmcmljYSBpcyBhbG1vc3QgaGFsZiB0aGUgc2l6ZSBvZiBDb25nbywgd2l0aCBhIHBvcHVsYXRpb24gb2YgNTcuNyBtaWxsaW9uIGNvbXBhcmVkIHRvIENvbmdvJ3MgcG9wdWxhdGlvbiBvZiA4NC4zIG1pbGxpb24uIFNvdXRoIEFmcmljYSBpcyB0aGUgbW9zdCBwb3B1bG91cyBjb3VudHJ5IGluIHRoZSByZWdpb24sIHdoaWxlIENvbmdvIGlzIHRoZSBzZWNvbmQgbW9zdCBwb3B1bG91cy4iLCJwcm9tcHQiOiJHZW5lcmF0ZSBzb21lIGtub3dsZWRnZSBhYm91dCB0aGUgc2l6ZXMgb2YgU291dGggQWZyaWNhIGFuZCBDb25nbzoiLCJtb2RlbCI6InRleHQtZGF2aW5jaS0wMDMifQ%3D%3D"
+    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
-## A more technical discussion
+بعدها، لنستخدم هذه المعلومات للإجابة عن الأسئلة بشكلٍ صحيح. وهذه هي خطوة التكامل المعرفيّ.
 
-Although the above use case was similar to the way generated knowledge was originally introduced, it is not exactly the same. The below content covers the more technical context in which the approach was introduced. It follows the two intermediate steps (knowledge generation and knowledge integration) pattern that we saw above.
+<iframe
+    src="https://embed.learnprompting.org/embed?config=eyJ0b3BQIjoxLCJ0ZW1wZXJhdHVyZSI6MCwibWF4VG9rZW5zIjo0MSwib3V0cHV0IjoiQ29uZ28gaXMgbGFyZ2VyIHRoYW4gU291dGggQWZyaWNhLlxuIiwicHJvbXB0IjoiU291dGggQWZyaWNhIGlzIHRoZSAyNXRoIGxhcmdlc3QgY291bnRyeSBpbiB0aGUgd29ybGQsIHdpdGggYW4gYXJlYSBvZiAxLDIyMSwwMzcgc3F1YXJlIGtpbG9tZXRlcnMgKDQ3MSw0NDUgc3F1YXJlIG1pbGVzKS4gQ29uZ28sIG9uIHRoZSBvdGhlciBoYW5kLCBpcyB0aGUgMTF0aCBsYXJnZXN0IGNvdW50cnkgaW4gdGhlIHdvcmxkLCB3aXRoIGFuIGFyZWEgb2YgMiwzNDQsODU4IHNxdWFyZSBraWxvbWV0ZXJzICg5MDUsNTY3IHNxdWFyZSBtaWxlcykuIFNvdXRoIEFmcmljYSBpcyBhbG1vc3QgaGFsZiB0aGUgc2l6ZSBvZiBDb25nbywgd2l0aCBhIHBvcHVsYXRpb24gb2YgNTcuNyBtaWxsaW9uIGNvbXBhcmVkIHRvIENvbmdvJ3MgcG9wdWxhdGlvbiBvZiA4NC4zIG1pbGxpb24uIFNvdXRoIEFmcmljYSBpcyB0aGUgbW9zdCBwb3B1bG91cyBjb3VudHJ5IGluIHRoZSByZWdpb24sIHdoaWxlIENvbmdvIGlzIHRoZSBzZWNvbmQgbW9zdCBwb3B1bG91cy5cblxuV2hpY2ggY291bnRyeSBpcyBsYXJnZXIsIENvbmdvIG9yIFNvdXRoIEFmcmljYT8iLCJtb2RlbCI6InRleHQtZGF2aW5jaS0wMDMifQ%3D%3D"
+    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/intermediate/knowledge_generation.webp"
-    width={1018}
-    height={242}
-    style={{ width: "750px", margin: "auto" }}
-  />
-</div>
+## مناقشةٌ أكثر تقنيّة
 
-<div style={{ textAlign: "center" }}>Generated Knowledge (Liu et al.)</div>
+وعلى الرّغم من أنّ الحالة السابقة كانت مشابهةً للطريقة التي قدمنا بها المعرفة المولّدة مسبقاً، إلّا أنها ليست مطابقةً لها تمامًا. وفي الفقرة القادمة سنغطي السياق الأكثر تقنية لتقديم هذا النهج. وهو يتبع نمط الخطوتين الوسيطتين (توليد المعرفة وتكامل المعرفة) التي رأيناها سابقاً.
 
-### Knowledge Generation
+![تقنية توليد المعرفة وتكاملها](https://learnprompting.org/assets/images/knowledge_generation-197796038929771b12d9636d5328f69a.webp)
 
-In the knowledge generation step, the <Term term="LLM">LLM</Term> is asked to generate a set of facts
-about the **question**. The LLM is prompted in few-shot fashion as seen below.
-M different completions are generated using this same prompt (similar to the self-consistency approach).
+### المعرفة المولّدة
+في خطوة توليد المعرفة، سألنا نماذج اللغات الكبيرة لتوليد مجموعةٍ من الحقائق حول السؤال. ثمّ يطلب منها بأسلوب أوامر عديدة الأمثلة كما هو موضح أدناه. ثم يتم إنشاء عمليات إكمال مختلفة باستخدام نفس التعليمة (على غرار نهج الاتساق الذاتي).
 
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/intermediate/gen_k_p1.webp"
-    width={1122}
-    height={428}
-    style={{ width: "500px", margin: "auto" }}
-  />
-</div>
+![المعرفة المولدة](https://learnprompting.org/assets/images/gen_k_p1-d66e2a37226275a4e6cbd4e8ec46feca.webp)
 
-<div style={{ textAlign: "center" }}>
-  Generated Knowledge Example (Liu et al.)
-</div>
+### التكامل المعرفيّ
+بعدها، نولّد أسئلة "تعزيز المعرفة" ونأمر نماذج اللغات الكبيرة بذلك للحصول على الإجابة الأخيرة. والطريقة الأسهل لفهم ذلك هي إعطاء مثالٍ عن الموضوع.
 
-### Knowledge Integration
+لنفترض أنّنا نبحث عن إجابةٍ للسؤال التالي "معطم حيوانات الكنغر تمتلك أطرافًا <مقنّعة>". ولنفترض أيضاً أنّنا في خطوة توليد المعرفة (المعلومات) ولّدنا خطوتين في أمرٍ واحد (M=2):
+* المعلومة1: حيوانات الكنغر هي حيواناتٌ جرابيّة تعيش في أستراليا.
+* المعلومة2: حيوانات الكنغر هي حيواناتٌ جرابيّة تملك خمسة أطراف.
 
-Next, we generate "knowledge augmented" questions and prompt the <Term term="LLM">LLM</Term> with them
-to get final answers. The easiest way to understand this is to go through an example.
+الآن، نقوم بربط كل معلومةٍ مع السؤال لإنشاء أسئلة معرفية إضافية:
+* سؤال تعزيز المعرفة1: لدى معظم حيوانات الكنغر أطراف <مقنّعة>. والكنغر هي حيوانات جرابية تعيش في أستراليا.
+سؤال تعزيز المعرفة 2: لدى معظم حيوانات الكنغر أطراف <مقنّعة>. الكنغر حيوان جرابي له 5 أطراف.
+ثمّ نأمر نماذج اللغات الكبيرة بأسئلة تعزيز المعرفة للحصول على اقتراحات الإجابة النهائية:
+* الإجابة1: 4
+* الإجابة2: 5
 
-Let's assume we are attempting to answer the **question**
-"Most Kangaroos have \<mask\> limbs". Assume that at the knowledge generation step
-we generated 2 knowledges (M=2):
+نختار الإجابة ذات الاحتمالية الأعلى كإجابة نهائية. يمكن أن يكون الاحتمال الأعلى هو احتمال softmax لرمز الإجابة، أو احتمالية التسجيل لرمز (أو رموز) الإجابة.
 
-- Knowledge 1: `Kangaroos are marsupials that live in Australia.`
+## نماذج تعزيز اللغة - سرديًّا
 
-- Knowledge 2: `Kangaroos are marsupials that have 5 limbs.`
+نهج تعزيز السّرد مشابهٌ لتوليد المعرفة (وتقريباً مطابقٌ له). ولكن، أقلّ تعقيداً من التطبيق الرسميّ لتوليد المعرفة.
 
-Now, we concatenate each knowledge with the question to generate knowledge augmented questions:
+![نماذج تعزيز اللغة]
+ (https://learnprompting.org/assets/images/recitation-671b162f9b90e2dabfa1c00a2b5e3e66.webp)
 
-- Knowledge Augmented Question 1: `Most Kangaroos have <mask> limbs. Kangaroos are marsupials that live in Australia.`
+والهدف هنا تقديم الأوامر عديدة الأمثلة لنماذج اللغات الكبيرة لتوليد المعرفة و الإجابة في نفس الخطوة. إنّ حقيقة أنه يقرأ/يولد المعرفة ويجيب على السؤال في نفس الخطوة هو الفرق الرئيسي عن نهج المعرفة المولَّدة.
 
-- Knowledge Augmented Question 2: `Most Kangaroos have <mask> limbs. Kangaroos are marsupials that have 5 limbs.`
+للتكرار، هذا النهج يدفع النموذج بنماذج متعدّدة مثل (سؤال، سرد، إجابة)، ثم يطرح السؤال. لاحظ المؤلفون أنه يمكن دمج هذا النهج مع الاتساق الذاتي أو مسارات الإنجاز المتعددة.
 
-We then prompt the LLM with these knowledge augmented questions and get the final answer proposals:
-
-- Answer 1: `4`
-
-- Answer 2: `5`
-
-We select the answer with the highest probability as the final answer. The
-highest probability could be the softmax probability of the answer token, or the
-log probability of the answer token(s).
-
-## Recitation-Augmented Language Models
-
-The recitation-augmented(@sun2022recitationaugmented) approach it is similar to generated knowledge (basically the same). However, is much less complex than the formal implementation of generated knowledge.
-
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/intermediate/recitation.webp"
-    width={610}
-    height={686}
-    style={{ width: "250px", margin: "auto" }}
-  />
-</div>
-
-The idea here is to few shot prompt the LLM to generate information _and_ answer in the _same_ step. The fact that it is reciting/generating knowledge and answering the question in the same step is the main difference from the generated knowledge approach.
-
-To reiterate, this approach prompts the model with multiple (question, recitation, answer) exemplars, then asks the question. The authors note that this approach can be combined with self consistency or multiple completion paths.
-
-## Notes
-
-- Generated knowledge shows improvements on various commonsense datasets.
-
-- The knowledge corresponding to the selected answer is called the _selected knowledge_.
-
-- In practice, you could take the most frequently occurring answer as the final one.
+## ملاحظات
+* المعرفة المولّدة تظهر تحسيناتٍ على مجموعة متنوعة من مجموعات البيانات الشائعة.
+* المعرفة المتوافقة مع الإجابة المختارة تسمى المعرفة المحددة.
+* وأثناء الممارسة، يمكنك اختيار الإجابة الأكثر تكرارًا كإجابة نهائية.

@@ -1,25 +1,36 @@
-export const metadata = { sidebar_position: 3, title: "🟢 Prompt Debiasing" };
+export const metadata = {
+  sidebar_position: 40,
+  title: "🟢 إزالة انحياز الأوامر",
+};
 
-# 🟢 Prompt Debiasing
+# إزالة انحياز الأوامر
 
-This page covers a few simple techniques to debias your prompts.
+تغطّي هذه الصفحة مجموعةً من التقنيّات البسيطة لإزالة انحياز التعليمات الخاصة بك.
 
-## Exemplar Debiasing
+## مثال عن إزالة الانحياز
 
-Depending on their distribution and order within the prompt, <Term term="exemplars"> exemplars </Term> may bias LLM outputs(@si2022prompting). This is discussed to some extent in the [What's in a Prompt](https://learnprompting.org/docs/intermediate/whats_in_a_prompt) page.
+يمكن أن يكون خرج نماذج اللغات الكبيرة متحيّزاً اعتمادًا على توزيع الأسئلة وترتيبها ضمن التعليمة. تمت مناقشة هذا إلى حد ما في صفحة [ماذا يوجد في صفحة التعليمة](https://learnprompting.org/docs/intermediate/whats_in_a_prompt).
 
-### Distribution
+# التوزيع
 
-When discussing the distribution of exemplars within a prompt, we are referring to
-how many exemplars from different classes are present. For example, if you are
-performing binary <Term term="sentiment analysis"> sentiment analysis </Term> (positive or negative) on tweets, and you
-provide 3 positive tweets and 1 negative tweet as exemplars, then you have a
-distribution of 3:1. Since the distribution is skewed towards positive tweets,
-the model will be biased towards predicting positive tweets.
+عند مناقشة توزيع الأمثلة في التعليمة، نحن نشير إلى عدد الأمثلة الموجودة من فئاتٍ مختلفة. كمثال، إن كنتَ تجري تحليلاً ثنائيًّا للمشاعر (إيجابي أو سلبي) على التغريدات، وقدمت 3 تغريدات إيجابية وتغريدة سلبية واحدة كأمثلة، فسيكون لديك توزيع بنسبة 3:1. وبما أن التوزيع يميل نحو التغريدات الإيجابية، فإن النموذج سيكون متحيزًا نحو التنبؤ بالتغريدات الإيجابية.
 
-#### Worse:
+***سيّئ***
+```
+س: التغريدة: "يا له من يومٍ جميل!"
+ج: إيجابيّ
 
-```text
+س: التغريدة: "أحبُّ وجود الجيوب في البناطيل."
+ج: إيجابيّ
+
+س: التغريدة: "أحبّ الـhotpockets"
+ج: إيجابيّ
+
+س: التغريدة: "أكره هذا الدّرس"
+ج: سلبيّ
+```
+بالإنجليزية:
+```
 Q: Tweet: "What a beautiful day!"
 A: positive
 
@@ -33,11 +44,24 @@ Q: Tweet: "I hate this class"
 A: negative
 ```
 
-#### Better:
+***أفضل***
+اعتماد أمثلةٍ متساوية تعطي توزيعاً أفضل.
 
-Having an even exemplar distribution is better.
+```
+س: التغريدة: "يا له من يومٍ جميل!"
+ج: إيجابيّ
 
-```text
+س: التغريدة: "أحبُّ وجود الجيوب في البناطيل."
+ج: إيجابيّ
+
+س: التغريدة: "أكره البيتزا"
+ج: سلبيّ
+
+س: التغريدة: "أكره هذا الدّرس"
+ج: سلبيّ
+```
+بالإنجليزية:
+```
 Q: Tweet: "What a beautiful day!"
 A: positive
 
@@ -51,15 +75,26 @@ Q: Tweet: "I hate this class"
 A: negative
 ```
 
-### Order
+## الترتيب
 
-The order of <Term term="exemplars"> exemplars </Term> can also cause bias. For example, a prompt that has randomly ordered exemplars
-will often perform better than the above prompt, which contains positive tweets first,
-followed by negative tweets.
+يمكن أن يسبّب ترتيب الأمثلة بشكلٍ معين تحيّزاً للخرج. كمثال، غالبًا ما يكون خرج التعليمة التي تحتوي على نماذج مرتبة بشكل عشوائي أفضل من التعليمة أعلاه، والتي تحتوي على تغريدات إيجابية أولاً، تليها تغريدات سلبية.
 
-#### Best:
+***الأفضل***
+```
+س: التغريدة: "أكره هذا الدّرس"
+ج: سلبيّ
 
-```text
+س: التغريدة: "يا له من يومٍ جميل!"
+ج: إيجابيّ
+
+س: التغريدة: "أكره البيتزا"
+ج: سلبيّ
+
+س: التغريدة: "أحبُّ وجود الجيوب في البناطيل."
+ج: إيجابيّ
+```
+بالإنجليزية:
+```
 Q: Tweet: "I hate this class"
 A: negative
 
@@ -73,16 +108,12 @@ Q: Tweet: "I love pockets on jeans"
 A: positive
 ```
 
-## Instruction Debiasing
+## إزالة انحياز التعليمات
 
-We can explicitly prompt GPT-3 to be unbiased, by including an instruction
-to do so in the prompt. In particular, Si et al.(@si2022prompting) use the following
-instruction when experimenting with BBQ(@parrish2021bbq), a bias benchmark.
+يمكننا أن نطالب GPT-3 بشكلٍ صريحٍ بأن يكون غير متحيز، من خلال تضمين تعليمات للقيام بذلك في التعليمة الأساسية. وخاصةً، يستخدم Si et al.1 التعليمات التالية عند تجربة BBQ2، وهو معيار التحيز.
 
-```text
-We should treat people from different socioeconomic statuses, sexual orientations, religions, races, physical appearances, nationalities, gender identities, disabilities, and ages equally. When we do not have sufficient information, we should choose the unknown option, rather than making assumptions based on our stereotypes.
-```
+يجب أن نعامل الأشخاص من مختلف الأوضاع الاجتماعية والاقتصادية، والتوجهات الجنسية، والأديان، والأعراق، والمظاهر الجسدية، والجنسيات، والهويات الجنسية، والإعاقات، والأعمار على قدم المساواة. وعندما لا يكون لدينا معلومات كافية، ينبغي لنا أن نختار الخيار المجهول، بدلا من وضع افتراضات بناء على الصور النمطية لدينا.
 
-## Notes
+## ملاحظات
 
-See more on debiasing in the Calibration section.
+تعرّف أكثر على التحيّز في قسم المعايرة.

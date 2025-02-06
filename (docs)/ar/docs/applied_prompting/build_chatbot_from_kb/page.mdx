@@ -1,262 +1,246 @@
 export const metadata = {
   sidebar_position: 40,
-  title: "🟢 Chatbot + Knowledge Base",
+  title: "🟢 روبوت دردشة مع قاعدة معرفة ",
 };
 
-# 🟢 Chatbot + Knowledge Base
+# روبوت دردشة مع قاعدة معرفة 
 
-Recent advancements in large language models (LLMs) such as [GPT-3](https://arxiv.org/abs/2005.14165) and [ChatGPT](https://chat.openai.com/chat) have created a lot of buzz in the tech industry. These models are incredibly powerful for content generation, but they also have some downsides such as bias(@nadeem-etal-2021-stereoset) and hallucinations(@Ji_2022). One area in which these LLMs can be particularly useful is chatbot development.
+تطورات حديثة في نماذج اللغة الكبيرة (LLMs) مثل GPT-3 و ChatGPT أحدثت الكثير من الجلبة في مجال التكنولوجيا. هذه النماذج قوية للغاية في إنتاج المحتوى، ولكن لديها بعض السلبيات مثل التحيز والهلوسة. واحدة من المجالات التي يمكن أن تكون فيها هذه النماذج مفيدة بشكل خاص هي تطوير روبوتات الدردشة.
 
-## Intent-Based Chatbots
+## روبوتات الدردشة المعتمدة على هدف
 
-Traditional chatbots are typically intent-based, meaning they are designed to respond to specific user intents. Each intent is made up of a set of sample questions and an associated response. For example, the intent “Weather” might include sample questions like “What’s the weather today?” or “Will it rain today?” and a response like “Today will be sunny.” When a user asks a question, the chatbot matches it to the intent with the most similar sample questions and returns the associated response.
+عادةً ما تكون روبوتات الدردشة التقليدية معتمدة على هدف، مما يعني أنها مصممة للرد على نوايا المستخدم المحددة. يتكون كل مقصد من مجموعة من عينات الأسئلة والرد المرتبط بها. على سبيل المثال، قد يشمل مقصد "الطقس" أسئلة مثل "ما هو الطقس اليوم؟" أو "هل ستمطر اليوم؟" وردًا مثل "اليوم سيكون مشمسًا." عندما يطرح المستخدم سؤالًا، يقوم روبوت الدردشة بمطابقته مع المقصد الذي يحتوي على عينات الأسئلة الأكثر تشابهًا ويعيد الرد المرتبط بها.
 
-<div style={{ textAlign: "left" }}>
-  <Image
-    src="/docs/assets/basic_applications/chatbot_from_kb_intents.webp"
-    width={2966}
-    height={1676}
-    style={{ width: "700px", margin: "0" }}
-  />
+[How a traditional intent-based chatbot works. Image by the author](https://learnprompting.org/assets/images/chatbot_from_kb_intents-251bc10434c53c268ea9f0ec6aa1a3fb.webp)
 
-  <p style={{ color: "gray", fontSize: "12px", fontStyle: "italic" }}>
-    How a traditional intent-based chatbot works. Image by the author.
-  </p>
-</div>
+ومع ذلك، تواجه روبوتات الدردشة المعتمدة على المقصد مجموعة من المشاكل الخاصة بها. أحد المشاكل هي أنها تتطلب عددًا كبيرًا من الأمثلة لإعطاء إجابات محددة. على سبيل المثال، قد يتوصل تعبير المستخدم مثل "لا يمكنني تسجيل الدخول" أو "نسيت كلمة المرور" أو "خطأ في تسجيل الدخول" إلى إجابات مختلفة وبالتالي مقاصد مختلفة، على الرغم من أنها جميعًا متشابهة تمامًا.
 
-However, intent-based chatbots have their own set of problems. One issue is that they require a large number of specific intents to give specific answers. For example, user utterances like “I can’t login”, “I forgot my password”, or “Login error” may need three different answers and therefore three different intents, even though they are all quite similar.
+## كيف يمكن أن يساعد GPT-3
 
-## How GPT-3 Can Help
+هنا يمكن أن يكون GPT-3 مفيدًا بشكل خاص. بدلاً من وجود العديد من المقاصد المحددة، يمكن أن يكون كل مقصد موسع أكثر ومرتبط بملف [قاعدة المعرفة](https://en.wikipedia.org/wiki/Knowledge_base) الخاصة بك. قاعدة المعرفة (KB) هي المعلومات المخزنة كبيانات منظمة وغير منظمة، جاهزة للاستخدام في التحليل أو الاستدلال. قاعدة المعرفة الخاصة بك قد تتكون من سلسلة من الملفات التي تشرح كيفية استخدام منتجاتك.
 
-This is where GPT-3 can be particularly useful. Instead of having many very specific intents, each intent can be broader and leverage a document from your [Knowledge Base](https://en.wikipedia.org/wiki/Knowledge_base). A Knowledge Base (KB) is information stored as structured and unstructured data, ready to be used for analysis or inference. Your KB may be composed of a series of documents explaining how to use your products.
+بهذه الطريقة، يتم ربط كل مقصد بملف بدلاً من قائمة من الأسئلة والأجوبة المحددة، على سبيل المثال، مقصد واحد لـ "مشاكل تسجيل الدخول"، مقصد واحد لـ "كيفية الاشتراك"، إلخ. عندما يطرح المستخدم سؤالًا عن تسجيل الدخول، يمكننا تمرير ملف "مشاكل تسجيل الدخول" إلى GPT-3 على شكل معلومات سياقية وتوليد إجابة محددة لسؤال المستخدم.
 
-This way, each intent is associated with a document instead of a list of questions and a specific answer, e.g. one intent for “login problems,” one intent for “how to subscribe,” etc. When a user asks a question about login, we can pass the “login problems” document to GPT-3 as context information and generate a specific response to the user’s question.
+تقلل هذه الطريقة من عدد المقاصد التي يجب إدارتها وتسمح بإجابات أفضل تتكيف مع كل سؤال. بالإضافة إلى ذلك، إذا تضمن الملف المرتبط بالمقصد عمليات مختلفة (على سبيل المثال، عملية لـ "تسجيل الدخول إلى الموقع الإلكتروني" وعملية أخرى لـ "تسجيل الدخول إلى تطبيق الجوال")، يمكن لـ GPT-3 أن يطلب توضيحًا من المستخدم قبل إعطاء الإجابة النهائية.
 
-<div style={{ textAlign: "left" }}>
-  <Image
-    src="/docs/assets/basic_applications/chatbot_from_kb_gpt3.webp"
-    width={2962}
-    height={1672}
-    style={{ width: "700px", margin: "0" }}
-  />
+## لماذا لا يمكننا تمرير كامل قاعدة المعرفة إلى GPT-3؟
 
-  <p style={{ color: "gray", fontSize: "12px", fontStyle: "italic" }}>
-    How a chatbot leveraging GPT-3 could work. Image by the author.
-  </p>
-</div>
+حاليًا، تحتوي نماذج اللغة الكبيرة مثل GPT-3 على حد معين لحجم البيانات النصية يبلغ حوالي 4 آلاف رمز (لنموذج `text-davinci-003`)، وهو حجم كبير ولكنه غير كافٍ لإدخال قاعدة المعرفة بأكملها في تعليمة واحدة. يوجد حد معين لحجم البيانات النصية في هذه النماذج لأسباب حسابية، حيث إن إنتاج النص يتطلب عددًا من الحسابات التي تزداد بسرعة مع زيادة حجم البيانات.
 
-This approach reduces the number of intents that need to be managed and allows for answers that are better adapted to each question. Additionally, if the document associated with the intent describes different processes (e.g. a process for “login on the website” and another for “login on the mobile app”), GPT-3 can automatically ask the user for clarification before giving the final answer.
+قد لا تواجه النماذج المستقبلية هذه القيود، بينما تحتفظ بقدرات توليد النصوص. ومع ذلك، في الوقت الحالي، نحتاج إلى إيجاد حلول للتغلب على هذه المشكلة.
 
-## Why Can’t We Pass the Whole KB to GPT-3?
+## كيف يمكن أن يعمل روبوت الدردشة باستخدام GPT-3؟
 
-Today, LLMs like GPT-3 have a maximum prompt size of about 4k tokens (for the [`text-davinci-003`](https://beta.openai.com/docs/models/gpt-3) model), which is a lot but not enough for feeding a whole knowledge base into a single prompt. The LLMs have a maximum prompt size for computational reasons, as generating text with them involves a number of computations which quickly increases as the prompt size increases.
+يمكن أن يتم تطوير روبوت الدردشة وفق خطوتين:
 
-Future LLMs may not have this limitation while retaining the text generation capabilities. However, for now, we need to design a solution around it.
+* الخطوة الأولى، نحتاج إلى اختيار المقصد المناسب لسؤال المستخدم، أي نحتاج إلى استرجاع الملف المناسب من قاعدة المعرفة.
+* ثم، بمجرد أن نحصل على الملف المناسب، يمكننا استخدام GPT-3 لإعطاء إجابة مناسبة للمستخدم. وللقيام بذلك، سنحتاج إلى صياغة تعليمة جيدة.
 
-## How a Chatbot With GPT-3 Could Work
+الخطوة الأولى تُحلّ بشكل أساسي عن طريق [البحث الدلالي](https://en.wikipedia.org/wiki/Semantic_search). يمكننا استخدام نماذج مدربة مسبقًا من مكتبة `sentence-transformers` وتعيين درجة لكل ملف. الملف ذو الدرجة الأعلى هو الذي سيُولّد إجابة روبوت الدردشة.
 
-So, the chatbot pipeline could be made of two steps:
+## توليد الإجابات باستخدام GPT-3
 
-1. First, we need to select the appropriate intent for the user question, i.e. we need to retrieve the right document from our knowledge base.
-2. Then, once we have the right document, we can leverage GPT-3 to generate an appropriate answer for the user. In doing so, we’ll need to craft a good prompt.
+بمجرد أن نحصل على الملف المناسب، سنحتاج إلى صياغة تعليمة جيدة لاستخدامه مع GPT-3 لتوليد الإجابة. في التجارب التالية، سنستخدم دائمًا نموذج text-davinci-003 مع درجة `0.7`.
 
-The first step is essentially solved by [semantic search](https://en.wikipedia.org/wiki/Semantic_search). We can use pre-trained models from the [`sentence-transformers`](https://www.sbert.net/examples/applications/semantic-search/README.html) library and easily assign a score to each document. The document with the highest score is the one that will be used to generate the chatbot answer.
+لصياغة التعليمة، سنجرب استخدام:
 
-<div style={{ textAlign: "left" }}>
-  <Image
-    src="/docs/assets/basic_applications/chatbot_from_kb_gpt3_organized.webp"
-    width={2960}
-    height={1668}
-    style={{ width: "700px", margin: "0" }}
-  />
+* ** تقنية [كتابة الأوامر بتحديد الأدوار](https://learnprompting.org/docs/basics/roles)**: وهي تقنية تعطي دورًا محددًا للذكاء الاصطناعي.
+* **معلومات قاعدة المعرفة ذات الصلة**، أي الوثيقة المُسترجعة في خطوة البحث الدلالي.
+* **آخر رسائل تم تبادلها بين المستخدم وروبوت الدردشة**. هذه مفيدة للرسائل التي يرسلها المستخدم ولا يتم تحديد السياق بأكمله. سنرى مثالًا على ذلك لاحقًا. يمكنك الاطلاع على [هذا المثال](https://learnprompting.org/docs/applied_prompting/build_chatgpt) لمعرفة كيفية إدارة المحادثات مع GPT-3.
+* أخيرًا، **سؤال المستخدم**.
 
-  <p style={{ color: "gray", fontSize: "12px", fontStyle: "italic" }}>
-    How a chatbot leveraging GPT-3 could work. GPT-3 could be used to generate
-    an appropriate answer leveraging the information from knowledge base
-    documents. Image by the author.
-  </p>
-</div>
+لنبدأ تعليماتنا باستخدام تقنية كتابة الأوامر بتحديد الأدوار.
+```
+باعتبارك روبوت دردشة متقدم يسمى Skippy، فإن هدفك الأساسي هو مساعدة المستخدمين بأفضل ما لديك.
+```
+بالإنجليزية:
+```
+As an advanced chatbot named Skippy, your primary goal is to assist users to the best of your ability.
+```
+بصفتك روبوت دردشة متطوّر يُدعى Skippy، هدفك الأساسي هو مساعدة المستخدمين قدر الإمكان.
+ثم، لنفترض أن خطوة البحث الدلالي استخرجت الملف التالي من قاعدة المعرفة لدينا. جميع الملفات تصف كيفية استخدام فيديوغرام، وهو تطبيق وهمي مشابه لإنستغرام، ولكنه مخصص للفيديو فقط.
 
-## Generating Answers with GPT-3
+يمكننا إضافة محتواه داخل التعليمات بهذه الطريقة.
+```
+بصفتك روبوت دردشة متطوّر يُدعى Skippy، هدفك الأساسي هو مساعدة المستخدمين قدر الإمكان.
 
-Once we have the right document, we’ll need to create a good prompt to be used with GPT-3 to generate the answer. In the following experiments, we’ll always use the `text-davinci-003` model with a temperature of `0.7`.
+بداية السياق
+سجل الدخول إلى فيديوغرام من الموقع الإلكتروني
+1. افتح متصفح الويب الخاص بك وانتقل إلى موقع فيديوغرام.
+2. انقر على زر "تسجيل الدخول" الموجود في الزاوية اليمنى العلوية من الصفحة.
+3. في صفحة تسجيل الدخول، ادخل اسم المستخدم وكلمة المرور الخاصة بك.
+4. بمجرد إدخال بياناتك، انقر على زر "تسجيل الدخول".
+5. الآن قد سجلت الدخول إلى حساب فيديوغرام الخاص بك.
 
-To craft the prompt, we’ll experiment using:
+تسجيل الدخول إلى فيديوغرام من التطبيق 
+1. افتح تطبيق فيديوغرام على جهازك المحمول.
+2. على الصفحة الرئيسية، اضغط على زر "تسجيل الدخول" الموجود في الزاوية اليمنى السفلية.
+3. في صفحة تسجيل الدخول، ادخل اسم المستخدم وكلمة المرور الخاصة بفيديوغرام.
+4. بمجرد إدخال بياناتك، اضغط على زر "تسجيل الدخول".
+5. الآن قد سجلت الدخول إلى حساب فيديوغرام الخاص بك.
+نهاية السياق
+```
+بالإنجليزية:
+```
+As an advanced chatbot named Skippy, your primary goal is to assist users to the best of your ability.
 
-- [**Role-prompting**](https://learnprompting.org/docs/basics/roles): a heuristic technique that assigns a specific role to the AI.
-- **Relevant KB information**, i.e. the document retrieved in the semantic search step.
-- **The last messages exchanged between the user and the chatbot**. These are useful for messages sent by the user where the whole context is not specified. We’ll see an example of it later. Have a look at [this example](https://learnprompting.org/docs/applied_prompting/build_chatgpt) to see how to manage conversations with GPT-3.
-- Last, **the user question**.
+START CONTEXT
+Login to VideoGram from Website
+1. Open your web browser and go to the VideoGram website.
+2. Click on the “Login” button located in the top right corner of the page.
+3. On the login page, enter your VideoGram username and password.
+4. Once you have entered your credentials, click on the “Login” button.
+5. You should now be logged in to your VideoGram account.
 
-<div style={{ textAlign: "left" }}>
-  <Image
-    src="/docs/assets/basic_applications/chatbot_from_kb_prompt.webp"
-    width={2960}
-    height={1664}
-    style={{ width: "700px", margin: "0" }}
-  />
+Login to VideoGram from Mobile App
+1. Open the VideoGram app on your mobile device.
+2. On the main page, tap the “Login” button located in the bottom right corner.
+3. On the login page, enter your VideoGram username and password.
+4. Once you have entered your credentials, tap the “Login” button.
+5. You should now be logged in to your VideoGram account.
+END CONTEXT
+```
 
-  <p style={{ color: "gray", fontSize: "12px", fontStyle: "italic" }}>
-    Information used to craft our GPT-3 prompt. Image by the author.
-  </p>
-</div>
+أخيرًا، نحتاج إلى إضافة المحادثة وسؤال المستخدم في نهاية التعليمات، مثل المثال التالي.
 
-Let’s start our prompt using the <span className="yellow-highlight">role-prompting</span> technique.
+```
+بصفتك روبوت دردشة متطوّر يُدعى Skippy، هدفك الأساسي هو مساعدة المستخدمين قدر الإمكان.
 
-<pre>
-  <span className="yellow-highlight">
-    As an advanced chatbot named Skippy, your primary goal is to assist users to
-    the best of your ability.
-  </span>
-</pre>
+بداية السياق
+تسجيل الدخول إلى فيديوغرام من الموقع الإلكتروني
+1. افتح متصفح الويب الخاص بك وانتقل إلى موقع فيديوغرام.
+2. انقر على زر "تسجيل الدخول" الموجود في الزاوية اليمنى العلوية من الصفحة.
+3. في صفحة تسجيل الدخول، ادخل اسم المستخدم وكلمة المرور الخاصة بفيديوغرام.
+4. بمجرد إدخال بياناتك، انقر على زر "تسجيل الدخول".
+5. الآن قد سجلت الدخول إلى حساب فيديوغرام الخاص بك.
 
-Then, suppose the semantic search step extracts the following document from our knowledge base. All the documents describe how the VideoGram product works, which is an imaginary product similar to Instagram, but only for videos.
+تسجيل الدخول إلى فيديوغرام من التطبيق 
+1. افتح تطبيق فيديوغرام على جهازك المحمول.
+2. على الصفحة الرئيسية، اضغط على زر "تسجيل الدخول" الموجود في الزاوية اليمنى السفلية.
+3. في صفحة تسجيل الدخول، ادخل اسم المستخدم وكلمة المرور الخاصة بفيديوغرام.
+4. بمجرد إدخال بياناتك، اضغط على زر "تسجيل الدخول".
+5. الآن قد سجلت الدخول إلى حساب فيديوغرام الخاص بك.
+نهاية السياق
 
-<div style={{ textAlign: "left" }}>
-  <Image
-    src="/docs/assets/basic_applications/chatbot_from_kb_login.webp"
-    width={2956}
-    height={1664}
-    style={{ width: "700px", margin: "0" }}
-  />
+سكيبي: مرحبًا، أنا سكيبي! كيف يمكنني مساعدتك؟
+المستخدم: لا أستطيع العثور على زر تسجيل الدخول.
+سكيبي:
+```
+بالإنجليزية:
+```
+As an advanced chatbot named Skippy, your primary goal is to assist users to the best of your ability.
 
-  <p style={{ color: "gray", fontSize: "12px", fontStyle: "italic" }}>
-    A document explaining how login to VideoGram works. Image by the author.
-  </p>
-</div>
+START CONTEXT
+Login to VideoGram from Website
+1. Open your web browser and go to the VideoGram website.
+2. Click on the “Login” button located in the top right corner of the page.
+3. On the login page, enter your VideoGram username and password.
+4. Once you have entered your credentials, click on the “Login” button.
+5. You should now be logged in to your VideoGram account.
 
-We can add <span className="yellow-highlight">its content</span> inside the prompt in this way.
+Login to VideoGram from Mobile App
+1. Open the VideoGram app on your mobile device.
+2. On the main page, tap the “Login” button located in the bottom right corner.
+3. On the login page, enter your VideoGram username and password.
+4. Once you have entered your credentials, tap the “Login” button.
+5. You should now be logged in to your VideoGram account.
+END CONTEXT
 
-<pre>
-  As an advanced chatbot named Skippy, your primary goal is to assist users to the best of your ability.
-  <br />
-  <span className="yellow-highlight">
-    START CONTEXT 
-    Login to VideoGram from Website
-    1. Open your web browser and go to the VideoGram website.
-    2. Click on the “Login” button located in the top right corner of the page.
-    3. On the login page, enter your VideoGram username and password. 
-    4. Once you have entered your credentials, click on the “Login” button. 
-    5. You should now be logged in to your VideoGram account.
-    <br/>
-    Login to VideoGram from Mobile App 
-    1. Open the VideoGram app on your mobile device. 
-    2. On the main page, tap the “Login” button located in the bottom right corner. 
-    3. On the login page, enter your VideoGram username and password. 
-    4. Once you have entered your credentials, tap the “Login” button.
-    5. You should now be logged in to your VideoGram account.
-    END CONTEXT
-  </span>
-</pre>
+SKIPPY: Hello, I’m Skippy! How can I help you?
+USER: I can’t find the login button.
+SKIPPY:
+```
+نحصل على الإجابة التالية عند تمرير هذه التعليمة إلى GPT-3:
+```
+لا مشكلة! في الموقع الإلكتروني، يوجد زر تسجيل الدخول في الزاوية اليمنى العلوية من الصفحة. في التطبيق المحمول، يوجد زر تسجيل الدخول في الزاوية اليمنى السفلية. لا تتردد إذا كنت بحاجة إلى أي مساعدة إضافية!
+```
+بالإنجليزية:
+```
+No problem! On the website, the login button is located in the top right corner of the page. On the mobile app, the login button is located in the bottom right corner. Let me know if you need any further assistance!
+```
+لاحظ كيف أن المعلومات في الإجابة تأتي من ملف قاعدة المعرفة.
 
-Last, we need to add <span className="yellow-highlight">the conversation and the user question</span> to the end of the prompt, like in the following example.
+## توضيح الأسئلة باستخدام GPT-3
+لنجرّب مع عبارة أكثر غموضًا، مثل "لا يمكن تسجيل الدخول". ها هو النص الكامل.
+```
+بصفتك روبوت دردشة متطوّر يدعى Skippy، هدفك الرئيسي هو مساعدة المستخدمين بأفضل قدر ممكن.
 
-<pre>
-  As an advanced chatbot named Skippy, your primary goal is to assist users to the best of your ability.
-  <br/>
-  START CONTEXT
-  Login to VideoGram from Website
-  1. Open your web browser and go to the VideoGram website.
-  2. Click on the “Login” button located in the top right corner of the page.
-  3. On the login page, enter your VideoGram username and password.
-  4. Once you have entered your credentials, click on the “Login” button.
-  5. You should now be logged in to your VideoGram account.
-  <br/>
-  Login to VideoGram from Mobile App
-  1. Open the VideoGram app on your mobile device.
-  2. On the main page, tap the “Login” button located in the bottom right corner.
-  3. On the login page, enter your VideoGram username and password.
-  4. Once you have entered your credentials, tap the “Login” button.
-  5. You should now be logged in to your VideoGram account.
- 
-  END CONTEXT
-  <br/>
-  <span className="yellow-highlight">
-    SKIPPY: Hello, I’m Skippy! How can I help you?
-    USER: I can’t find the login button.
-    SKIPPY:
-  </span>
-</pre>
+بداية السياق
+تسجيل الدخول إلى فيديوغرام من الموقع
+1. افتح متصفح الويب الخاص بك وانتقل إلى موقع فيديوغرام.
+2. انقر على زر "تسجيل الدخول" الموجود في الزاوية العلوية اليمنى من الصفحة.
+3. في صفحة تسجيل الدخول، ادخل اسم المستخدم وكلمة المرور الخاصة بفيديوغرام.
+4. بمجرد أن تقوم بإدخال بياناتك، انقر على زر "تسجيل الدخول".
+5. الآن قد قمت بتسجيل الدخول إلى حساب فيديوغرام الخاص بك.
 
-Passing this prompt to GPT-3, I got the following generated answer.
+تسجيل الدخول إلى فيديوغرام من التطبيق 
+1. افتح تطبيق فيديوغرام على جهازك المحمول.
+2. في الصفحة الرئيسية، اضغط على زر "تسجيل الدخول" الموجود في الزاوية السفلية اليمنى.
+3. في صفحة تسجيل الدخول، ادخل اسم المستخدم وكلمة المرور الخاصة بفيديوغرام.
+4. بمجرد أن تقوم بإدخال بياناتك، اضغط على زر "تسجيل الدخول".
+5. الآن قد قمت بتسجيل الدخول إلى حساب فيديوغرام الخاص بك.
+نهاية السياق
 
-<pre>
-  <span className="bluegreen-highlight">
-    No problem! On the website, the login button is located in the top right corner of the page. On the mobile app, the login button is located in the bottom right corner. Let me know if you need any further assistance!
-  </span>
-</pre>
+SKIPPY: مرحبًا، أنا سكيبي! كيف يمكنني مساعدتك؟
+المستخدم: لا يمكن تسجيل الدخول
+SKIPPY:
+```
+بالإنجليزية:
+```
+As an advanced chatbot named Skippy, your primary goal is to assist users to the best of your ability.
 
-Notice how the information in the generated answer comes from the knowledge base document.
+START CONTEXT
+Login to VideoGram from Website
+1. Open your web browser and go to the VideoGram website.
+2. Click on the “Login” button located in the top right corner of the page.
+3. On the login page, enter your VideoGram username and password.
+4. Once you have entered your credentials, click on the “Login” button.
+5. You should now be logged in to your VideoGram account.
 
-## Disambiguating Questions with GPT-3
+Login to VideoGram from Mobile App
+1. Open the VideoGram app on your mobile device.
+2. On the main page, tap the “Login” button located in the bottom right corner.
+3. On the login page, enter your VideoGram username and password.
+4. Once you have entered your credentials, tap the “Login” button.
+5. You should now be logged in to your VideoGram account.
+END CONTEXT
 
-Let’s try with a more vague user utterance, like <span className="yellow-highlight">“can’t login”</span>. Here’s the complete prompt.
+SKIPPY: Hello, I’m Skippy! How can I help you?
+USER: Can’t login
+SKIPPY:
+```
+يجيب GPT-3 محاولاً فهم مشكلة المستخدم بشكل أفضل.
+```
+يؤسفني سماع ذلك. هل يمكنك أن تخبرني إذا كنت تحاول تسجيل الدخول عبر موقع أم تطبيق؟
+```
+بالإنجليزية:
+```
+I’m sorry to hear that. Can you tell me if you are trying to login via the VideoGram website or mobile app?
+```
+ثم، هنا الحوار الكامل. تم إخفاء التعليمة كلها.
+```
+المستخدم: لا يمكن تسجيل الدخول
+SKIPPY: أنا آسف لسماع ذلك. هل يمكنك أن تخبرني إذا كنت تحاول تسجيل الدخول عبر موقع أم تطبيق؟
+المستخدم: التطبيق 
+SKIPPY: حسنًا، ليس هناك مشكلة. لتسجيل الدخول عبر التطبيق، افتح تطبيق فيديوغرام على جهازك المحمول. في الصفحة الرئيسية، اضغط على زر "تسجيل الدخول" الموجود في الزاوية السفلية اليمنى. في صفحة تسجيل الدخول، ادخل اسم المستخدم وكلمة المرور الخاصة بك. بمجرد أن تقوم بإدخال بياناتك، اضغط على زر "تسجيل الدخول". الآن قد قمت بتسجيل الدخول إلى حساب فيديوغرام الخاص بك. يرجى إعلامي إذا كنت بحاجة إلى أي مساعدة أخرى.
+```
+بالإنجليزية:
+```
+USER: Can’t login
+SKIPPY: I’m sorry to hear that. Can you tell me if you are trying to login via the VideoGram website or mobile app?
+USER: Mobile app
+SKIPPY: OK, no problem. To login via the mobile app, open the VideoGram app on your mobile device. On the main page, tap the “Login” button located in the bottom right corner. On the login page, enter your VideoGram username and password. Once you have entered your credentials, tap the “Login” button. You should now be logged in to your VideoGram account. Please let me know if you need any further assistance.
+```
+يمكن لـ GPT-3 إدارة التوضيح، شرط أن يتوفر لديه المعلومات السياقية الصحيحة.
 
-<pre>
-  As an advanced chatbot named Skippy, your primary goal is to assist users tothe best of your ability.
-  <br/>
-  START CONTEXT
-  Login to VideoGram from Website
-  1. Open your web browser and go to the VideoGram website.
-  2. Click on the “Login” button located in the top right corner of the page.
-  3. On the login page, enter your VideoGram username and password.
-  4. Once you have entered your credentials, click on the “Login” button.
-  5. You should now be logged in to your VideoGram account.
-  <br/>
-  Login to VideoGram from Mobile App
-  1. Open the VideoGram app on your mobile device.
-  2. On the main page, tap the “Login” button located in the bottom right corner.
-  3. On the login page, enter your VideoGram username and password.
-  4. Once you have entered your credentials, tap the “Login” button.
-  5. You should now be logged in to your VideoGram account.
-  END CONTEXT
-  <br/>
-  SKIPPY: Hello, I’m Skippy! How can I help you?
-  USER: <span className="yellow-highlight">Can’t login</span>
-  SKIPPY:
-</pre>
+## مشاكل في إنشاء الإجابات باستخدام GPT-3
 
-GPT-3 answers trying to understand better what’s the problem of the user.
+كانت الأمثلة السابقة جيدة. ومع ذلك، هناك عدة طرق يمكن أن يفشل فيها هذا الروبوت في الدردشة.
 
-<pre>
-  <span className="bluegreen-highlight">
-    I’m sorry to hear that. Can you tell me if you are trying to login via the
-    VideoGram website or mobile app?
-  </span>
-</pre>
+إذا سألنا "هل التطبيق مجاني؟" لـ GPT-3 مع تمرير ملف تسجيل الدخول كسياق، فمن المحتمل أن نحصل على إجابة مثل "نعم، تطبيق فيديوغرام مجاني للتنزيل والاستخدام"، حتى وإن لم تكن هذه المعلومات موجودة ضمن معلومات السياق. إن إنشاء معلومات خاطئة يعتبر أمرًا سيئًا جدًا لروبوتات الدردشة الخاصة بخدمة العملاء!
 
-Next, here’s how the complete conversation goes. The whole prompt is hidden for better visibility.
+نادرًا ما يعطي GPT-3 معلومات خاطئة عندما يكون الجواب على سؤال المستخدم موجودًا في السياق. نظرًا لأن أسئلة المستخدم غالبًا ما تكون نصوصًا قصيرة وغامضة، فإننا لا نستطيع الاعتماد على خطوة البحث الدلالي لاسترجاع ملف صحيح دائمًا، وبالتالي نحن عرضة دائمًا لتوليد معلومات خاطئة.
 
-<pre>
-  USER: Can’t login
-  <br />
-  SKIPPY: I’m sorry to hear that. Can you tell me if you are trying to login via
-  the VideoGram website or mobile app?
-  <br />
-  USER: Mobile app
-  <br />
-  <span className="bluegreen-highlight">
-    SKIPPY: OK, no problem. To login via the mobile app, open the VideoGram app
-    on your mobile device. On the main page, tap the “Login” button located in
-    the bottom right corner. On the login page, enter your VideoGram username
-    and password. Once you have entered your credentials, tap the “Login”
-    button. You should now be logged in to your VideoGram account. Please let me
-    know if you need any further assistance.
-  </span>
-</pre>
+## الخاتمة
 
-GPT-3 can manage disambiguation, provided that it has the right contextual information.
-
-## Problems With Generating Answers with GPT-3
-
-The previous examples worked well. However, there are several ways in which this chatbot could fail.
-
-If we ask “Is the mobile app free?” to GPT-3 passing the login document as context, you’d often get an answer like “Yes, the VideoGram mobile app is free to download and use”, even if such information is not contained in the context information. Generating false information is very bad for customer service chatbots!
-
-GPT-3 rarely generates false information when the answer to the user question can be found in the context. As user questions are often short and ambiguous texts, we can’t rely on the semantic search step to always retrieve a correct document, and so we are always vulnerable to false information generation.
-
-## Conclusion
-
-GPT-3 is very useful for creating conversational chatbots and is able to answer a series of specific questions on the basis of contextual information inserted in the prompt. However, it’s hard to make the model produce answers leveraging only the information in the context, as the model tends to hallucinate (i.e. generating new information, potentially false). Generating false information is a problem of different severity depending on the use case.
-
-Written by [Fabio Chiusano](https://www.linkedin.com/in/fabio-chiusano-b6a3b311b/).
+GPT-3 مفيد جدًا لإنشاء روبوتات الدردشة وقادر على الإجابة على سلسلة من الأسئلة المحددة بناءً على المعلومات السياقية المدرجة في النص. ومع ذلك، من الصعب جعل النموذج يقدّم إجابات باستخدام المعلومات في السياق فقط، حيث يميل النموذج إلى الهلوسة (أي توليد معلومات جديدة، قد تكون خاطئة بشكل محتمل). إن توليد معلومات خاطئة هو مشكلة ذات خطورة مختلفة تبعًا لحالة الاستخدام.

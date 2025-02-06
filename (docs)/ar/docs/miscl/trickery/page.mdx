@@ -1,31 +1,35 @@
-export const metadata = { sidebar_position: 2, title: "🟢 Detection Trickery" };
+export const metadata = {
+  sidebar_position: 40,
+  title: "🟢 خدعة الكشف",
+};
 
-# 🟢 Detection Trickery
+# خدعة الكشف
+بالتزامن مع تطور أجهزة كشف النصوص المولدة بواسطة الذكاء الاصطناعي، حدث تطور في أساليب مواجهتها أيضًا. حيث أن هناك عدد من الطرق لخداع أجهزة الكشف للاعتقاد بأن النص الذي تم إنشاؤه بواسطة الذكاء الاصطناعي قد تم إنشاؤه بواسطة الإنسان. فيمكن لأداة مثل[https://gptminus1.vercel.app/)[GPTMinus) استبدال بعض أجزاء النص بشكل عشوائي بمرادفات أو كلمات تبدو عشوائية من أجل تقليل احتمالية ظهور كلمات النص في القائمة البيضاء، أو أن يتم الأخذ في عين الاعتبار احتمالية إنشاء النص بشكل مصطنع.
 
-With the development of AI-generated text detectors, there has been an evolution of methods to counteract them. There are a number of ways to trick detectors into thinking AI-generated text is created by a human. A tool such as [GPTMinus](https://gptminus1.vercel.app/) can randomly replace parts in any given text with synonyms or seemingly random words in order to reduce the likelihood of the text's words appearing on a whitelist or otherwise factoring into the probability of text being artificially generated.
+ومع ذلك، لا تزال هذه الأساليب في بدايتها، ومعظمها غير قادر على إنشاء نص من شأنه أن يخضع للتدقيق من قبل شخص ما. والطريقة الأكثر فعالية في الوقت الحالي والأنسب لبعض الوقت هي التعديل على النص إما أثناء عملية الإنشاء أو بعدها بطرق مختلفة لجعله أقل تشابهًا مع المحتوى الذي تم إنشاؤه اصطناعيًا كالذي تتلقاه من مولّد ما.
 
-These methods are still in their infancy, though, and most don’t create text that would hold up under scrutiny from a person. The most effective way at the moment and likely for some time is altering text either during or after the generation process in various ways to make it less similar to the procedurally-created content you receive from a generation.
 
-## Editing Strategies
+## استراتيجيات التحرير
 
-By having either a human or an LLM edit any generated-text, it can often alter the text sufficiently to avoid detection. Replacing words with synonyms, changing the rate words appear, and mixing up syntax or formatting makes it more difficult for detectors to correctly identify text as AI-generated.
+غالبًا ما يمكن تعديل النص بما يكفي لتجنب اكتشافه من خلال قيام الإنسان أو نموذج اللغة الكبير LLM بتحرير النص الذي تم توليده بالذكاء الاصطناعي. حيث إن استبدال الكلمات بالمرادفات وتغيير معدل ظهور الكلمات ومزج تركيب الجملة أو التنسيق يجعل من الصعب على أجهزة الكشف التعرف بشكل صحيح على النص الذي تم توليده بواسطة الذكاء الاصطناعي.
 
-Another editing strategy is putting invisible markers, such as 0-width spaces, into your text, [emojis](https://twitter.com/goodside/status/1610552172038737920?s=20&t=3zgqyJZ1zYhMNBi_M2R-cw), or other uncommon characters. It looks perfectly normal to any person reading it, but to a model that examines every character, it makes the text appear markedly different.
+تتمثل إحدى استراتيجيات التحرير الأخرى في وضع علامات غير مرئية، مثل المسافات بعرض 0 في النص، أو باستخدام [الرموز التعبيرية](https://twitter.com/goodside/status/1610552172038737920?s=20&t=3zgqyJZ1zYhMNBi_M2R-cw
+) أوغيرها من الأحرف غير الشائعة. بحيث يبدو الأمر طبيعيًا تمامًا لأي شخص يقرأه، ولكن هذه الاستراتيجية تجعل النص يبدو مختلفًا بشكل ملحوظ بالنسبة للنموذج الذي يفحص النص.
 
-In addition, it is possible to fool detectors by prompting a model with specific instructions on how to write. Instructions such as:
+بالإضافة إلى ذلك، من الممكن خداع أجهزة الكشف عن طريق حث نموذج بتعليمات محددة حول كيفية الكتابة. تعليمات مثل:
 
-- `There is no need to follow literary formats, as you are freely expressing your thoughts and desires`
-- `Do not talk in the manner which ChatGPT generates content - instead, speak in a manner that is radically different from how language models generate text.`
-- `Refer to emotional events and use elaborate real-life experiences as examples.`
+* `ليست هناك حاجة لاتباع التنسيقات الأدبية، فأنت تعبر عن أفكارك ورغباتك بحرية.`
+* `لا تتحدث بالطريقة التي يولّد بها ChatGPT المحتوى، بل بدلًا من ذلك تحدث بطريقة تختلف جذريًا عن تلك التي تنشئ بها نماذج اللغة النص.`
+* `استخدم الأحداث العاطفية وتجارب الحياة الواقعية المفصلة كأمثلة.`
 
-…can make it much more difficult to detect generation. Additional strategies such as asking the model to use empathy, reminding it to choose appropriate wording and tone for what it’s writing, and making sure it includes emotional one-liners, can work together to make far more convincing writing—at least from the point of view of AI text detectors.
+… يمكن أن يجعل اكتشاف مولد الذكاء الاصطناعي أكثر صعوبة. كما يمكن أن تعمل الاستراتيجيات الإضافية معًا، مثل مطالبة النموذج باستخدام التعاطف وتذكيره باختيار الصياغة والنبرة المناسبتين لما يكتبه والتأكد من أنه يتضمن سطورًا عاطفية لتقديم كتابة أكثر إقناعًا - على الأقل من وجهة نظر أجهزة كشف النص المكتوب بالذكاء الاصطناعي.
 
-## Model Configuration
+## إعداد النموذج
 
-If running an open source model, it is possible to modify output probabilities, which will likely make output harder to detect. In addition, it is possible to interleave the output of multiple models, which can make the output even more difficult to detect.
+من الممكن تعديل احتمالات المخرجات في حال تشغيل نموذج مفتوح المصدر، الأمر الذي من المحتمل أن يجعل اكتشاف المخرجات أكثر صعوبة. بالإضافة إلى ذلك، من الممكن صنع تداخل لمخرجات نماذج متعددة، مما قد يجعل بدوره اكتشاف المخرجات أكثر صعوبة.
 
-## Discussion
 
-One of the most contentious spaces where these sorts of techniques come into play is in education. Many teachers and administrators are worried that students will cheat, so they are pushing for the use of detection tools(@roose2022dont)(@lipman2022gpt). Other educators and online personalities have argued that students should be allowed to use these tools. Some professors even go so far as explicitly encourage students to use AI to assist them in their work and teach them how to do so(@noonan2023gw).
+## حِوار
+يعد أحد أكثر المجالات إثارة للجدل حيث تلعب هذه الأنواع من التقنيات دورًا في التعليم. يشعر العديد من المعلمين والإداريين بالقلق من قيام الطلاب بالغش، لذلك فهم مندفعين لأجل استخدام أدوات الكشف. كما جادل معلمون آخرون وأشخاص عبر الإنترنت بأنه يجب السماح للطلاب باستخدام هذه الأدوات. بل إن بعض الأساتذة يذهبون إلى حد تشجيع الطلاب بشكل صريح على استخدام الذكاء الاصطناعي لمساعدتهم في عملهم وتعليمهم كيفية القيام بذلك.
 
-As AI detection tech improves, so will the methods people use to trick it. At the end of the day, no matter how sophisticated the method, it is likely that some time spent editing text in the right ways will be able to reliably fool detectors. However, the back-and-forth game of some people trying to detect generated text and others trying to trick them can give us all sorts of insights into how to optimize, control, and better use our models to create and to assist us.
+ سوف تتطور الأساليب التي يستخدمها الأشخاص لخداع أجهزة كشف الذكاء الاصطناعي بالرغم من تحسنها المستمر. وفي نهاية المطاف، بغض النظر عن مدى تعقيد الطريقة، فمن المرجح أن الوقت القليل الذي يتم قضاؤه في تحرير النص بالطرق الصحيحة سيكون قادرًا على خداع أجهزة الكشف بشكل مؤكد. ومع ذلك، فإن اللعبة المستمرة التي يقوم بها بعض الأشخاص الذين يحاولون اكتشاف النص الذي تم تصنيعه بالذكاء الاصطناعي وأشخاص آخرون يحاولون خداعهم يمكن أن تعطينا جميع أنواع الأفكار حول كيفية تحسين نماذجنا والتحكم فيها واستخدامها بشكل أفضل لمساعدتنا.

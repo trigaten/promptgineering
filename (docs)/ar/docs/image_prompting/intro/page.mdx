@@ -1,251 +1,148 @@
-export const metadata = { sidebar_position: 1, title: "🟢 Introduction" };
+export const metadata = {
+  sidebar_position: 40,
+  title: "🟢 المقدمة",
+};
 
-# 🟢 Introduction
+# المقدمة
 
-Figuring out the best prompt to create a perfect image is a particular challenge.
-Research into methods to do so is not quite as developed as text prompting. This
-may be due to inherent challenges in creating objects which are fundamentally subjective
-and often lack good accuracy metrics. However, fear not, as the image prompting
-community(@parsons2022dalleprompt) has made great discoveries about how to prompt various image models(@rombach2021highresolution)(@ramesh2022hierarchical).
+فهم أفضل تعليمة لإنشاء صورة مثالية هو تحدي خاص. البحث في الطرق للقيام بذلك ليس متقدمًا تمامًا مثل تعليمات النص. قد يكون ذلك بسبب التحديات الجوهرية في إنشاء عناصر تكون بشكل أساسي ذات طابع موضوعي وتفتقر غالبًا إلى مقاييس دقة جيدة. ومع ذلك، لا داعي للقلق، حيث قامت مجتمع تعليمة الصور بالعثور على اكتشافات رائعة حول كيفية توجيه مختلف نماذج الصور.
 
-This guide covers basic image prompting techniques, and we highly encourage
-that you look at the great resources at the end of the chapter.
-Additionally, we provide an example of the end-to-end image prompting process below.
+يغطي هذا الدليل تقنيات تعليمة الصور الأساسية، ونشجع بشدة على أن تلقي نظرة على المصادر الرائعة في نهاية الفصل. بالإضافة إلى ذلك، نقدم مثالًا على عملية تعليمة الصور من البداية إلى النهاية أدناه.
 
-## Example
+## مثال
 
-Here I will go through an example of how I created the images for the front page of this course.
-I had been experimenting with low poly style for a deep reinforcement learning
-neural radiance field project. I liked the low poly style, and wanted to use it
-for this course's images.
+سأقوم هنا بشرح مثال حول كيف قمت بإنشاء الصور للصفحة الرئيسية لهذه الحلقة الدراسية. كنت قد قمت بتجريب أسلوب الرسم منخفض التعدد  لمشروع حقل الإشعاع العصبي لتعزيز التعلم العميق. أعجبني أسلوب الرسم منخفض التعدد وأردت استخدامه لصور هذه الحلقة الدراسية.
 
-I wanted an astronaut, a rocket, and a computer for the images on the front page.
+أردت  رائد فضاء، وصاروخ، وحاسوب  للصور على الصفحة الرئيسية.
 
-I did a bunch of research into how to create low poly images, on [r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/)
-and other sites, but couldn't find anything super helpful.
+قمت بإجراء العديد من الأبحاث حول كيفية إنشاء صور بأسلوب الرسم منخفض التعدد على [r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/?rdt=32773)  ومواقع أخرى، ولكن لم أجد شيئًا مفيدًا للغاية.
 
-I decided to just start with DALLE and the following prompt, and see what happened.
+قررت أن أبدأ مع DALLE وتعليمة الأمر التالية، وأرى ماذا سيحدث.
 
-<AIInput>
-  Low poly white and blue rocket shooting to the moon in front of a sparse green
-  meadow
-</AIInput>
+التعليمة:
+```
+صاروخ بأسلوب الرسم منخفض التعدد باللونين الأبيض والأزرق يطلق نحو القمر أمام مرج أخضر فارغ.
+```
+بالإنجليزية:
+```
+Low poly white and blue rocket shooting to the moon in front of a sparse green meadow
+```
+![Rocket Picture](https://learnprompting.org/assets/images/rockets_dalle_2-0c37c6ca98f43ebe236c06bc433cc1ef.webp)
 
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/images_chapter/rockets_dalle_1.webp"
-    className="img-docs"
-    width={2430}
-    height={604}
-    style={{ width: "750px", margin: "auto" }}
-  />
-</div>
+اعتقدت أن هذه النتائج كانت جيدة بشكل مقبول كمحاولة الأولى؛ أعجبتني بشكل خاص الصاروخ في الزاوية السفلية اليسرى.
 
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/images_chapter/rockets_dalle_2.webp"
-    className="img-docs"
-    width={2430}
-    height={604}
-    style={{ width: "750px", margin: "auto" }}
-  />
-</div>
+التعليمة:
+```
+حاسوب بأسلوب الرسم منخفض التعدد باللونين الأبيض والأزرق يجلس في مروج أخضر فارغ.
+```
+بالإنجليزية:
+```
+Low poly white and blue computer sitting in a sparse green meadow.
+```
+![Laptop Picture](https://learnprompting.org/assets/images/computer_dalle_1-e50bfbe642519e140a597572c8b7886d.webp)
 
-I thought these results were pretty decent for a first try; I particularly liked
-the bottom left rocket.
+أخيرًا، كنت بحاجة إلى رائد فضاء! هذه التعليمة تبدو أنها حققت الغرض:
 
-Next, I wanted a computer in the same style:
+التعليمة:
+```
+رائد فضاء بأسلوب الرسم منخفض التعدد باللونين الأبيض والأزرق يجلس في مروج أخضر فارغ مع جبال بأسلوب الرسم منخفض التعدد في الخلفية.
+```
+بالإنجليزية:
+```
+Low poly white and blue astronaut sitting in a sparse green meadow with low poly mountains in the background
+```
+اعتقدت أن الثانية كانت مقبولة
 
-<AIInput>
-  Low poly white and blue computer sitting in a sparse green meadow
-</AIInput>
+الآن، لدي رائد فضاء، وصاروخ، وحاسوب. كنت راضيًا عنهم، لذا قمت بوضعهم على الصفحة الرئيسية. بعد بضعة أيام وبعض المداخلات من أصدقائي، أدركت أن الأسلوب ليس متناغم 😔.
 
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/images_chapter/computer_dalle_1.webp"
-    className="img-docs"
-    width={2430}
-    height={604}
-    style={{ width: "750px", margin: "auto" }}
-  />
-</div>
+قمت بإجراء المزيد من الأبحاث على  [r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/?rdt=32773) ووجدت أشخاصاً يستخدمون كلمة متساوي القياس. قررت تجربة ذلك، باستخدام Stable Diffusion بدلاً من DALLE. أدركت أيضًا أنه يجب أن أضيف مزيدًا من المحددات إلى تعليمتي لتقييد الأسلوب. جربت هذه التعليمة:
 
-Finally, I needed an astronaut! This prompt seemed to do the trick:
+التعليمة:
+```
+عالم بأسلوب رسم منخفض التعدد،  مع رائد فضاء ببدلة بيضاء وحافة خوذة زرقاء جالسًا في مروج أخضر فارغ مع جبال بأسلوب رسم منخفضة التعدد في الخلفية. مفصل بشكل كبير، متساوي القياس 4K.
+```
+بالإنجليزية:
+```
+A low poly world, with an astronaut in white suit and blue visor sitting in a sparse green meadow with low poly mountains in the background. Highly detailed, isometric, 4K
+```
+![Astronaut](https://learnprompting.org/assets/images/astronaut_sd_1-0c10b896c8f0e81d47eb1f3e49ec8c47.webp)
 
-<AIInput>
-  Low poly white and blue astronaut sitting in a sparse green meadow with low
-  poly mountains in the background
-</AIInput>
+لم تكن هذه جيدة، لذا قررت أن أبدأ بالصاروخ بدلاً من ذلك.
 
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/images_chapter/astronaut_dalle_1.webp"
-    className="img-docs"
-    width={2430}
-    height={604}
-    style={{ width: "750px", margin: "auto" }}
-  />
-</div>
+التعليمة:
+```
+عالم بأسلوب رسم منخفض التعدد  مع صاروخ أبيض وأزرق يطلق من مرج أخضر فارغ مع جبال منخفضة التعدد في الخلفية. مفصل بشكل كبير، متساوية القياس، 4K.
+بالإنجليزية:
+```
+A low poly world, with a white and blue rocket blasting off from a sparse green meadow with low poly mountains in the background. Highly detailed, isometric, 4K.
+```
+![rocket blasting](https://learnprompting.org/assets/images/rocket_sd_1-4abeb5a0ae6d9240bce119c7fbab3e3e.webp)
 
-I thought the second one was decent.
+هذه ليست جيدة جداً، ولكن بعد بعض التجربة هنا، انتهيت بهذه بدلاً منها:
 
-Now I had an astronaut, a rocket, and a computer. I was happy with them,
-so I put them on the front page. After a few days and input from my friends I
-realized the style just wasn't consistent 😔.
+![Rocket](https://learnprompting.org/assets/images/rocket-82a7808bafd33692f107b00364498a6d.webp)
 
-I did some more research on [r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/) and found people using the word isometric. I decided to try that out, using Stable Diffusion instead of DALLE.
-I also realized that I needed to add more modifiers to my prompt
-to constrain the style. I tried this prompt:
+والآن احتجت إلى حاسوب محمول أفضل:
 
-<AIInput>
-  A low poly world, with an astronaut in white suit and blue visor sitting in a
-  sparse green meadow with low poly mountains in the background. Highly
-  detailed, isometric, 4K
-</AIInput>
+التعليمة:
+```
+عالم منخفض التعدد، حيث يظهر حاسوب محمول أبيض وأزرق يجلس في مروج أخضر فارغ مع جبال منخفضة التعدد في الخلفية. الشاشة زرقاء تمامًا. مفصل بشكل كبير، متساوي القياس 4K.
+```
+بالإنجليزية:
+```
+A low poly world, with a white and blue laptop sitting in sparse green meadow with low poly mountains in the background. The screen is completely blue. Highly detailed, isometric, 4K.
+```
+حصلت على نتائج غير متناسقة؛ أحب النتيجة في الزاوية السفلية اليمنى، ولكن قررت أن أتجه في اتجاه مختلف.
 
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/images_chapter/astronaut_sd_1.webp"
-    className="img-docs"
-    width={1222}
-    height={1108}
-    style={{ width: "250px", margin: "auto" }}
-  />
-</div>
+التعليمة:
+```
+عالم منخفض التعدد، مع جوهرة بيضاء وزرقاء متوهجة تجلس في مروج أخضر فارغ مع جبال منخفضة التعدد في الخلفية. مفصل بشكل كبير، متساوية القياس 4K.
+```
+بالإنجليزية:
+```
+A low poly world, with a glowing white and blue gemstone sitting in a sparse green meadow with low poly mountains in the background. Highly detailed, isometric, 4K.
+```
+![mountain](https://learnprompting.org/assets/images/gemstone_sd_1-793a929dc29f0c6d4cf21a7c3a6e8bc0.webp)
+هذا لم يكن صحيحًا تمامًا. لنجرب شيئًا ساحرًا ومتوهجًا.
 
-These weren't great, so I decided to start on the rocket instead
+التعليمة:
+```
+عالم منخفض التعدد، حيث تظهر جوهرة بيضاء وزرقاء متوهجة تطفو بشكل سحري في منتصف الشاشة فوق مروج أخضر فارغ مع جبال منخفضة التعدد في الخلفية. مفصل بشكل كبير، متساوية القياس 4K.
+```
+بالإنجليزية:
+```
+A low poly world, with a glowing white and blue gemstone magically floating in the middle of the screen above a sparse green meadow with low poly mountains in the background. Highly detailed, isometric, 4K
+```
+![mountain2](https://learnprompting.org/assets/images/gemstone_sd_3-c02d44793eb309956fc827702e9e1a64.webp)
 
-<AIInput>
-  A low poly world, with a white and blue rocket blasting off from a sparse
-  green meadow with low poly mountains in the background. Highly detailed,
-  isometric, 4K
-</AIInput>
+أعجبتني هذه، ولكن أردت الجوهرة في منتصف الشاشة.
 
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/images_chapter/rocket_sd_1.webp"
-    className="img-docs"
-    width={1222}
-    height={1108}
-    style={{ width: "250px", margin: "auto" }}
-  />
-</div>
+التعليمة:
+```
+عالم منخفض التعدد، حيث تظهر جوهرة زرقاء متوهجة تطفو بشكل سحري في منتصف الشاشة فوق مروج أخضر فارغ مع جبال منخفضة التعدد في الخلفية. مفصل بشكل كبير، متساوية القياس 4K.
+```
+بالإنجليزية:
+```
+A low poly world, with a glowing blue gemstone magically floating in the middle of the screen above a sparse green meadow with low poly mountains in the background. Highly detailed, isometric, 4K
+```
+![gemstone](https://learnprompting.org/assets/images/gemstone_sd_3-c02d44793eb309956fc827702e9e1a64.webp)
 
-These are not particularly good, but after a bit of iterating around here, I ended up with
+في هذا الوقت تقريبًا، قمت باستخدام قدرة Stable Diffusion على أن يكون للصورة السابقة تأثير في الصور المستقبلية. وهكذا وصلت إلى:
 
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/img/rocket.webp"
-    className="img-docs"
-    width={512}
-    height={512}
-    style={{ width: "250px", margin: "auto" }}
-  />
-</div>
+![gemstone2](https://learnprompting.org/assets/images/computer-a7650711abd417cd70885fd9ea55e816.webp)
 
-Now I needed a better laptop:
+وأخيرًا وصلت إلى الرائد الفضائي
 
-<AIInput>
-  A low poly world, with a white and blue laptop sitting in sparse green meadow
-  with low poly mountains in the background. The screen is completely blue.
-  Highly detailed, isometric, 4K
-</AIInput>
+التعليمة:
+```
+عالم منخفض التعدد، حيث يظهر رائد فضاء ببدلة بيضاء مقدة خوذة رزقاء جالسًا في مروج أخضر فارغ مع جبال منخفضة التعدد في الخلفية. مفصل بشكل كبير، متساوي القياس 4K.
+```
+بالإنجليزية:
+```
+A low poly world, with an astronaut in white suite and blue visor is sitting in a sparse green meadow with low poly mountains in the background. Highly detailed, isometric, 4K
+```
+![Astronaut](https://learnprompting.org/assets/images/astronaut-0a68ed878831172c3b548a982f1e601f.webp) 
 
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/images_chapter/laptop_sd_1.webp"
-    className="img-docs"
-    width={1222}
-    height={1108}
-    style={{ width: "250px", margin: "auto" }}
-  />
-</div>
+في هذه المرحلة، كنت راضيًا بما يكفي عن تناسق الأسلوب بين الصور الثلاث لاستخدامها على الموقع الإلكتروني. النقاط الرئيسية بالنسبة لي كانت أن هذه عملية ثقيلة بالبحث وتكرارية، وكان عليّ تعديل توقعاتي وأفكاري أثناء تجربتي مع تعليمات ونماذج مختلفة.
 
-I got some inconsistent results; I like the bottom right one, but I decided to go in a different direction.
 
-<AIInput>
-  A low poly world, with a glowing white and blue gemstone sitting in a sparse
-  green meadow with low poly mountains in the background. Highly detailed,
-  isometric, 4K
-</AIInput>
-
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/images_chapter/gemstone_sd_1.webp"
-    className="img-docs"
-    width={1222}
-    height={1108}
-    style={{ width: "250px", margin: "auto" }}
-  />
-</div>
-
-This wasn't quite right. Let's try something magical and glowing.
-
-<AIInput>
-  A low poly world, with a glowing white and blue gemstone magically floating in
-  the middle of the screen above a sparse green meadow with low poly mountains
-  in the background. Highly detailed, isometric, 4K
-</AIInput>
-
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/images_chapter/gemstone_sd_2.webp"
-    className="img-docs"
-    width={1222}
-    height={1108}
-    style={{ width: "250px", margin: "auto" }}
-  />
-</div>
-
-I liked these, but wanted the stone in the middle of the screen.
-
-<AIInput>
-  A low poly world, with a glowing blue gemstone magically floating in the
-  middle of the screen above a sparse green meadow with low poly mountains in
-  the background. Highly detailed, isometric, 4K
-</AIInput>
-
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/images_chapter/gemstone_sd_3.webp"
-    className="img-docs"
-    width={1222}
-    height={1108}
-    style={{ width: "250px", margin: "auto" }}
-  />
-</div>
-
-Somewhere around here, I used SD's ability to have a previous image provide some influence for future images.
-And thus I arrived at:
-
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/img/computer.webp"
-    className="img-docs"
-    width={512}
-    height={512}
-    style={{ width: "250px", margin: "auto" }}
-  />
-</div>
-
-Finally, I was on to the astronaut.
-
-<AIInput>
-  A low poly world, with an astronaut in white suite and blue visor is sitting
-  in a sparse green meadow with low poly mountains in the background. Highly
-  detailed, isometric, 4K
-</AIInput>
-
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/img/astronaut.webp"
-    className="img-docs"
-    width={404}
-    height={432}
-    style={{ width: "250px", margin: "auto" }}
-  />
-</div>
-
-At this point, I was sufficiently happy with the style consistency between my three images to use them
-on the website. The main takeaways for me were that this was a very iterative, research heavy process,
-and I had to modify my expectations and ideas as I experimented with different prompts and models.

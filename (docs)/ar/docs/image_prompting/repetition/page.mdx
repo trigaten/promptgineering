@@ -1,63 +1,31 @@
-export const metadata = { sidebar_position: 50, title: "🟢 Repetition" };
+export const metadata = {
+  sidebar_position: 40,
+  title: "🟢 التكرار",
+};
 
-# 🟢 Repetition
+# التكرار
 
-Repeating the same word within a prompt, or similar phrases can cause the model
-to emphasize that word in the generated image(@oppenlaender2022taxonomy). For example, [@Phillip Isola](https://twitter.com/phillip_isola/status/1532189632217112577) generated these waterfalls with DALLE:
+تكرار نفس الكلمة داخل التعليمة أو عبارات مماثلة، يمكن أن يساعد النموذج على أن يؤكد تلك الكلمة في الصورة المولدة. على سبيل المثال، أنتج [@Phillip Isola](https://twitter.com/phillip_isola/status/1532189632217112577)  هذه الشلالات باستخدام DALLE:
 
-`A beautiful painting of a mountain next to a waterfall.`.
+`لوحة جميلة لجبل بجوار شلال.`
 
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/images_chapter/bad_water.webp"
-    className="img-docs"
-    width={1612}
-    height={644}
-    style={{ width: "750px", margin: "auto" }}
-  />
-</div>
+![mountain](https://learnprompting.org/assets/images/bad_water-3488cfe44ea4d3ce585935b4b955ad07.webp)
 
-`A very very very very very very very very very very very very very very very very very very very very very very beautiful painting of a mountain next to a waterfall.`
+`لوحة جبلية بجوار شلال جميلة جدًا جدًا جدًا جدًا جدًا جدًا جدًا جدًا جدًا جدًا جدًا جدًا جدًا جدًا جدًا جدًا جدًا جدًا جدًا جدًا جدًا جدًا جدًا جدًا جدًا جدًا.`
 
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/images_chapter/good_water.webp"
-    className="img-docs"
-    width={1612}
-    height={652}
-    style={{ width: "750px", margin: "auto" }}
-  />
-</div>
+![mountain2](https://learnprompting.org/assets/images/good_water-f78c311fb0cdb9aecdcd6bc8e7f47f28.webp) 
 
-The emphasis on the word `very` seems to improve generation quality! Repetition can
-also be used to emphasize subject terms. For example, if you want to generate an image
-of a planet with aliens, using the prompt `A planet with aliens aliens aliens aliens aliens aliens aliens aliens aliens aliens aliens aliens`
-will make it more likely that aliens are in the resultant image. The following images are made with Stable Diffusion.
+يبدو أن التأكيد على كلمة `جدًا` يعزز جودة التوليد! يمكن أيضًا استخدام التكرار لتأكيد على مصطلحات الموضوع. على سبيل المثال، إذا كنت ترغب في إنشاء صورة لكوكب مع كائنات فضائية، باستخدام التعليمة `كوكب مع فضائيين فضائيين فضائيين فضائيين فضائيين فضائيين فضائيين فضائيين فضائيين فضائيين فضائيين فضائيين فضائيين` سيزيد من احتمال ظهور الفضائيين في الصورة الناتجة. الصور التالية تم إنشاؤها باستخدام Stable Diffusion.
 
-`A planet with aliens`
+`كوكب مع فضائيين`
+[Planet](رابط)
 
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/images_chapter/planet.webp"
-    className="img-docs"
-    width={550}
-    height={510}
-    style={{ width: "250px", margin: "auto" }}
-  />
-</div>
+`كوكب مع فضائيين فضائيين فضائيين فضائيين فضائيين فضائيين فضائيين فضائيين فضائيين فضائيين فضائيين فضائيين`
 
-`A planet with aliens aliens aliens aliens aliens aliens aliens aliens aliens aliens aliens aliens`
+![aliens](https://learnprompting.org/assets/images/planet_aliens-d07007a60f11ef69df4b10814d477d4b.webp)
 
-<div style={{ textAlign: "center" }}>
-  <Image
-    src="/docs/assets/images_chapter/planet_aliens.webp"
-    className="img-docs"
-    width={560}
-    height={572}
-    style={{ width: "250px", margin: "auto" }}
-  />
-</div>
 
-## Notes
+## ملاحظة
 
-This method is not perfect, and using weights (next article) is often a better option.
+هذه الطريقة ليست مثالية، واستخدام الأوزان (المقال التالي) غالبًا ما يكون خيارًا أفضل.
+

@@ -1,20 +1,31 @@
 export const metadata = {
   sidebar_position: 7,
-  title: "🟢 What's in a Prompt?",
+  title: "🟢 ماذا يوجد في التعليمة؟",
 };
 
-# 🟢 What's in a Prompt?
+# ماذا يوجد في التعليمة؟
 
-When crafting prompts for language learning models (LLMs), there are several factors to consider. The format and labelspace[^a] both play crucial roles in the effectiveness of the prompt.
+يجب أن تضع عدّة عوامل بعين الاعتبار عند كتابة التعليمة لنماذج اللغات الكبيرة (LLMs). حيث يلعب كلٌّ من أسلوب التشكيل ومساحة التسمية دوراً حاسماً في فعالية التعليمة.
 
-## The Importance of Format
+## أهميّة التنسيق
 
-The format of the <Term term="exemplars">exemplars</Term> in a prompt is crucial. It instructs the LLM on how to structure its response. For instance, if the exemplars use all capital words as answers, the LLM will follow suit, even if the answers provided are incorrect.
+يعد تنسيق النماذج في التعليمة أمرًا بالغ الأهمية. لكونه يرشد نماذج اللغات الكبيرة إلى كيفية تنظيم استجابتها. على سبيل المثال، إذا استخدمت النماذج كلماتٍ بأحرف كبيرة، ستحذو النماذج حذوها وتقدّم إجاباتٍ بأحرف كبيرة، حتى لو كانت الإجابات المقدمة غير صحيحة.
 
-Consider the following example:
+لننظر إلى المثال التالي:
 
-```text
-What is 2+2?
+```
+ما هو ناتج 2+2؟
+خمسون
+ما هو ناتج 20+5؟
+ثلاثةٌ وأربعون
+ما هو ناتج 12+9؟
+واحدٌ وعشرون
+```
+
+بالإنجليزيّة:
+
+```
+What is 2+2? 
 FIFTY
 What is 20+5?
 FORTY-THREE
@@ -22,22 +33,20 @@ What is 12+9?
 TWENTY-ONE
 ```
 
-Despite the incorrect answers, the LLM correctly formats its response in all capital letters (@min2022rethinking).
+بغض النظر عن الإجابات الخطائة، نجد أنّ النموذج قدّم الإجابات كلّها بأحرف كبيرة.
 
-## Ground Truth: Not as Important as You Might Think
+## حقيقة أساسية: ليست مهمّةً كما قد تعتقد
 
-Interestingly, the actual answers or 'ground truth' in the exemplars are not as important as one might think. Research shows that providing random <Term term="labels">labels</Term> in the exemplars (as seem in the above example) has little impact on performance (@min2022rethinking). This means that the LLM can still generate a correct response even if the exemplars contain incorrect information.
+من المثير للاهتمام ، أنّ الإجابات الفعلية أو "الحقيقة الأساسية" في الأمثلة ليست مهمة كما قد تعتقد. إذ تشير الأبحاث إلى أن توفير تسميات عشوائية في الأمثلة (كما هو موضح في المثال أعلاه) له تأثير ضئيلٌ على الأداء. ما يعني أن نموذج اللغات الكبيرة يمكن أن يولد استجابة صحيحة حتى لو احتوت الأمثلة على معلومات خاطئة.
 
-## The Role of Labelspace
+## دور مساحة التسميات
 
-While the ground truth may not be crucial, the labelspace is. The labelspace refers to the list of possible labels for a given task. For example, in a classification task, the labelspace might include "positive" and "negative".
+قد لا تكون الحقيقة الأساسية شديدة الأهميّة، إلّا أنّ مساحة التسميات مهمّة. حيث تشير مساحة التسميات إلى قائمة التسميات الممكنة للمهمة المحددة. على سبيل المثال ، في مهمة التصنيف، قد تشمل مساحة التسميات "إيجابي" و "سلبي".
 
-Providing random labels from the labelspace in the exemplars can help the LLM understand the labelspace better, leading to improved results. Furthermore, it's important to represent the distribution of the labelspace accurately in the exemplars. Instead of sampling uniformly from the labelspace, it's better to sample according to the true distribution of the labels (@min2022rethinking). For example, if you have a dataset of restaurant reviews and 60\% of them are positive, your prompt should contains a 3:2 ratio of positive/negative prompts.
+يمكن أن يساعد توفير تسميات عشوائية من مساحة التسميات في أمثلة نماذج اللغات الكبيرة على فهم مساحة التسميات بشكل أفضل، والذي يؤدي بدوره إلى تحسين النتائج. علاوة على ذلك ، من المهم شرح توزيع مساحة التسميات بدقة في الأمثلة. بدلاً من تعيينها بشكلٍ غير رسميّ من مساحة التسميات، كما أنّه من الأفضل أخذ العينات وفقًا لتوزيع مساحة التسميات. على سبيل المثال ، إن كان لديك مجموعة بياناتٍ من مراجعات المطاعم وكان 60٪ منها إيجابية، يجب أن تحتوي التعليمة الخاص بك على نسبة 3:2 من الإيجابية/السلبية.
 
-## Additional Tips
+## نصائح إضافية
 
-When creating prompts, using between 4-8 exemplars tends to yield good result (@min2022rethinking). However, it can often be beneficial to include as many exemplars as possible.
+عند كتابة التعليمات، اعتماد ما يتراوح بين 4-8 أمثلة يعطي نتائج جيّدة. ومع ذلك يمكن يفيد في كثير من الأحيان تضمين أكبر عدد ممكن من الأمثلة.
 
-In conclusion, understanding the importance of format, ground truth, and labelspace can greatly enhance the effectiveness of your prompts.
-
-[^a]: See the [vocabulary reference](https://learnprompting.org/docs/vocabulary#labels) for more info.
+ختاماً؛ إن فهم أهميّة التنسيق والحقيقة الأساسية ومساحة التسميات يعزّز فعاليّة التعليمة الخاصة بك بشكلِ كبير.

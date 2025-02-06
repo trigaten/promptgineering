@@ -1,41 +1,32 @@
 export const metadata = {
-  sidebar_position: 1,
-  title: "🟢 Detecting AI Generated Text",
+  sidebar_position: 40,
+  title: "🟢 اكتشاف النصوص المُنشئة من الذكاء الاصطناعي",
 };
 
-# 🟢 Detecting AI Generated Text
+# اكتشاف النصوص المُنشئة من الذكاء الاصطناعي
+إن اكتشاف النصوص المُنشئة من الذكاء الاصطناعي هو مشكلة كبيرة للباحثين الأمنيين والمعلمين وغيرهم. إن الأدوات مثل [GPTZero]( https://gptzero.me/) و [مكتشف GPT2](https://openai-openai-detector.hf.space/) و [المكتشفات ثنائية اللغة](https://github.com/Hello-SimpleAI/chatgpt-comparison-detection) أثبتوا نجاحهم ولكن يمكن مراوغتهم.
 
-Detecting AI generated text is a big problem for safety researchers and educators,
-among others. Tools like [GPTZero](https://gptzero.me), [GPT2 detector](https://openai-openai-detector.hf.space), and [bilingual detectors](https://github.com/Hello-SimpleAI/chatgpt-comparison-detection) have seen significant success,
-However, they can be [tricked](https://learnprompting.org/docs/miscl/trickery).
+تعمل OpenAI وباحثون آخرون على وضع علامات مائية إحصائية في النصوص المُنشئة ولكن يمكن تفاديها عن طريق تعديل أجزاء كبيرة من النص
 
-OpenAI and other researchers(@bansal2022certified)(@gu2022watermarking) are working to introduce statistical watermarking into their generated text, but this too may be fooled by modifying large portions of the text.
+سنتحدث في هذه المقالة عن الطرق الحالية لاكتشاف النصوص المُنشئة من الذكاء الاصطناعي والمقال الذي بعده سنتحدث عن طرق إخفاء هكذا نصوص.
 
-The problem of AI text detection will likely be an arms race as new models and new detection methods are introduced. Many companies have already started to build solutions which they claim are very effective, but it is difficult to prove this, especially as models change over time.
+## مصنف نصوص OpenAI
+إن [مصنف نصوص OpenAI]( https://platform.openai.com/ai-text-classifier) هو محاولة جيدة لاكتشاف النصوص المُنشئة من الذكاء الاصطناعي العام. عن طريق تدريب النموذج على كمية كبيرة من البيانات المُنشة من الذكاء الاصطناعي والنصوص المكتوبة من البشر ذات نوعية متشابه، إذ يستطيع المكتشف حساب إمكانية كون النص المعطى مُنشئًا من نموذج لغوي كبير
 
-This article will cover some of the current methods for detecting AI-generated text, and the next will discuss a few ways people have found to fool them.
+لكن لديه بعض المحدوديات – لا يقبل أي مدخل أقل من 1000 كلمة ويمكن تعديل النص للعبث بحساب الاحتمالية ويواجه مشاكل مع النصوص المكتوبة من قبل الأطفال والمتحدثين بغير اللغة الإنجليزية لأنه مدرب على مجموعة نصوص احترافية
 
-## OpenAI Text Classifier
+إنه يشير إلى نصوص مكتوبة من قبل البشر على أنها نصوص المُنشئة من الذكاء الاصطناعي حوالي 9% من الوقت ويحدد النصوص المُنشئة من الذكاء الاصطناعي بشكل صحيح حوالي 26% من الوقت. ستتحسن هذه الأرقام كلما زادت قوة ونطاق النموذج ولكن قد تكون الحالة أن وجود المكتشفات المتخصصة مطلوب لتحديد حالة كون النص مُنشئًا أو لا.
 
-The [OpenAI Text Classifier](https://platform.openai.com/ai-text-classifier) is a fairly good attempt at a general-purpose AI text detector.
-By training the model on a large quantity of AI-generated data and human-written text of a similar quality, the detector is able to compute the likelihood that any given text was created by an LLM.
+## طريقة العلامة المائية
+أحد طرق اكتشاف النصوص المُنشئة من الذكاء الاصطناعي يتطلب وضع علامة مائية إحصائية عند إنشاء النص. تستخدم هذه التقنيات "لائحة بيضاء" خاصة بالنموذج اللغوي الكبير التي هي طريقة لتحديد إذا كان النص مُنشئًا من نموذج ذكاء اصطناعي معين. تعمل هذه العلامة المائية عن طريق اختيار مجموعة عشوائية من الرموز "الخضراء" قبل إنشاء الكلمة وتستخدم التعليمات اللينة لهذه الرموز المختارة أثناء أخذ العينة. لا تؤثر هذه الرموز المُثقلة على نوعية الإنشاء ولكن يمكن اكتشافها عن طريق الخوارزميات باستخدام نماذج لغوية كبيرة أخرى.
 
-It has a number of limitations—it doesn’t accept any submission of under 1000 words, text can easily be edited to mess with the probability calculations, and because of its professionally-focused training set, it has more trouble with text created by children or non-english speakers.
-
-It currently flags human text as AI-generated only about 9% of the time, and correctly identifies AI-generated text ~26% of the time. As the model increases in power and scope, those numbers will improve, but it may be the case that more specific detectors are required to adequately assess whether text is generated or not.
-
-## The Watermark Method
-
-One method to detect AI generated text requires introducing a statistical watermark when generating the text. These techniques may use a LLM “whitelist”, which is a method of determining if text was generated by a specific AI model. The watermark works by selecting a randomized set of "green" tokens before a word is generated, and then softly promoting use of the selected tokens during sampling. These weighted values have a minimal effect on the quality of generations, but can be algorithmically detected by another LLM(@kirchenbauer2023watermarking).
-
-This is an intriguing idea, but it requires a model’s creators to implement this framework into their LLM. If a model doesn’t have the watermark built in, this method will not work.
+إن هذه الطريقة مثيرة ولكنها تتطلب وضع هذه الهيكلية من صناعي النموذج في داخل النموذج اللغوي الكبير الخاص بهم. إذ لا تعمل هذه الطريقة إذا لم تكن العلامة المائية مضمنة.
 
 ## DetectGPT
+إن طريقة [DetectGPT]( https://detectgpt.ericmitchell.ai/) تستطيع اكتشاف النصوص المُنشئة من الذكاء الاصطناعي بتهيئة أقل من المفاهيم السابقة. إذ وجد الباحثون أن إنشاء النصوص في النماذج اللغوية الكبيرة "يشغل منحنيات سلبية في الدالة الاحتمالية لسجل النموذج"، وبسبب ذلك أصبح من الممكن إنشاء أنظمة تعتمد على المنحنيات لتحديد إذا ما كان النص مُنشئًا إجرائيًا.
 
-The [DetectGPT](https://detectgpt.ericmitchell.ai/)(@mitchell2023detectgpt) method is able to detect AI-generated text with less setup than the previous concepts. Researchers have found that LLM text generations tend to "occupy negative curvature regions of the model’s log probability function". Because of this, it is possible to create a curvature-based system for determining if a block of text was procedurally generated.
+يعمل عن طريق حساب احتمالات السجل من النموذج الذي يُعتقد أنه أنشأ النص ومقارنته مع تعديلات عشوائية للنص من نموذج آخر ونموذج لغوي عادي تم تدريبه مسبقًا. يستطيع DetectGPT بهذه الطريقة تحديد إمكانية كون النص مُنشئًا من الذكاء الاصطناعي باستخدام المنحنى الاحتمالي فقط!
 
-It works by computing log probabilities from the model that was thought to have generated the text and comparing them to random alterations of the text from another, pre-trained generic language model. In this way, DetectGPT is able to identify the likelihood of the passage being generated using probability curves alone!
+## ملاحظة
+للمزيد عن موضوع المكتشفات وكيفية تفاديهم راجع [هذه المقالة]( https://learnprompting.org/docs/miscl/trickery) 
 
-## Note
-
-For an additional discussion on the topic of detectors and how people are tricking them, see [this article](https://learnprompting.org/docs/miscl/trickery).
